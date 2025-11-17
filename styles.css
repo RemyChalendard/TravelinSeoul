@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Nav*/
+nav {
+  background: #271b1b;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/*Nav text*/
+nav a {
+  color: white;
+  margin: 0 10px;
+}
+
+/*Header*/
+header {
+  background-color: #2a9d8f;
+  text-align: center;
+  color: white;
+}
+
+/*Header logo*/
+header::before {
+  content:"";
+  display:block;
+  width:200px;
+  height:200px;
+  background-image:url(images/logo.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position:center;
+  margin:0 auto 10px;
+}
+
+
+/*Main*/
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  padding-bottom:20px;
+}
+
+h2, h3, h4 {
+  text-align: center;
+  color: black;
+  padding-bottom: 10px;
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 28px;
+  text-align:center;
+  padding:18px;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 15px;
+  padding: 30px;
+}
+
+h4 {
+  margin: 10px;
+  font-weight: bold;
+}
+
+h5 {
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  color: white;
+}
+
+p {
+  font-size: 19px;
+  padding: 18px;
+  text-align: left;
+  min-width: 300px;
+}
+
+/* Footer */
+footer {
+  background-color: #2a9d8f;
+  text-align: center;
+  color: white;
+
+  }.logo {
+  padding: 5px;
+}
+
+
+/* Flex */
+#article {
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 36px;
+  margin-right: 36px;
+  padding-top: 18px;
+}
+
+#article .flex {
+  margin-right: 20px; 
+  margin-left:20px; 
+  text-align: center;  
+  height: auto;        
+}
+
+#article .text {
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  margin-top: 20px; 
+     
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  #article {
+    flex-direction: column; 
+    align-items: center;    
+  }
+
+  #article .flex {
+    margin-right: 0;        
+    margin-bottom: 15px;    
+    width: 100%;            
+    max-width: 100%;        
+  }
+
+  #article .text {
+    width: 100%;                
+  }
+}
