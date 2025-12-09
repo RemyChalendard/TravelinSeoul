@@ -162,3 +162,22 @@ justify-content: center;
 
 }
 
+/* Tableau Hangeul */
+
+  table {
+    border-collapse: collapse;
+    margin: 20px;
+  }
+  td {
+    border: 1px solid #333;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    transition: background 0.2s;
+  }
+  td:hover {
+    background: #f0f0f0;
+  }
