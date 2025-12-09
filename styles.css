@@ -1,6 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -25,6 +24,10 @@ header {
   background-color: #2a9d8f;
   text-align: center;
   color: white;
+}
+
+footer {
+  margin-top:15px;
 }
 
 /*Header logo*/
@@ -57,7 +60,6 @@ h2, h3, h4 {
   text-align: center;
   color: black;
   padding-bottom: 10px;
-  text-decoration: underline;
 }
 
 h2 {
@@ -80,13 +82,7 @@ h4 {
   font-weight: bold;
 }
 
-h5 {
-  padding: 10px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: normal;
-  color: white;
-}
+
 
 p {
   font-size: 19px;
@@ -106,6 +102,8 @@ footer {
   }.logo {
   padding: 5px;
 }
+
+
 
 
 /* Flex */
@@ -159,7 +157,8 @@ justify-content: center;
 
 .f-1-1-300 {
   flex:1 1 300px;
-  margin-bottom:20px;
+  margin-left:15px;
 
 
 }
+
