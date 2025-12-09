@@ -62,6 +62,8 @@ h2 {
   font-size: 28px;
   text-align:center;
   padding:18px;
+  background-color: #2a9d8f;
+  color:white;
 }
 
 h3 {
@@ -103,7 +105,7 @@ footer {
 
 
 /* Flex */
-#article {
+.aaa {
   display: flex;
   flex-direction: row; 
   justify-content: flex-start;
@@ -118,7 +120,7 @@ footer {
   margin-right: 20px; 
   margin-left:20px; 
   text-align: center;  
-  height: auto;        
+  height: auto;  
 }
 
 #article .text {
