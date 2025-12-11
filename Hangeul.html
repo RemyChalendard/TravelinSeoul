@@ -2,136 +2,137 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
-    <title>Travel In Seoul – Activités</title>
+  <title>Travel In Seoul – Activités</title>
 </head>
 
 <body>
 
-    <header>
-        <h1>TRAVEL IN SEOUL</h1>
+  <header>
+    <h1>TRAVEL IN SEOUL</h1>
 
-        <nav>
-            <a href="Accueil.html">HOME</a>
-            <a href="Foods.html">FOODS</a>
-            <a href="Activités.html" class="active">ACTIVITIES</a>
-            <a href="Quartiers.html">DISTRICTS</a>
-            <a href="Hangeul.html">HANGEUL</a>
-            <a href="services.html">SERVICES</a>
-            <a href="forum.html">CONTACT</a>
-        </nav>
-    </header>
+    <nav>
+      <a href="Accueil.html">HOME</a>
+      <a href="news.html">NEWS</a>
+      <a href="Foods.html">FOODS</a>
+      <a href="Activités.html" class="active">ACTIVITIES</a>
+      <a href="Quartiers.html">DISTRICTS</a>
+      <a href="Hangeul.html">HANGEUL</a>
+      <a href="services.html">SERVICES</a>
+      <a href="forum.html">CONTACT</a>
+    </nav>
+  </header>
 
-    <main>
-        <h3>La création du Hangeul</h3>
+  <main>
+    <h3>La création du Hangeul</h3>
 
-        <div class="d-flex fd-row jc-c g-16">
-            <div class="f-1-1-300">
+    <div class="d-flex fd-row jc-c g-16">
+      <div class="f-1-1-300">
 
-                <img src="images/9229079-coreen-alphabet-lettres-hangeul-langue-vecteur-libre-telechargement-gratuit-vectoriel.jpg" width="450" alt="Le hangeul">
-</div>
+        <img
+          src="images/9229079-coreen-alphabet-lettres-hangeul-langue-vecteur-libre-telechargement-gratuit-vectoriel.jpg"
+          width="450" alt="Le hangeul">
+      </div>
       <div class="text">
-                    <h2>Le Hangeul</h2>
+        <h2>Le Hangeul</h2>
 
-                    <h4>Une langue a la porté de tous</h4>
-                    <p>Le Hangeul est l’alphabet coréen, créé au XVe siècle sous le règne du roi Sejong le Grand
-                        (1397‑1450). Avant sa création, les Coréens utilisaient principalement les caractères chinois
-                        (Hanja) pour écrire, ce qui rendait la lecture et l’écriture difficiles pour le peuple. En 1443,
-                        le roi Sejong et son équipe de savants ont inventé un alphabet simple et logique, composé de 14
-                        consonnes et 10 voyelles de base, permettant de former toutes les syllabes coréennes.
+        <h4>Une langue a la porté de tous</h4>
+        <p>Le Hangeul est l’alphabet coréen, créé au XVe siècle sous le règne du roi Sejong le Grand
+          (1397‑1450). Avant sa création, les Coréens utilisaient principalement les caractères chinois
+          (Hanja) pour écrire, ce qui rendait la lecture et l’écriture difficiles pour le peuple. En 1443,
+          le roi Sejong et son équipe de savants ont inventé un alphabet simple et logique, composé de 14
+          consonnes et 10 voyelles de base, permettant de former toutes les syllabes coréennes.
 
-                        L’objectif du Hangeul était de démocratiser l’écriture, en offrant un système accessible à tous,
-                        même aux paysans illettrés. Chaque lettre est conçue pour refléter la forme des organes vocaux
-                        lors de la prononciation, ce qui rend l’apprentissage intuitif. Depuis sa création, le Hangeul
-                        est devenu un symbole de l’identité culturelle coréenne et est célébré chaque année le 9 octobre
-                        lors de la Journée du Hangeul en Corée du Sud. </p>
-                        </div>
-                        </div>
+          L’objectif du Hangeul était de démocratiser l’écriture, en offrant un système accessible à tous,
+          même aux paysans illettrés. Chaque lettre est conçue pour refléter la forme des organes vocaux
+          lors de la prononciation, ce qui rend l’apprentissage intuitif. Depuis sa création, le Hangeul
+          est devenu un symbole de l’identité culturelle coréenne et est célébré chaque année le 9 octobre
+          lors de la Journée du Hangeul en Corée du Sud. </p>
+      </div>
+    </div>
 
-                          <h1>Tableau des lettres Hangeul</h1>
+    <h1>Tableau des lettres Hangeul</h1>
 
-  <table id="hangeulTable"></table>
+    <table id="hangeulTable"></table>
 
-    </main>
+  </main>
 
-<script>
-const letters = [
-  // Consonnes simples
-  { kr: "ㄱ", rom: "g/k" }, { kr: "ㄴ", rom: "n" },
-  { kr: "ㄷ", rom: "d/t" }, { kr: "ㄹ", rom: "r/l" },
-  { kr: "ㅁ", rom: "m" },   { kr: "ㅂ", rom: "b/p" },
-  { kr: "ㅅ", rom: "s" },   { kr: "ㅇ", rom: "ng/—" },
-  { kr: "ㅈ", rom: "j" },   { kr: "ㅊ", rom: "ch" },
-  { kr: "ㅋ", rom: "k" },   { kr: "ㅌ", rom: "t" },
-  { kr: "ㅍ", rom: "p" },   { kr: "ㅎ", rom: "h" },
+  <script>
+    const letters = [
+      // Consonnes simples
+      { kr: "ㄱ", rom: "g/k" }, { kr: "ㄴ", rom: "n" },
+      { kr: "ㄷ", rom: "d/t" }, { kr: "ㄹ", rom: "r/l" },
+      { kr: "ㅁ", rom: "m" }, { kr: "ㅂ", rom: "b/p" },
+      { kr: "ㅅ", rom: "s" }, { kr: "ㅇ", rom: "ng/—" },
+      { kr: "ㅈ", rom: "j" }, { kr: "ㅊ", rom: "ch" },
+      { kr: "ㅋ", rom: "k" }, { kr: "ㅌ", rom: "t" },
+      { kr: "ㅍ", rom: "p" }, { kr: "ㅎ", rom: "h" },
 
-  // Consonnes doubles
-  { kr: "ㄲ", rom: "kk" }, { kr: "ㄸ", rom: "tt" },
-  { kr: "ㅃ", rom: "pp" }, { kr: "ㅆ", rom: "ss" },
-  { kr: "ㅉ", rom: "jj" },
+      // Consonnes doubles
+      { kr: "ㄲ", rom: "kk" }, { kr: "ㄸ", rom: "tt" },
+      { kr: "ㅃ", rom: "pp" }, { kr: "ㅆ", rom: "ss" },
+      { kr: "ㅉ", rom: "jj" },
 
-  // Voyelles simples
-  { kr: "ㅏ", rom: "a" },   { kr: "ㅑ", rom: "ya" },
-  { kr: "ㅓ", rom: "eo" },  { kr: "ㅕ", rom: "yeo" },
-  { kr: "ㅗ", rom: "o" },   { kr: "ㅛ", rom: "yo" },
-  { kr: "ㅜ", rom: "u" },   { kr: "ㅠ", rom: "yu" },
-  { kr: "ㅡ", rom: "eu" },  { kr: "ㅣ", rom: "i" },
+      // Voyelles simples
+      { kr: "ㅏ", rom: "a" }, { kr: "ㅑ", rom: "ya" },
+      { kr: "ㅓ", rom: "eo" }, { kr: "ㅕ", rom: "yeo" },
+      { kr: "ㅗ", rom: "o" }, { kr: "ㅛ", rom: "yo" },
+      { kr: "ㅜ", rom: "u" }, { kr: "ㅠ", rom: "yu" },
+      { kr: "ㅡ", rom: "eu" }, { kr: "ㅣ", rom: "i" },
 
-  // Voyelles combinées / diphtongues
-  { kr: "ㅐ", rom: "ae" }, { kr: "ㅒ", rom: "yae" },
-  { kr: "ㅔ", rom: "e" },  { kr: "ㅖ", rom: "ye" },
-  { kr: "ㅘ", rom: "wa" }, { kr: "ㅙ", rom: "wae" },
-  { kr: "ㅚ", rom: "oe" }, { kr: "ㅝ", rom: "wo" },
-  { kr: "ㅞ", rom: "we" }, { kr: "ㅟ", rom: "wi" },
-  { kr: "ㅢ", rom: "ui" }
-];
+      // Voyelles combinées / diphtongues
+      { kr: "ㅐ", rom: "ae" }, { kr: "ㅒ", rom: "yae" },
+      { kr: "ㅔ", rom: "e" }, { kr: "ㅖ", rom: "ye" },
+      { kr: "ㅘ", rom: "wa" }, { kr: "ㅙ", rom: "wae" },
+      { kr: "ㅚ", rom: "oe" }, { kr: "ㅝ", rom: "wo" },
+      { kr: "ㅞ", rom: "we" }, { kr: "ㅟ", rom: "wi" },
+      { kr: "ㅢ", rom: "ui" }
+    ];
 
-//Permet d'interragir avec le hangeulTable du HTML
-const table = document.getElementById("hangeulTable");
+    //Permet d'interragir avec le hangeulTable du HTML
+    const table = document.getElementById("hangeulTable");
 
-const columns = 5;
-let row;
+    const columns = 5;
+    let row;
 
-letters.forEach((item, index) => {
-  if (index % columns === 0) {
-    row = document.createElement("tr"); // Tr = Table row
-    table.appendChild(row);
-  }
+    letters.forEach((item, index) => {
+      if (index % columns === 0) {
+        row = document.createElement("tr"); // Tr = Table row
+        table.appendChild(row);
+      }
 
-  const cell = document.createElement("td"); // Td = Table data
-  cell.textContent = item.kr;
+      const cell = document.createElement("td"); // Td = Table data
+      cell.textContent = item.kr;
 
-//Permet de changer l'ellement du tableau "cell"
-// Cette partie permet de switché entre kr et rom
-  cell.addEventListener("click", () => {
-    cell.textContent = (cell.textContent === item.kr) ? item.rom : item.kr;
-  });
+      //Permet de changer l'ellement du tableau "cell"
+      // Cette partie permet de switché entre kr et rom
+      cell.addEventListener("click", () => {
+        cell.textContent = (cell.textContent === item.kr) ? item.rom : item.kr;
+      });
 
-  row.appendChild(cell);
-});
-</script>
+      row.appendChild(cell);
+    });
+  </script>
 
-    <footer>
-        <h5>CONTACTEZ-NOUS</h5>
+  <footer>
+    <h5>CONTACTEZ-NOUS</h5>
 
-        <div class="logo">
-            <a href="https://facebook.com/seoulcitykorea">
-                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png" width="50" height="50"
-                    alt="Facebook">
-            </a>
+    <div class="logo">
+      <a href="https://facebook.com/seoulcitykorea">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png" width="50" height="50" alt="Facebook">
+      </a>
 
-            <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" width="50" height="50"
-                    alt="Instagram">
-            </a>
-        </div>
+      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" width="50" height="50" alt="Instagram">
+      </a>
+    </div>
 
-        <h5>Un projet de : Chalendard Rémy</h5>
-    </footer>
+    <h5>Un projet de : Chalendard Rémy</h5>
+  </footer>
 
 </body>
 
