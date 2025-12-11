@@ -9,67 +9,68 @@
     <title>Travel In Seoul</title>
 </head>
 
-    <header>
-        <h1>TRAVEL IN SEOUL</h1>
-        <nav>
-    <a href="Accueil.html">HOME</a>
-    <a href="news.html">NEWS</a>
-    <a href="Foods.html">FOODS</a>
-    <a href="Activités.html">ACTIVITIES</a>
-    <a href="Quartiers.html">DISTRICTS</a>
-    <a href="Hangeul.html">HANGEUL</a>
-    <a href="services.html">SERVICES</a>
-    <a href="contact.html">CONTACT</a>
-        </nav>
-    </header>
+<header>
+    <h1>TRAVEL IN SEOUL</h1>
+    <nav>
+        <a href="Accueil.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="Foods.html">FOODS</a>
+        <a href="Activités.html">ACTIVITIES</a>
+        <a href="Quartiers.html">DISTRICTS</a>
+        <a href="Hangeul.html">HANGEUL</a>
+        <a href="services.html">SERVICES</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
 
-    <main>
-        <div class="d-flex fd-row jc-c g-16">
-            <div class="f-1-1-300">
-    <form id="contactForm" action="#" method="post" novalidate>
-      <div class="row">
-        <div>
-          <label for="nom">Nom *</label>
-          <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="family-name" >
+<main>
+    <div class="d-flex fd-row jc-c g-16">
+        <div class="f-1-1-300">
+            <form id="contactForm">
+                <div class="form">
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required
+                            autocomplete="family-name">
+                    </div>
+
+                    <div>
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required
+                            autocomplete="name">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" name="mail" placeholder="exemple@domaine.com" required
+                        autocomplete="email">
+                </div>
+
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Écrivez votre message..." required></textarea>
+                </div>
+
+
+                <button type="submit" class="btn">Envoyer</button>
+
+            </form>
         </div>
+    </div>
+</main>
 
-        <div>
-          <label for="prenom">Prénom *</label>
-          <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required autocomplete="given-name" >
-        </div>
-      </div>
-
-      <div>
-        <label for="mail">Email *</label>
-        <input type="email" id="mail" name="mail" placeholder="exemple@domaine.com" required autocomplete="email" >
-      </div>
-
-      <div>
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" placeholder="Écrivez votre message..." required></textarea>
-      </div>
-
-      <div style="display:flex; gap:8px; align-items:center;">
-        <button type="submit" class="btn">Envoyer</button>
-        <div id="status" aria-live="polite"></div>
-      </div>
-    </form>            </div>
-        </div>
-    </main>
-
-    <footer>
-        <h5>CONTACTER-NOUS</h5>
-        <section class="logo">
-            <a href="https://facebook.com/seoulcitykorea">
-                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png" width="50" height="50"
-                    alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" width="50" height="50"
-                    alt="Instagram">
-            </a>
-            <h5>Un projet de : Chalendard Rémy</h5>
-        </section>
-    </footer>
+<footer>
+    <h5>CONTACTER-NOUS</h5>
+    <section class="logo">
+        <a href="https://facebook.com/seoulcitykorea">
+            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png" width="50" height="50" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
+            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" width="50" height="50" alt="Instagram">
+        </a>
+        <h5>Un projet de : Chalendard Rémy</h5>
+    </section>
+</footer>
 
 </html>
