@@ -120,15 +120,21 @@ footer {
 
   text-align:center;
   margin-top: 20px; 
+  
      
 }
+
+.text {
+
+  padding-top:16px;
+  flex-wrap: wrap;
+flex-direction: column;}
 
 /* Media Query */
 
 
 .d-flex {
-  display:flex
-
+  display:flex;
 }
 
 .fd-row {
@@ -158,9 +164,25 @@ justify-content: center;
 .f-1-1-300 {
   flex:1 1 300px;
   margin-left:15px;
-
+  margin-bottom: 32px;
 
 }
+
+@media (max-width: 768px) {
+  .d-flex {
+    flex-wrap: wrap;      /* 👉 passe en dessous seulement sur mobile */
+  }
+
+  .fd-row {
+    flex-direction: column;  /* 👉 image au-dessus, texte en dessous */
+  }
+
+  .f-1-1-300 img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 
 /* Tableau Hangeul */
 
