@@ -1,0 +1,24 @@
+{
+    "lieu": [
+        {
+            "lieu favoris ": "Gyeonbokgung",
+            "type": "Palais",
+            "quartier": "Jongno"
+        },
+        {
+            "lieu favoris ": "Seoul Stadium",
+            "type": "Sport",
+            "quartier": "Sang am dong"
+        },
+        {
+            "lieu favoris ": "Sky Dome",
+            "type": "Divertissement",
+            "quartier": "Gocheok Dong"
+        },
+        {
+            "lieu favoris ": "Gyeonbokgung",
+            "type": "palais",
+            "quartier": "Jongno"
+        }
+    ]
+}

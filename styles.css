@@ -186,7 +186,7 @@ td:hover {
 
   img {
     max-width: 90%;
-    justify-content: center;
+    align-items: center;
   }
 
   .d-flex {
@@ -219,7 +219,7 @@ td:hover {
 #contactForm {
   max-width: 500px;
   margin: auto;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
 }
 
 #contactForm label {
@@ -237,6 +237,7 @@ td:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  resize: none;
 }
 
 .form {
