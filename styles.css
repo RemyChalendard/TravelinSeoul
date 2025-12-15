@@ -21,7 +21,7 @@ nav a {
 
 /*Header*/
 header {
-  background-color: #2a9d8f;
+  background-color: #1e7067;
   text-align: center;
   color: white;
 }
@@ -67,7 +67,7 @@ h2 {
   font-size: 28px;
   text-align: center;
   padding: 18px;
-  background-color: #2a9d8f;
+  background-color: #1e7067;
   color: white;
 }
 
@@ -93,7 +93,7 @@ p {
 
 /* Footer */
 footer {
-  background-color: #2a9d8f;
+  background-color: #1e7067;
   text-align: center;
   color: white;
 }
