@@ -81,6 +81,7 @@ h3 {
 h4 {
   margin: 10px;
   font-weight: bold;
+
 }
 
 
@@ -169,12 +170,22 @@ padding-bottom:13px;
 }
 
 h5 {
-  font-size:20px;
+  color:white;
+  font-size:21px;
+  padding-top:12px;
+  padding-bottom:10px;
+}
+
+h6 {
+  font-size:16px;
   font-style:bold;
   text-align:center;
   padding-top:12px;
-  color:white;
+  padding-bottom:12px;
+  color:#F0CAB9;
 }
+
+
 
 /* Tableau Hangeul */
 table {

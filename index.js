@@ -16,7 +16,7 @@ fetch(url)
       const article = document.createElement("article");
       article.innerHTML = `
         <h5>${data.evenements[i].lieu}</h5>
-        <h4>${data.evenements[i].date}</h4>
+        <h6>${data.evenements[i].date}</h6>
       `;
 
       tableau.appendChild(article);
