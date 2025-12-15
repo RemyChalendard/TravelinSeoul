@@ -160,14 +160,20 @@ footer {
 
 /* Tableau Evenement */
 .tableau {
-border-collapse: collapse;
-margin: auto;
-background-color:white;
+border-color: #000000;
+border:8px ;
+background-color: #1e7067;
+text-align:center;
+padding-top:13px;
+padding-bottom:13px;
 }
 
 h5 {
-  font-size:15px;
+  font-size:20px;
+  font-style:bold;
   text-align:center;
+  padding-top:12px;
+  color:white;
 }
 
 /* Tableau Hangeul */
@@ -177,6 +183,7 @@ table {
   background-color: rgb(108, 108, 238);
   text-align: center;
 }
+
 td {
   border: 1px solid #333;
   padding: 20px;
