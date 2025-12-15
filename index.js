@@ -15,8 +15,8 @@ fetch(url)
     for (let i = 0; i < data.evenements.length; i++) {
       const article = document.createElement("article");
       article.innerHTML = `
-        <h3>${data.evenements[i].lieu}</h3>
-        <p>${data.evenements[i].date}</p>
+        <h5>${data.evenements[i].lieu}</h5>
+        <h4>${data.evenements[i].date}</h4>
       `;
 
       tableau.appendChild(article);

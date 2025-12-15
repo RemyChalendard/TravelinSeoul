@@ -83,6 +83,10 @@ h4 {
   font-weight: bold;
 }
 
+
+
+
+
 p {
   font-size: 19px;
   padding: 18px;
@@ -154,15 +158,17 @@ footer {
   margin-bottom: 32px;
 }
 
-
 /* Tableau Evenement */
+.tableau {
+border-collapse: collapse;
+margin: auto;
+background-color:white;
+}
 
-
-
-
-
-
-
+h5 {
+  font-size:15px;
+  text-align:center;
+}
 
 /* Tableau Hangeul */
 table {
@@ -235,7 +241,7 @@ td:hover {
 #contactForm label {
   display: block;
   margin-bottom: 10px;
-  margin-top:15px;
+  margin-top: 15px;
   font-weight: bold;
 }
 

@@ -2,22 +2,22 @@
   "evenements": [
     
     {
-      "lieu": "Seoul Stadium",
+      "lieu": "Seoul Stadium - FC Seoul / Incheon",
       "date": "08-01",
       "type": "Sport"
     },
     {
-      "lieu": "KSPO Stadium",
+      "lieu": "KSPO Stadium - Bunnies Camp",
       "date": "09-01",
       "type": "Concert"
     },
     {
-      "lieu": "Lotte World",
+      "lieu": "Lotte World - Winter is coming",
       "date": "10-01",
       "type": "Celebration"
     },
     {
-      "lieu": "Aura Club",
+      "lieu": "Aura Club - Welcome 2026",
       "date": "10-01",
       "type": "Showcase"
     }
