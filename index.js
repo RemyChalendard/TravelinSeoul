@@ -5,23 +5,21 @@ fetch(url)
     console.log(response);
     return response.json();
   })
+
   .then((data) => {
     console.log(data);
-    console.log(data[0].name);
+    console.log(data[0])
 
-    // Sélectionner l'élément où les articles vont être ajoutés
-    const evenements = document.getElementById("evenements");
+    const tableau = document.querySelector(".tableau");
 
-    // Parcourir les données pour créer et ajouter des articles
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.evenements.length; i++) {
       const article = document.createElement("article");
       article.innerHTML = `
-        <h2>${data[i].name}</h2>
-        <p>${data[i].description}</p>
+        <h3>${data.evenements[i].lieu}</h3>
+        <p>${data.evenements[i].date}</p>
       `;
-      evenements.appendChild(article);
+
+      tableau.appendChild(article);
     }
   })
-  .catch((error) => {
-    console.error("Erreur lors de la récupération des données:", error);
-  });
+
