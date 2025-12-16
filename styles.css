@@ -211,7 +211,7 @@ td:hover {
 
 /* Responsive Mobile */
 /* Media Query */
-@media (max-width: 768px) {
+@media (max-width: 837px) {
   h1 {
     text-align: center;
     font-size: 30px;
