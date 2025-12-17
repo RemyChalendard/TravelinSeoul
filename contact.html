@@ -25,6 +25,22 @@
     </nav>
 </header>
 
+    <style>
+        .success {
+            outline: 2px solid green;
+        }
+
+        .error {
+            outline: 2px solid red;
+
+        }
+
+        .success-checked::before {
+            content: "✓ ";
+            color: green;
+        }
+    </style>
+
 <main>
     <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
@@ -62,55 +78,55 @@
 </main>
 
 <script>
-        const form = document.getElementById("registerForm");
-        const message = document.querySelector(".message");
-        let errors = [];
-        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+const form = document.getElementById("contactForm");
 
-        form.firstName.addEventListener("input", (e) => {
+const nom = document.getElementById("nom");
+const prenom = document.getElementById("prenom");
+const mail = document.getElementById("mail");
 
-            if (form.firstName.value.length > 5 && form.firstName.value.length < 20) {
-                form.firstName.classList = "success";
-                console.log("ok")
-            } else {
-                form.firstName.classList = "error";
-                console.log("KO")
-                errors.push("Prenom obligatoire"); // Stop l'executuon du formulaire et stock l'erreur dans le tableau
-                e.preventDefault(); // E veut dire event
-            }
-        });
+const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-        form.lastName.addEventListener("input", (e) => {
-
-            if (form.lastName.value.length > 5 && form.lastName.value.length < 20) {
-                form.lastName.classList = "success";
-                console.log("ok")
-            } else {
-                form.lastName.classList = "error";
-                console.log("KO")
-                errors.push("Nom obligatoire");
-                e.preventDefault();
-            }
-        });
-
-    form.email.addEventListener("input", (e) => {
-  if (emailRegex.test(form.email.value)) {
-    form.email.classList.remove("error");
-    form.email.classList.add("success");
-    console.log("ok");
+prenom.addEventListener("input", () => {
+  if (prenom.value.length >= 2 && prenom.value.length <= 20) {
+    prenom.classList.add("success");
+    prenom.classList.remove("error");
   } else {
-    form.email.classList.remove("success");
-    form.email.classList.add("error");
-    console.log("KO");
+    prenom.classList.add("error");
+    prenom.classList.remove("success");
+  }
+});
+
+nom.addEventListener("input", () => {
+  if (nom.value.length >= 2 && nom.value.length <= 20) {
+    nom.classList.add("success");
+    nom.classList.remove("error");
+  } else {
+    nom.classList.add("error");
+    nom.classList.remove("success");
+  }
+});
+
+mail.addEventListener("input", () => {
+  if (emailRegex.test(mail.value)) {
+    mail.classList.add("success");
+    mail.classList.remove("error");
+  } else {
+    mail.classList.add("error");
+    mail.classList.remove("success");
+  }
+});
+
+form.addEventListener("submit", (e) => {
+  if (
+    !nom.classList.contains("success") ||
+    !prenom.classList.contains("success") ||
+    !mail.classList.contains("success")
+  ) {
+    e.preventDefault();
+    alert("Merci de remplir correctement tous les champs.");
   }
 });
 </script>
-
-</body>
-
-
-
-
 
 <footer>
     <h5>CONTACTER-NOUS</h5>
