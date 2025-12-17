@@ -60,6 +60,58 @@
         </div>
     </div>
 </main>
+
+<script>
+        const form = document.getElementById("registerForm");
+        const message = document.querySelector(".message");
+        let errors = [];
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        form.firstName.addEventListener("input", (e) => {
+
+            if (form.firstName.value.length > 5 && form.firstName.value.length < 20) {
+                form.firstName.classList = "success";
+                console.log("ok")
+            } else {
+                form.firstName.classList = "error";
+                console.log("KO")
+                errors.push("Prenom obligatoire"); // Stop l'executuon du formulaire et stock l'erreur dans le tableau
+                e.preventDefault(); // E veut dire event
+            }
+        });
+
+        form.lastName.addEventListener("input", (e) => {
+
+            if (form.lastName.value.length > 5 && form.lastName.value.length < 20) {
+                form.lastName.classList = "success";
+                console.log("ok")
+            } else {
+                form.lastName.classList = "error";
+                console.log("KO")
+                errors.push("Nom obligatoire");
+                e.preventDefault();
+            }
+        });
+
+    form.email.addEventListener("input", (e) => {
+  if (emailRegex.test(form.email.value)) {
+    form.email.classList.remove("error");
+    form.email.classList.add("success");
+    console.log("ok");
+  } else {
+    form.email.classList.remove("success");
+    form.email.classList.add("error");
+    console.log("KO");
+  }
+});
+</script>
+
+</body>
+
+
+
+
+
 <footer>
     <h5>CONTACTER-NOUS</h5>
     <section class="logo">
