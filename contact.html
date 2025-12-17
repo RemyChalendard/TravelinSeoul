@@ -116,14 +116,15 @@ mail.addEventListener("input", () => {
   }
 });
 
-form.addEventListener("submit", (e) => {
-  if (
-    !nom.classList.contains("success") ||
-    !prenom.classList.contains("success") ||
-    !mail.classList.contains("success")
-  ) {
-    e.preventDefault();
-    alert("Merci de remplir correctement tous les champs.");
+    form.email.addEventListener("input", (e) => {
+  if (emailRegex.test(form.email.value)) {
+    form.email.classList.remove("error");
+    form.email.classList.add("success");
+    console.log("ok");
+  } else {
+    form.email.classList.remove("success");
+    form.email.classList.add("error");
+    console.log("KO");
   }
 });
 </script>
