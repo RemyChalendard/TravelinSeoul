@@ -1,4 +1,4 @@
-const url = "http://localhost:5500/Site/evenements.json";
+const url = "http://127.0.0.1:5500/evenements.json";
 
 fetch(url)
   .then((response) => {
