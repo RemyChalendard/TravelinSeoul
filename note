@@ -1,0 +1,112 @@
+🔴 PRIORITÉ ABSOLUE – Lignes de bus
+❌ Performance : 48
+
+C’est le seul vrai point critique du site.
+
+Causes très probables
+
+Trop de JavaScript (map, données, filtres…)
+
+Requêtes réseau lourdes (JSON, API, fichiers)
+
+DOM trop volumineux (listes longues)
+
+Absence de lazy-loading
+
+Actions concrètes (dans l’ordre)
+
+Lazy load du contenu lourd
+
+Tables
+
+Cartes
+
+Listes de lignes
+
+Découper le JS
+
+Charger la logique seulement quand nécessaire
+
+defer / async
+
+Virtualisation des listes
+
+Afficher 20–30 lignes max à la fois
+
+Éviter le rendu initial complet
+
+Skeleton / loader
+
+Optimiser le LCP
+
+Image ou titre principal chargé en priorité
+
+🎯 Objectif réaliste : 80–90
+
+🟠 PRIORITÉ 2 – Foods
+⚠️ Best Practices : 73
+
+Performance et accessibilité sont bonnes → problème technique, pas visuel.
+
+Causes fréquentes Lighthouse
+
+Images avec ratio incorrect
+
+API dépréciées
+
+Console errors
+
+Cookies non sécurisés
+
+rel="noopener" manquant
+
+Images trop lourdes
+
+👉 Dans Lighthouse > Best Practices :
+Corrige tout ce qui est en rouge, c’est souvent rapide.
+
+🎯 Objectif : 95+
+
+🟡 PRIORITÉ 3 – Accessibilité perfectible
+Pages concernées
+
+Activités : 87
+
+Contact : 90
+
+Foods : 97 (presque parfait)
+
+Problèmes probables
+
+Contraste texte/fond
+
+Champs de formulaire sans label
+
+Boutons sans texte accessible
+
+Mauvaise hiérarchie des titres
+
+👉 Actions rapides :
+
+Un seul <h1> par page
+
+Tous les inputs avec <label for="">
+
+alt descriptifs
+
+Vérifier contrastes (WCAG AA)
+
+🎯 Objectif : 95–100
+
+🟢 Pages excellentes (aucune action urgente)
+✅ Très solides
+
+Accueil
+
+Districts
+
+Hangeul
+
+Lignes de métro
+
+👉 Ces pages servent de référence technique pour corriger les autres.
