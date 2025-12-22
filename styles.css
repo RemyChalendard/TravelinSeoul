@@ -32,7 +32,7 @@ footer {
 
 .iframe {
   padding-top: 12px;
-  text-align:center;
+  text-align: center;
 
 }
 
@@ -59,7 +59,7 @@ h1 {
   text-align: center;
   font-size: 50px;
   padding-bottom: 20px;
-  padding-top:20px;
+  padding-top: 20px;
 }
 
 h2,
@@ -106,6 +106,7 @@ footer {
   text-align: center;
   color: white;
 }
+
 .logo {
   padding: 5px;
 }
@@ -165,32 +166,32 @@ footer {
 
 /* Tableau Evenement */
 .tableau {
-border-color: #000000;
-border:8px ;
-background-color: #1e7067;
-text-align:center;
-padding-top:13px;
-padding-bottom:13px;
+  border-color: #000000;
+  border: 8px;
+  background-color: #1e7067;
+  text-align: center;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
 h5 {
-  color:white;
-  font-size:21px;
-  padding-top:12px;
-  padding-bottom:10px;
+  color: white;
+  font-size: 21px;
+  padding-top: 12px;
+  padding-bottom: 10px;
 }
 
 h6 {
-  font-size:16px;
-  font-style:bold;
-  text-align:center;
-  padding-top:12px;
-  padding-bottom:12px;
-  color:#F0CAB9;
+  font-size: 16px;
+  font-style: bold;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #F0CAB9;
 }
 
 ul {
-  margin-bottom:12px;
+  margin-bottom: 12px;
 }
 
 
@@ -212,6 +213,7 @@ td {
   height: 80px;
   transition: background 0.2s;
 }
+
 td:hover {
   background: #f0f0f0;
 }
@@ -253,6 +255,12 @@ td:hover {
     display: block;
     margin: 10px 0;
     padding-top: 10px;
+  }
+
+  .iframe {
+    padding-top: 12px;
+    text-align: center;
+    max-width: 400px;
   }
 }
 
