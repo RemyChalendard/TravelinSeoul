@@ -30,6 +30,12 @@ footer {
   margin-top: 15px;
 }
 
+.iframe {
+  padding-top: 12px;
+  text-align:center;
+
+}
+
 /*Header logo*/
 header::before {
   content: "";
