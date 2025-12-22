@@ -30,11 +30,23 @@ footer {
   margin-top: 15px;
 }
 
-.iframe {
-  padding-top: 12px;
-  text-align: center;
-
+.map-container {
+    display: flex;              
+    justify-content: center;   
+    align-items: center;        
+    padding: 12px 0;             
 }
+
+
+.map-container iframe {
+    width: 70%;                  
+    max-width: 800px;            
+    height: 400px;              
+    border: none;                
+}
+
+
+
 
 /*Header logo*/
 header::before {
@@ -257,13 +269,14 @@ td:hover {
     padding-top: 10px;
   }
 
-  .iframe-container iframe {
-    padding-top: 12px;
-    text-align: center;
-    width : 70%;
-    height:250px;
-  }
+    .map-container  {
+        width: 90%;        
+        height: 300px;
+    }
 }
+
+
+
 
 /* Formulaire Contact */
 #contactForm {
