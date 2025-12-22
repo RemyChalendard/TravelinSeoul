@@ -257,10 +257,11 @@ td:hover {
     padding-top: 10px;
   }
 
-  .iframe {
+  .iframe-container iframe {
     padding-top: 12px;
     text-align: center;
-    max-width: 400px;
+    width : 100%;
+    height:250px;
   }
 }
 
