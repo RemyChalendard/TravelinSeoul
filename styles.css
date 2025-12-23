@@ -103,7 +103,7 @@ h3 {
 
 h4 {
   font-weight: bold;
-
+  margin-top: 8px;
 }
 
 
@@ -233,8 +233,8 @@ td:hover {
   background: #f0f0f0;
 }
 
-.strong{
-  margin-bottom:12px;
+.strong {
+  margin-bottom: 12px;
 }
 
 /* Responsive Mobile */
