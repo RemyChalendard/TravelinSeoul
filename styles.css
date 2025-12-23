@@ -11,12 +11,17 @@ nav {
   padding: 20px 0;
 }
 
+nav a:hover {
+  background-color:#2A6EBB;
+}
+
 /*Nav text*/
 nav a {
   color: white;
-  margin: 0 15px;
-  padding-top: 15px;
+  margin: 0 px;
+  padding: 15px;
   text-decoration: none;
+  
 }
 
 /*Header*/
@@ -137,7 +142,7 @@ footer {
 }
 
 .text {
-  padding-top: 16px;
+
   flex-wrap: wrap;
   flex-direction: column;
 }
@@ -245,7 +250,7 @@ td:hover {
     margin-top: 12px;
   }
 
-  /* Images responsive (uniquement contenu, pas logos) */
+  /* Images responsive */
   .f-1-1-300 img {
     width: min(90vw, 420px);
     height: auto;
@@ -281,7 +286,7 @@ td:hover {
   }
 
   footer .logo img {
-    width: 40px;       /* ajuste la taille si besoin */
+    width: 40px;      
     height: auto;
     display: inline-block;
     max-width: none;
@@ -306,13 +311,6 @@ td:hover {
   }
 
 }
-
-
-
-
-
-
-
 
 /* Formulaire Contact */
 #contactForm {
