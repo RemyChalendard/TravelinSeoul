@@ -234,6 +234,7 @@ td:hover {
 /* Media Query */
 @media (max-width: 780px) {
 
+  /* Titres */
   h1 {
     text-align: center;
     font-size: 30px;
@@ -244,13 +245,15 @@ td:hover {
     margin-top: 12px;
   }
 
-  /* Images responsive */
-  img {
-    max-width: 100%;
+  /* Images responsive (uniquement contenu, pas logos) */
+  .f-1-1-300 img {
+    width: min(90vw, 420px);
     height: auto;
+    margin: 0 auto;
     display: block;
   }
 
+  /* Flexbox */
   .d-flex {
     flex-wrap: wrap;
   }
@@ -259,15 +262,31 @@ td:hover {
     flex-direction: column;
   }
 
-.f-1-1-300 img {
+  /* Footer logos */
+  footer {
+    text-align: center;
+  }
 
-    width: 90vw;        /* prend 90% de l’écran */
-    max-width: 420px;   /* MAIS jamais plus grand */
+  footer .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  footer .logo a {
+    display: inline-flex;
+    width: auto;
+  }
+
+  footer .logo img {
+    width: 40px;       /* ajuste la taille si besoin */
     height: auto;
-    margin: 0 auto;
-    display: block;
-}
-
+    display: inline-block;
+    max-width: none;
+    margin: 0;
+  }
 
   /* Nav */
   nav {
@@ -280,11 +299,16 @@ td:hover {
     padding-top: 10px;
   }
 
+  /* Carte / map */
   .map-container {
     width: 100%;
     height: 300px;
   }
+
 }
+
+
+
 
 
 
