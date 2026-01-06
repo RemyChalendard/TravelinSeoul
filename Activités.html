@@ -53,7 +53,6 @@
   </footer>
 
   <script>
-    // Charger le JSON séparé
     fetch('activites.json')
       .then(response => response.json())
       .then(data => {
@@ -105,29 +104,6 @@
     }
   })
   .catch(err => console.error("Erreur lors du chargement du JSON événements :", err));
-
-
-            // Charger et afficher les activités
-    fetch('activites.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('activitesContainer');
-        data.activites.forEach(act => {
-          const div = document.createElement('div');
-          div.innerHTML = `
-            <div>
-              <img src="${act.image}" alt="${act.titre}" width="450">
-            </div>
-            <div>
-              <h2>${act.titre}</h2>
-              <h4>${act.lieu}</h4>
-              <p>${act.description}</p>
-              ${act.bouton}
-            </div>
-          `;
-          container.appendChild(div);
-        });
-      });
 
   </script>
 </body>
