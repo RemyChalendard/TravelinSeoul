@@ -1,4 +1,4 @@
-const url = "/evenements.json";
+const url = "https://remychalendard.github.io/evenements.json";
 
 fetch(url)
   .then((response) => {
