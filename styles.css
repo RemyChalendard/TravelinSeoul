@@ -241,10 +241,8 @@ td:hover {
 /* Media Query */
 @media (max-width: 780px) {
 
-  /* Police ecriture */
-
-    body {
-    font-family: initial;
+  body {
+    font-family: 'Roboto', sans-serif;
   }
 
   /* Titres */
