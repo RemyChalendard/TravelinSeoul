@@ -1,0 +1,40 @@
+{
+  "evenements": "Les événements à venir",
+  "activites": [
+    {
+      "titre": "Football - FC Seoul",
+      "lieu": "Seoul World Cup Stadium, Séoul",
+      "description": "Le FC Seoul est l’un des clubs de football les plus emblématiques de Corée du Sud. Fondé en 1983 sous le nom de Lucky-Goldstar Hwangso FC, le club était initialement basé à Chungcheong avant de déménager dans la capitale, Séoul, en 1989. Au fil des années, il a changé de nom plusieurs fois, devenant LG Cheetahs, puis finalement FC Seoul en 2004. Le club joue ses matchs à domicile au Seoul World Cup Stadium, un stade moderne inauguré pour la Coupe du Monde 2002. Le FC Seoul a remporté plusieurs titres de K League 1, ainsi que des Coupes de Corée, et s’est souvent illustré sur la scène asiatique, notamment en Ligue des champions de l’AFC. Connu pour sa rivalité intense avec les Suwon Samsung Bluewings surnommée le « Super Match », le FC Seoul est aujourd’hui un pilier du football sud-coréen, reconnu pour son histoire riche, son large public et son style de jeu ambitieux.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/1469E/production/_133141638_lingard.jpg",
+      "bouton": "<a href='https://www.fcseoul.com/'><button id='monBouton'>FC Seoul</button></a>"
+    },
+    {
+      "titre": "Lotte World",
+      "lieu": "240 Olympic-ro, Songpa District, Seoul, Corée du Sud",
+      "description": "Le Lotte World est l’un des parcs d’attractions les plus célèbres et les plus populaires de Séoul, en Corée du Sud. Inauguré en 1989, il se distingue par sa particularité d’être à la fois un parc intérieur le plus grand du monde et un parc extérieur, appelé Magic Island, construit autour d’un lac pittoresque. Situé dans le quartier de Jamsil, Lotte World offre une grande variété d’attractions, allant des montagnes russes aux spectacles culturels, en passant par des parades, des patinoires et un aquarium. Le complexe comprend également un centre commercial, un hôtel de luxe et un musée folklorique coréen, faisant de Lotte World une destination de loisirs complète pour les familles, les touristes et les amateurs de sensations fortes. Grâce à son atmosphère magique et à ses installations modernes, il est devenu un symbole du divertissement à Séoul et une étape incontournable pour les visiteurs de la capitale sud-coréenne.",
+      "image": "images/lotteworld.webp",
+      "bouton": "<a href='https://www.lotteworld.com/'><button id='monBouton'>Lotte World</button></a>"
+    },
+    {
+      "titre": "K-POP, Un phénomène mondial",
+      "lieu": "Seoul Olympic Stadium ou KSPO DOME",
+      "description": "La K-pop, ou Korean pop music, est un genre musical originaire de Corée du Sud qui mélange des styles variés comme la pop, le hip-hop, le R&B, l’électro et même le rock. Elle est née dans les années 1990, avec des groupes pionniers comme Seo Taiji and Boys, qui ont introduit des sons occidentaux et des chorégraphies modernes dans la musique coréenne. Rapidement, les grandes agences de divertissement comme SM Entertainment, YG Entertainment et JYP Entertainment ont mis en place un système d’entraînement rigoureux pour former de jeunes artistes, appelés idols, à chanter, danser et se produire sur scène avec professionnalisme. La K-pop est devenue populaire dans le monde entier grâce à son esthétique soignée, ses clips spectaculaires, ses chorégraphies dynamiques et l’implication des fans sur les réseaux sociaux. Des groupes comme BLACKPINK, IVE ou Newjeans ont contribué à faire de la K-pop un phénomène mondial, symbole de la culture coréenne moderne et de la puissance du soft power sud-coréen.",
+      "image": "images/kpop.webp",
+      "bouton": ""
+    },
+    {
+      "titre": "Temple de Jogyesa",
+      "lieu": "Adresse : 55 Ujeongguk-ro, Jongno-gu, Séoul",
+      "description": "Le temple de Jogyesa est l'un des temples bouddhistes les plus importants et les plus emblématiques de Séoul, situé au cœur du quartier historique de Jongno. Fondé en 1395, il a été réaménagé en 1910, et est aujourd’hui le centre principal du bouddhisme Jogye, la secte bouddhiste la plus influente en Corée du Sud. Ce temple est un lieu de prière, de méditation et de réflexion spirituelle, attirant à la fois les locaux et les visiteurs internationaux. L’atmosphère du temple est particulièrement sereine, et ses bâtiments traditionnels sont magnifiquement ornés. Le hall principal, le Daeungjeon, abrite une grande statue du Bouddha, entourée de peintures murales représentant des scènes bouddhiques. Une caractéristique unique de Jogyesa est son arbre de saule géant âgé de plusieurs siècles, un symbole de la sagesse et de la longévité dans le bouddhisme. En plus des structures religieuses, le temple dispose d'un jardin paisible où les visiteurs peuvent se détendre et méditer.",
+      "image": "images/Jogyesa.webp",
+      "bouton": "<a href='https://www.jogyesa.kr/'><button id='monBouton'>Jogyesa</button></a>"
+    },
+    {
+      "titre": "Daeungjeon Hall : le hall principal avec la statue du Bouddha.",
+      "lieu": "",
+      "description": "L'arbre de saule géant : vieux de plus de 500 ans, il symbolise la sagesse bouddhiste. Le pavillon de la méditation : où les moines et visiteurs peuvent pratiquer la méditation. Les lanternes de la paix : lors de certaines périodes, le temple est décoré de milliers de lanternes colorées, créant une ambiance spectaculaire. Le temple est également un lieu de grande importance culturelle, avec des événements comme le Buddha’s Birthday Festival (Fête de Bouddha) en avril ou mai, où des lanternes sont suspendues partout et des cérémonies sont organisées. La zone autour de Jogyesa est un mélange de culture traditionnelle et moderne, avec des cafés, des galeries d'art et des boutiques artisanales, parfait pour une promenade après une visite spirituelle.",
+      "image": "images/hall-daeungjeon-temple-bulguksa-gyeongju-900x600.webp",
+      "bouton": ""
+    }
+  ]
+}
