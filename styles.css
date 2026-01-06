@@ -241,6 +241,12 @@ td:hover {
 /* Media Query */
 @media (max-width: 780px) {
 
+  /* Police ecriture */
+
+    body {
+    font-family: initial;
+  }
+
   /* Titres */
   h1 {
     text-align: center;
@@ -362,3 +368,4 @@ td:hover {
   height: 100%;
   object-fit: cover;
 }
+
