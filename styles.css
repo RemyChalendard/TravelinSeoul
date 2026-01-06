@@ -88,7 +88,7 @@ h4 {
 
 h2 {
   font-size: 28px;
-  text-align: center;
+  text-align: left;
   padding: 18px;
   background-color: #2A6EBB;
   color: white;
@@ -104,12 +104,13 @@ h3 {
 h4 {
   font-weight: bold;
   margin-top: 8px;
+  text-align: center;
 }
 
 
 p {
   font-size: 19px;
-  padding: 18px;
+  padding: 12px;
   text-align: left;
   min-width: 200px;
 
