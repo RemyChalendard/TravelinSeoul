@@ -241,9 +241,6 @@ td:hover {
 /* Media Query */
 @media (max-width: 780px) {
 
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
 
   /* Titres */
   h1 {
