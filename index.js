@@ -1,4 +1,4 @@
-const url = "./evenements.json";
+const url = windows.location.origin + "./evenements.json";
 
 fetch(url)
   .then((response) => {
