@@ -1,5 +1,5 @@
-const url = windows.location.origin + "./evenements.json";
-console.log(windows.location.origin);
+const url = window.location.origin + "./evenements.json";
+console.log(window.location.origin);
 console.log(hello);
 
 fetch(url)
