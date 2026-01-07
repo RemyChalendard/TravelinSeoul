@@ -114,6 +114,10 @@ p {
 
 }
 
+li {
+margin-bottom: 18px;
+}
+
 .mw1200 {
   max-width: 1200px;
 }
