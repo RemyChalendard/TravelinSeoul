@@ -50,8 +50,6 @@ footer {
 }
 
 
-
-
 /*Header logo*/
 header::before {
   content: "";
@@ -263,6 +261,7 @@ background: #2A6EBB;
 font-size: 21px;
 border-radius: 3px;
 cursor: pointer;
+padding:6px;
 
 }
 
