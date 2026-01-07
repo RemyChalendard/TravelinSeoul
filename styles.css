@@ -25,7 +25,8 @@ nav a {
 
 /* Iframe */
 iframe {
-  margin-bottom: 0px;
+  display:block;
+  border: none;
 }
 
 /*Header*/
@@ -401,6 +402,6 @@ padding:6px;
 
 .art-img {
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
 }
 
