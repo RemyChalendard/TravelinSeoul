@@ -48,6 +48,9 @@
         <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" width="50" height="50"
           alt="Instagram">
       </a>
+      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
+        <img class="art-img" src="images/Naver_Icon_1.webp" width="50" height="50" alt="Naver" />
+      </a>
       <h5>Un projet de : Chalendard Rémy</h5>
     </section>
   </footer>
@@ -81,29 +84,29 @@
         });
       })
       .catch(err => console.error("Erreur lors du chargement du JSON :", err));
-</script>
+  </script>
 
-     <script> 
- fetch('./evenements.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('evenements');
+  <script>
+    fetch('./evenements.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('evenements');
 
-    if(data.evenements && data.evenements.length) {
-      data.evenements.forEach(event => {
-        const div = document.createElement('div');
-        div.innerHTML = `
+        if (data.evenements && data.evenements.length) {
+          data.evenements.forEach(event => {
+            const div = document.createElement('div');
+            div.innerHTML = `
           <h4>${event.type || "Événement"}</h4>
           <p><strong>Lieu :</strong> ${event.lieu || "Non renseigné"}</p>
           <p><strong>Date :</strong> ${event.date || "Non renseignée"}</p>
         `;
-        container.appendChild(div);
-      });
-    } else {
-      container.innerHTML = "<p>Aucun événement à venir.</p>";
-    }
-  })
-  .catch(err => console.error("Erreur lors du chargement du JSON événements :", err));
+            container.appendChild(div);
+          });
+        } else {
+          container.innerHTML = "<p>Aucun événement à venir.</p>";
+        }
+      })
+      .catch(err => console.error("Erreur lors du chargement du JSON événements :", err));
 
   </script>
 </body>

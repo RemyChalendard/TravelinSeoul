@@ -2,16 +2,17 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contactez-nous pour toute question ou suggestion sur Séoul : remplissez notre formulaire et nous vous répondrons rapidement pour vous aider à planifier votre visite.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Travel In Seoul</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Contactez-nous pour toute question ou suggestion sur Séoul : remplissez notre formulaire et nous vous répondrons rapidement pour vous aider à planifier votre visite.">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Travel In Seoul</title>
 </head>
 
 <body>
-<header>
+  <header>
     <h1>TRAVEL IN SEOUL</h1>
     <nav>
       <a href="index.html">HOME</a>
@@ -24,120 +25,122 @@
       <a href="metro.html">LIGNES DE METRO</a>
       <a href="contact.html">CONTACT</a>
     </nav>
-</header>
+  </header>
 
-    <style>
-        .success {
-            outline: 2px solid green;
-        }
+  <style>
+    .success {
+      outline: 2px solid green;
+    }
 
-        .error {
-            outline: 2px solid red;
+    .error {
+      outline: 2px solid red;
 
-        }
+    }
 
-        .success-checked::before {
-            content: "✓ ";
-            color: green;
-        }
-    </style>
+    .success-checked::before {
+      content: "✓ ";
+      color: green;
+    }
+  </style>
 
-<main>
+  <main>
     <div class="d-flex fd-row jc-c g-16">
-        <div class="f-1-1-300">
-            <form id="contactForm">
-                <div class="form">
-                    <div>
-                        <label for="nom">Nom</label>
-                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required
-                            autocomplete="family-name">
-                    </div>
+      <div class="f-1-1-300">
+        <form id="contactForm">
+          <div class="form">
+            <div>
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="family-name">
+            </div>
 
-                    <div>
-                        <label for="prenom">Prénom</label>
-                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required
-                            autocomplete="name">
-                    </div>
-                </div>
+            <div>
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required autocomplete="name">
+            </div>
+          </div>
 
-                <div>
-                    <label for="mail">Email</label>
-                    <input type="email" id="mail" name="mail" placeholder="exemple@mail.com" required
-                        autocomplete="email">
-                </div>
+          <div>
+            <label for="mail">Email</label>
+            <input type="email" id="mail" name="mail" placeholder="exemple@mail.com" required autocomplete="email">
+          </div>
 
-                <div>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Écrivez votre message " rows="10" required></textarea>
-                </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Écrivez votre message " rows="10" required></textarea>
+          </div>
 
 
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
-        </div>
+          <button type="submit" class="btn">Envoyer</button>
+        </form>
+      </div>
     </div>
-</main>
+  </main>
 
-<script>
-const form = document.getElementById("contactForm");
+  <script>
+    const form = document.getElementById("contactForm");
 
-const nom = document.getElementById("nom");
-const prenom = document.getElementById("prenom");
-const mail = document.getElementById("mail");
+    const nom = document.getElementById("nom");
+    const prenom = document.getElementById("prenom");
+    const mail = document.getElementById("mail");
 
-const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-prenom.addEventListener("input", () => {
-  if (prenom.value.length >= 2 && prenom.value.length <= 20) {
-    prenom.classList.add("success");
-    prenom.classList.remove("error");
-  } else {
-    prenom.classList.add("error");
-    prenom.classList.remove("success");
-  }
-});
+    prenom.addEventListener("input", () => {
+      if (prenom.value.length >= 2 && prenom.value.length <= 20) {
+        prenom.classList.add("success");
+        prenom.classList.remove("error");
+      } else {
+        prenom.classList.add("error");
+        prenom.classList.remove("success");
+      }
+    });
 
-nom.addEventListener("input", () => {
-  if (nom.value.length >= 2 && nom.value.length <= 20) {
-    nom.classList.add("success");
-    nom.classList.remove("error");
-  } else {
-    nom.classList.add("error");
-    nom.classList.remove("success");
-  }
-});
+    nom.addEventListener("input", () => {
+      if (nom.value.length >= 2 && nom.value.length <= 20) {
+        nom.classList.add("success");
+        nom.classList.remove("error");
+      } else {
+        nom.classList.add("error");
+        nom.classList.remove("success");
+      }
+    });
 
-mail.addEventListener("input", () => {
-  if (emailRegex.test(mail.value)) {
-    mail.classList.add("success");
-    mail.classList.remove("error");
-  } else {
-    mail.classList.add("error");
-    mail.classList.remove("success");
-  }
-});
+    mail.addEventListener("input", () => {
+      if (emailRegex.test(mail.value)) {
+        mail.classList.add("success");
+        mail.classList.remove("error");
+      } else {
+        mail.classList.add("error");
+        mail.classList.remove("success");
+      }
+    });
 
     form.email.addEventListener("input", (e) => {
-  if (emailRegex.test(form.email.value)) {
-    form.email.classList.remove("error");
-    form.email.classList.add("success");
-    console.log("ok");
-  } else {
-    form.email.classList.remove("success");
-    form.email.classList.add("error");
-    console.log("KO");
-  }
-});
-</script>
+      if (emailRegex.test(form.email.value)) {
+        form.email.classList.remove("error");
+        form.email.classList.add("success");
+        console.log("ok");
+      } else {
+        form.email.classList.remove("success");
+        form.email.classList.add("error");
+        console.log("KO");
+      }
+    });
+  </script>
 
   <footer>
     <h5>CONTACTEZ-NOUS</h5>
     <section id="logo">
       <a href="https://facebook.com/seoulcitykorea">
-        <img class="art-img"  src="https://cdn-icons-png.flaticon.com/128/10096/10096995.png" width="50" height="50" alt="Facebook">
+        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/10096/10096995.png" width="50" height="50"
+          alt="Facebook">
       </a>
       <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img"  src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" width="50" height="50" alt="Instagram">
+        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" width="50" height="50"
+          alt="Instagram">
+      </a>
+      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
+        <img class="art-img" src="images/Naver_Icon_1.webp" width="50" height="50" alt="Naver" />
       </a>
       <h5>Un projet de : Chalendard Rémy</h5>
     </section>
