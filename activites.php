@@ -1,3 +1,45 @@
+<?php
+
+require 'config.php';
+
+// ===== IMPORT DU JSON EN HAUT =====
+if (isset($_GET['importer']) && $_GET['importer'] == 'json') {
+    $json_file = 'evenements.json';
+
+    if (file_exists($json_file)) {
+        $json_data = file_get_contents($json_file);
+        $data = json_decode($json_data, true);
+
+        if ($data && isset($data['evenements'])) {
+            $inserted = 0;
+            $errors = [];
+
+            foreach ($data['evenements'] as $event) {
+                if (isset($event['lieu']) && isset($event['date']) && isset($event['type'])) {
+                    $lieu = $mysqli->real_escape_string($event['lieu']);
+                    $date = $mysqli->real_escape_string($event['date']);
+                    $type = $mysqli->real_escape_string($event['type']);
+
+                    $sql_insert = "INSERT INTO evenements (lieu, date, type) VALUES ('$lieu', '$date', '$type')";
+                    
+                    if ($mysqli->query($sql_insert)) {
+                        $inserted++;
+                    } else {
+                        $errors[] = $mysqli->error;
+                    }
+                }
+            }
+
+            $_GET['message_import'] = "$inserted événement(s) importé(s) avec succès !";
+        }
+    }
+}
+
+// Récupérer tous les événements
+$sql = "SELECT * FROM evenements ORDER BY id DESC";
+$result = $mysqli->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
