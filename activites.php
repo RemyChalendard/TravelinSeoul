@@ -2,42 +2,6 @@
 
 require 'config.php';
 
-// ===== IMPORT DU JSON EN HAUT =====
-if (isset($_GET['importer']) && $_GET['importer'] == 'json') {
-    $json_file = 'evenements.json';
-
-    if (file_exists($json_file)) {
-        $json_data = file_get_contents($json_file);
-        $data = json_decode($json_data, true);
-
-        if ($data && isset($data['evenements'])) {
-            $inserted = 0;
-            $errors = [];
-
-            foreach ($data['evenements'] as $event) {
-                if (isset($event['lieu']) && isset($event['date']) && isset($event['type'])) {
-                    $lieu = $mysqli->real_escape_string($event['lieu']);
-                    $date = $mysqli->real_escape_string($event['date']);
-                    $type = $mysqli->real_escape_string($event['type']);
-
-                    $sql_insert = "INSERT INTO evenements (lieu, date, type) VALUES ('$lieu', '$date', '$type')";
-                    
-                    if ($mysqli->query($sql_insert)) {
-                        $inserted++;
-                    } else {
-                        $errors[] = $mysqli->error;
-                    }
-                }
-            }
-
-            $_GET['message_import'] = "$inserted événement(s) importé(s) avec succès !";
-        }
-    }
-}
-
-// Récupérer tous les événements
-$sql = "SELECT * FROM evenements ORDER BY id DESC";
-$result = $mysqli->query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -57,15 +21,15 @@ $result = $mysqli->query($sql);
   <header>
     <h1>TRAVEL IN SEOUL</h1>
     <nav>
-      <a href="index.html">HOME</a>
-      <a href="news.html">NEWS</a>
-      <a href="restautant.html">FOODS</a>
-      <a href="activites.html">ACTIVITIES</a>
-      <a href="Quartiers.html">DISTRICTS</a>
-      <a href="language.html">HANGEUL</a>
-      <a href="bus.html">LIGNES DE BUS</a>
-      <a href="metro.html">LIGNES DE METRO</a>
-      <a href="contact.html">CONTACT</a>
+      <a href="index.php">HOME</a>
+      <a href="news.php">NEWS</a>
+      <a href="restautant.php">FOODS</a>
+      <a href="activites.php">ACTIVITIES</a>
+      <a href="Quartiers.php">DISTRICTS</a>
+      <a href="language.php">HANGEUL</a>
+      <a href="bus.php">LIGNES DE BUS</a>
+      <a href="metro.php">LIGNES DE METRO</a>
+      <a href="contact.php">CONTACT</a>
     </nav>
   </header>
 
@@ -98,7 +62,7 @@ $result = $mysqli->query($sql);
     </section>
   </footer>
 
-  <script>
+  <!-- <script>
     fetch('activites.json')
       .then(response => response.json())
       .then(data => {
@@ -151,7 +115,7 @@ $result = $mysqli->query($sql);
       })
       .catch(err => console.error("Erreur lors du chargement du JSON événements :", err));
 
-  </script>
+  </script> -->
 </body>
 
 </html>

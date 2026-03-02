@@ -22,15 +22,15 @@
   <header>
     <h1>TRAVEL IN SEOUL</h1>
    <nav>
-      <a href="index.html">HOME</a>
-      <a href="news.html">NEWS</a>
-      <a href="restautant.html">FOODS</a>
-      <a href="activites.html">ACTIVITIES</a>
-      <a href="Quartiers.html">DISTRICTS</a>
-      <a href="language.html">HANGEUL</a>
-      <a href="bus.html">LIGNES DE BUS</a>
-      <a href="metro.html">LIGNES DE METRO</a>
-      <a href="contact.html">CONTACT</a>
+      <a href="index.php">HOME</a>
+      <a href="news.php">NEWS</a>
+      <a href="restautant.php">FOODS</a>
+      <a href="activites.php">ACTIVITIES</a>
+      <a href="Quartiers.php">DISTRICTS</a>
+      <a href="language.php">HANGEUL</a>
+      <a href="bus.php">LIGNES DE BUS</a>
+      <a href="metro.php">LIGNES DE METRO</a>
+      <a href="contact.php">CONTACT</a>
     </nav>
   </header>
 
