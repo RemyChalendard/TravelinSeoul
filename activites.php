@@ -62,7 +62,32 @@ require 'config.php';
     </section>
   </footer>
 
-  <!-- <script>
+    <!-- Tableau activitées -->
+  <script>
+    fetch('./evenements.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('evenements');
+
+        if (data.evenements && data.evenements.length) {
+          data.evenements.forEach(event => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+          <h4>${event.type || "Événement"}</h4>
+          <p><strong>Lieu :</strong> ${event.lieu || "Non renseigné"}</p>
+          <p><strong>Date :</strong> ${event.date || "Non renseignée"}</p>
+        `;
+            container.appendChild(div);
+          });
+        } else {
+          container.innerHTML = "<p>Aucun événement à venir.</p>";
+        }
+      })
+      .catch(err => console.error("Erreur lors du chargement du JSON événements :", err));
+  </script>
+
+    <!-- Article des activitées -->
+  <script>
     fetch('activites.json')
       .then(response => response.json())
       .then(data => {
@@ -93,29 +118,8 @@ require 'config.php';
       .catch(err => console.error("Erreur lors du chargement du JSON :", err));
   </script>
 
-  <script>
-    fetch('./evenements.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('evenements');
 
-        if (data.evenements && data.evenements.length) {
-          data.evenements.forEach(event => {
-            const div = document.createElement('div');
-            div.innerHTML = `
-          <h4>${event.type || "Événement"}</h4>
-          <p><strong>Lieu :</strong> ${event.lieu || "Non renseigné"}</p>
-          <p><strong>Date :</strong> ${event.date || "Non renseignée"}</p>
-        `;
-            container.appendChild(div);
-          });
-        } else {
-          container.innerHTML = "<p>Aucun événement à venir.</p>";
-        }
-      })
-      .catch(err => console.error("Erreur lors du chargement du JSON événements :", err));
 
-  </script> -->
 </body>
 
 </html>
