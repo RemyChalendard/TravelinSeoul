@@ -18,6 +18,9 @@ Ne pas changer le chemin des images meme si elles sont sur phpmyadmin
 
 Mettre toutes les pages en HTML :
 
+Mettre du html dans la boucle pour pouvoir faire des paragrahes
+
 - Quartiers (terminé)
 - Activités (terminé)
-- Restaurant (En cours)
+- Restaurant (terminée)
+- Index (terminée)

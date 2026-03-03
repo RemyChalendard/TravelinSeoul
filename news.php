@@ -3,25 +3,48 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h3> NEWS</h3>
+<h1> <strong> Actualitées</strong></h1>
 
 
-<!-- NEWS -->
-<div class="d-flex fd-row jc-c g-16 ">
-  <div class="f-1-1-300">
-    <img class="art-img" class="art-img"
-      src="https://images.unsplash.com/photo-1538098629216-b50fb4725510?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870"
-      width="450" alt="La ville de Séoul">
-  </div>
+<?php
+try {
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'News' ORDER BY date_creation ASC");
+  $requete->execute();
+  $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-  <div class="text">
-    <h2>NEWS</h2>
-    <p>
-      A Remplir
-    </p>
+  if ($evenements) {
+    foreach ($evenements as $event) {
+      ?>
+      <div class="d-flex fd-row jc-c g-16">
+        <div class="f-1-1-300">
+          <?php if (!empty($event['image'])): ?>
+            <img class="art-img" src="<?php echo htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['titre'] ?? 'Image'); ?>" width="450">
+          <?php else: ?>
+            <img class="art-img" src="https://via.placeholder.com/450x300?text=No+Image" alt="Pas d'image" width="450">
+          <?php endif; ?>
+        </div>
+        
+        <div class="text">
+          <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
+          <p><?php echo htmlspecialchars($event['contenu'] ?? "Non renseigné"); ?></p>
+          <p><strong>Auteur :</strong> <?php echo htmlspecialchars($event['auteur'] ?? "Non renseigné"); ?></p>
+        </div>
+      </div>
+      
+        
+      <?php
+   
+    }
+  } else {
+    echo "<p>Aucun quartier à afficher.</p>";
+  }
+} catch (PDOException $e) {
+  echo "Erreur : " . $e->getMessage();
+}
+?>
 
-  </div>
-</div>
+
+
 
 <?php
 include 'includes/footer.php'

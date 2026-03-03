@@ -64,9 +64,9 @@ try {
 
         <div class="text">
           <h2><?php echo htmlspecialchars($article['titre'] ?? "Article"); ?></h2>
-          <h4><strong>Auteur :</strong> <?php echo htmlspecialchars($article['auteur'] ?? "Non renseigné"); ?></h4>
-          <p><strong></strong> <?php echo htmlspecialchars($article['description'] ?? "Non renseignée"); ?></p>
           <p><strong> </strong> <?php echo (htmlspecialchars($article['contenu'] ?? "Non renseigné")); ?></p>
+          <p><strong>Auteur :</strong> <?php echo htmlspecialchars($article['auteur'] ?? "Non renseigné"); ?></p>
+
         </div>
       </div>
 
