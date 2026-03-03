@@ -15,9 +15,11 @@ require 'config.php';
         <div class="flex">
           <?php
           try {
+
             $requete = $pdo->prepare("SELECT * FROM evenements ORDER BY date ASC");
             $requete->execute();
-            $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
+            // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
+            $evenements = $requete->fetchAll(PDO::FETCH_ASSOC); 
 
             if ($evenements) {
               foreach ($evenements as $event) {
