@@ -7,62 +7,83 @@ require 'config.php';
 <h3 id="titre-evenements">Les évenements à venir:</h3>
 
 <div class="tableau" id="evenements">
-<?php
-try {
+  <div id="activites-container">
+  <div class="d-flex fd-row jc-c g-16">
+    <div class="f-1-1-300">
+      <div class="flex">
+  <?php
+  try {
     $requete = $pdo->prepare("SELECT * FROM evenements ORDER BY date ASC");
     $requete->execute();
     $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 
     if ($evenements) {
-        foreach ($evenements as $event) {
-            echo "<div>";
-            echo "<h4>" . htmlspecialchars($event['titre'] ?? "Événement") . "</h4>";
-            echo "<p><strong>Type :</strong> " . htmlspecialchars($event['type'] ?? "Non renseigné") . "</p>";
-            echo "<p><strong>Lieu :</strong> " . htmlspecialchars($event['lieu'] ?? "Non renseigné") . "</p>";
-            echo "<p><strong>Date :</strong> " . htmlspecialchars($event['date'] ?? "Non renseignée") . "</p>";
-            echo "</div>";
-        }
+      foreach ($evenements as $event) {
+        echo "<div>";
+        echo "<h4>" . htmlspecialchars($event['titre'] ?? "Événement") . "</h4>";
+        echo "<p><strong>Type :</strong> " . htmlspecialchars($event['type'] ?? "Non renseigné") . "</p>";
+        echo "<p><strong>Lieu :</strong> " . htmlspecialchars($event['lieu'] ?? "Non renseigné") . "</p>";
+        echo "<p><strong>Date :</strong> " . htmlspecialchars($event['date'] ?? "Non renseignée") . "</p>";
+        echo "</div>";
+      }
     } else {
-        echo "<p>Aucun événement à venir.</p>";
+      echo "<p>Aucun événement à venir.</p>";
     }
-} catch (PDOException $e) {
+  } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
-}
-?>
+  }
+  ?>
+</div>
+    </div>
+  </div>
+</div>
 </div>
 
-<div id="evenements"></div>
-<div id="activites-container"></div>
-
 <h3>Les Activités</h3>
-<!-- <div id="evenements"> -->
-<div id="activites-container">
-<?php
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+  <div class="text">
+ <?php
 try {
     $requete = $pdo->prepare("SELECT * FROM articles ORDER BY date_creation ASC");
     $requete->execute();
-    $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
+    $articles = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($evenements) {
-        foreach ($evenements as $event) {
-            echo "<div>";
-            echo "<h4>" . htmlspecialchars($event['titre'] ?? "articles") . "</h4>";
-            echo "<p><strong>Titre :</strong> " . htmlspecialchars($event['titre'] ?? "Non renseigné") . "</p>";
-            echo "<p><strong>Description :</strong> " . htmlspecialchars($event['description'] ?? "Non renseigné") . "</p>";
-            echo "<p><strong>Contenu :</strong> " . htmlspecialchars($event['contenu'] ?? "Non renseignée") . "</p>";
-            echo "<p><strong>Images :</strong> " . ($event['image'] ?? "Non renseignée") . "</p>";
-            echo "<p><strong>Auteur :</strong> " . htmlspecialchars($event['auteur'] ?? "Non renseignée") . "</p>";
-            echo "</div>";
+    if ($articles) {
+        foreach ($articles as $article) {
+            ?>
+            <div class="d-flex fd-row jc-c g-16">
+                <!-- IMAGE -->
+                <div class="f-1-1-300">
+                    <?php if (!empty($article['image'])): ?>
+                        <img class="art-img" src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['titre'] ?? 'Article'); ?>" width="450">
+                    <?php else: ?>
+                        <img class="art-img" src="https://via.placeholder.com/450x300?text=No+Image" alt="Pas d'image" width="450">
+                    <?php endif; ?>
+                </div>
+
+                <!-- TEXTE -->
+                <div class="text">
+                    <h2><?php echo htmlspecialchars($article['titre'] ?? "Article"); ?></h2>
+                    <h4><strong>Auteur :</strong> <?php echo htmlspecialchars($article['auteur'] ?? "Non renseigné"); ?></h4>
+                    <p><strong>Description :</strong> <?php echo htmlspecialchars($article['description'] ?? "Non renseignée"); ?></p>
+                    <p><strong> :</strong> <?php echo nl2br(htmlspecialchars($article['contenu'] ?? "Non renseigné")); ?></p>
+                </div>
+            </div>
+
+            <?php
         }
     } else {
-        echo "<p>Aucun événement à venir.</p>";
+        echo "<p>Aucun article à afficher.</p>";
     }
 } catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
+    echo "<p style='color: red;'><strong>Erreur :</strong> " . htmlspecialchars($e->getMessage()) . "</p>";
 }
 ?>
-<!-- </div> -->
-</div>
+  </div>
+    </div>  
+  </div>
+
 
 <?php
 include 'includes/footer.php'
