@@ -14,3 +14,10 @@ Probleme de cache sur la page Bus, j'ai 97 de performance en navigation privée 
 
 
 Ne pas changer le chemin des images meme si elles sont sur phpmyadmin
+
+
+Mettre toutes les pages en HTML :
+
+- Quartiers (terminé)
+- Activités (terminé)
+- Restaurant (En cours)

@@ -3,7 +3,7 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h3>La Gastronomie</h3>
+<h1>La Gastronomie</h1>
 
 <div class="d-flex fd-row jc-c g-16">
   <div class="f-1-1-300">
