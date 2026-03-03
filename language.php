@@ -5,30 +5,42 @@ require 'config.php';
 
 <h3>La création du Hangeul</h3>
 
-<div class="d-flex fd-row jc-c g-16">
-  <div class="f-1-1-300">
+<?php
+try {
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Hangeul' ORDER BY date_creation ASC");
+  $requete->execute();
+  $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-    <img class="art-img"
-      src="images/9229079-coreen-alphabet-lettres-hangeul-langue-vecteur-libre-telechargement-gratuit-vectoriel.jpg"
-      width="450" alt="Le hangeul">
-  </div>
-  <div class="text">
-    <h2>Le Hangeul</h2>
-
-    <h4>Une langue a la porté de tous</h4>
-    <p>Le Hangeul est l’alphabet coréen, qui à été créé au XVe siècle sous le règne du roi Sejong le Grand
-      (1397‑1450). Avant sa création, les Coréens utilisaient principalement les caractères chinois
-      (Hanja) pour écrire, ce qui rendait la lecture et l’écriture difficiles pour le peuple. En 1443,
-      le roi Sejong et son équipe de savants ont inventé un alphabet simple et logique, composé de 14
-      consonnes et 10 voyelles de base, permettant de former toutes les syllabes coréennes.
-
-      L’objectif du Hangeul était de démocratiser l’écriture, en offrant un système accessible à tous,
-      même aux paysans illettrés. Chaque lettre est conçue pour refléter la forme des organes vocaux
-      lors de la prononciation, ce qui rend l’apprentissage intuitif. Depuis sa création, le Hangeul
-      est devenu un symbole de l’identité culturelle coréenne et est célébré chaque année le 9 octobre
-      lors de la Journée du Hangeul en Corée du Sud. </p>
-  </div>
-</div>
+  if ($evenements) {
+    foreach ($evenements as $event) {
+      ?>
+      <div class="d-flex fd-row jc-c g-16">
+        <div class="f-1-1-300">
+          <?php if (!empty($event['image'])): ?>
+            <img class="art-img" src="<?php echo htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['titre'] ?? 'Image'); ?>" width="450">
+          <?php else: ?>
+            <img class="art-img" src="https://via.placeholder.com/450x300?text=No+Image" alt="Pas d'image" width="450">
+          <?php endif; ?>
+        </div>
+        
+        <div class="text">
+          <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
+          <p><?php echo htmlspecialchars($event['contenu'] ?? "Non renseigné"); ?></p>
+          <p><strong>Auteur :</strong> <?php echo htmlspecialchars($event['auteur'] ?? "Non renseigné"); ?></p>
+        </div>
+      </div>
+      
+        
+      <?php
+   
+    }
+  } else {
+    echo "<p>Aucun quartier à afficher.</p>";
+  }
+} catch (PDOException $e) {
+  echo "Erreur : " . $e->getMessage();
+}
+?>
 
 <h1>Tableau des lettres Hangeul</h1>
 

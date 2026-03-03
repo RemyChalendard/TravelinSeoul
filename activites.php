@@ -15,7 +15,7 @@ require 'config.php';
         <div class="flex">
           <?php
           try {
-            $requete = $pdo->prepare("SELECT * FROM evenements ORDER BY date ASC");
+            $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Evenements' ORDER BY date_creation ASC");
             $requete->execute();
             $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 

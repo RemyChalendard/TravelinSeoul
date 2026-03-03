@@ -24,3 +24,4 @@ Mettre du html dans la boucle pour pouvoir faire des paragrahes
 - Activités (terminé)
 - Restaurant (terminée)
 - Index (terminée)
+- Page News (terminée, rajouter des artciles d'actualités)
