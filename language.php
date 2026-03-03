@@ -1,148 +1,216 @@
 <?php
-
+include 'includes/header.php';
+require 'config.php';
 ?>
 
-<!doctype html>
-<html lang="fr">
+<h3>La création du Hangeul</h3>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <meta name="description"
-    content="Découvrez le Hangeul, l’alphabet coréen unique : son histoire, sa structure et ses caractères pour mieux comprendre la langue et la culture de Séoul">
-  <link rel="stylesheet" href="styles.css">
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
 
-  <title>Travel In Seoul – Activités</title>
-</head>
+    <img class="art-img"
+      src="images/9229079-coreen-alphabet-lettres-hangeul-langue-vecteur-libre-telechargement-gratuit-vectoriel.jpg"
+      width="450" alt="Le hangeul">
+  </div>
+  <div class="text">
+    <h2>Le Hangeul</h2>
 
-<body>
+    <h4>Une langue a la porté de tous</h4>
+    <p>Le Hangeul est l’alphabet coréen, qui à été créé au XVe siècle sous le règne du roi Sejong le Grand
+      (1397‑1450). Avant sa création, les Coréens utilisaient principalement les caractères chinois
+      (Hanja) pour écrire, ce qui rendait la lecture et l’écriture difficiles pour le peuple. En 1443,
+      le roi Sejong et son équipe de savants ont inventé un alphabet simple et logique, composé de 14
+      consonnes et 10 voyelles de base, permettant de former toutes les syllabes coréennes.
 
-  <header>
-    <h1>TRAVEL IN SEOUL</h1>
+      L’objectif du Hangeul était de démocratiser l’écriture, en offrant un système accessible à tous,
+      même aux paysans illettrés. Chaque lettre est conçue pour refléter la forme des organes vocaux
+      lors de la prononciation, ce qui rend l’apprentissage intuitif. Depuis sa création, le Hangeul
+      est devenu un symbole de l’identité culturelle coréenne et est célébré chaque année le 9 octobre
+      lors de la Journée du Hangeul en Corée du Sud. </p>
+  </div>
+</div>
 
-   <nav>
-      <a href="index.php">HOME</a>
-      <a href="news.php">NEWS</a>
-      <a href="restautant.php">FOODS</a>
-      <a href="activites.php">ACTIVITIES</a>
-      <a href="Quartiers.php">DISTRICTS</a>
-      <a href="language.php">HANGEUL</a>
-      <a href="bus.php">LIGNES DE BUS</a>
-      <a href="metro.php">LIGNES DE METRO</a>
-      <a href="contact.php">CONTACT</a>
-    </nav>
-  </header>
-  <main>
-    <h3>La création du Hangeul</h3>
+<h1>Tableau des lettres Hangeul</h1>
 
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
+<table id="hangeulTable"></table>
 
-        <img class="art-img"
-          src="images/9229079-coreen-alphabet-lettres-hangeul-langue-vecteur-libre-telechargement-gratuit-vectoriel.jpg"
-          width="450" alt="Le hangeul">
-      </div>
-      <div class="text">
-        <h2>Le Hangeul</h2>
+<script>
+  const letters = [
+    // Consonnes simples
+    {
+      kr: "ㄱ",
+      rom: "g/k"
+    }, {
+      kr: "ㄴ",
+      rom: "n"
+    },
+    {
+      kr: "ㄷ",
+      rom: "d/t"
+    }, {
+      kr: "ㄹ",
+      rom: "r/l"
+    },
+    {
+      kr: "ㅁ",
+      rom: "m"
+    }, {
+      kr: "ㅂ",
+      rom: "b/p"
+    },
+    {
+      kr: "ㅅ",
+      rom: "s"
+    }, {
+      kr: "ㅇ",
+      rom: "ng/—"
+    },
+    {
+      kr: "ㅈ",
+      rom: "j"
+    }, {
+      kr: "ㅊ",
+      rom: "ch"
+    },
+    {
+      kr: "ㅋ",
+      rom: "k"
+    }, {
+      kr: "ㅌ",
+      rom: "t"
+    },
+    {
+      kr: "ㅍ",
+      rom: "p"
+    }, {
+      kr: "ㅎ",
+      rom: "h"
+    },
 
-        <h4>Une langue a la porté de tous</h4>
-        <p>Le Hangeul est l’alphabet coréen, qui à été créé au XVe siècle sous le règne du roi Sejong le Grand
-          (1397‑1450). Avant sa création, les Coréens utilisaient principalement les caractères chinois
-          (Hanja) pour écrire, ce qui rendait la lecture et l’écriture difficiles pour le peuple. En 1443,
-          le roi Sejong et son équipe de savants ont inventé un alphabet simple et logique, composé de 14
-          consonnes et 10 voyelles de base, permettant de former toutes les syllabes coréennes.
+    // Consonnes doubles
+    {
+      kr: "ㄲ",
+      rom: "kk"
+    }, {
+      kr: "ㄸ",
+      rom: "tt"
+    },
+    {
+      kr: "ㅃ",
+      rom: "pp"
+    }, {
+      kr: "ㅆ",
+      rom: "ss"
+    },
+    {
+      kr: "ㅉ",
+      rom: "jj"
+    },
 
-          L’objectif du Hangeul était de démocratiser l’écriture, en offrant un système accessible à tous,
-          même aux paysans illettrés. Chaque lettre est conçue pour refléter la forme des organes vocaux
-          lors de la prononciation, ce qui rend l’apprentissage intuitif. Depuis sa création, le Hangeul
-          est devenu un symbole de l’identité culturelle coréenne et est célébré chaque année le 9 octobre
-          lors de la Journée du Hangeul en Corée du Sud. </p>
-      </div>
-    </div>
+    // Voyelles simples
+    {
+      kr: "ㅏ",
+      rom: "a"
+    }, {
+      kr: "ㅑ",
+      rom: "ya"
+    },
+    {
+      kr: "ㅓ",
+      rom: "eo"
+    }, {
+      kr: "ㅕ",
+      rom: "yeo"
+    },
+    {
+      kr: "ㅗ",
+      rom: "o"
+    }, {
+      kr: "ㅛ",
+      rom: "yo"
+    },
+    {
+      kr: "ㅜ",
+      rom: "u"
+    }, {
+      kr: "ㅠ",
+      rom: "yu"
+    },
+    {
+      kr: "ㅡ",
+      rom: "eu"
+    }, {
+      kr: "ㅣ",
+      rom: "i"
+    },
 
-    <h1>Tableau des lettres Hangeul</h1>
+    // Voyelles combinées / diphtongues
+    {
+      kr: "ㅐ",
+      rom: "ae"
+    }, {
+      kr: "ㅒ",
+      rom: "yae"
+    },
+    {
+      kr: "ㅔ",
+      rom: "e"
+    }, {
+      kr: "ㅖ",
+      rom: "ye"
+    },
+    {
+      kr: "ㅘ",
+      rom: "wa"
+    }, {
+      kr: "ㅙ",
+      rom: "wae"
+    },
+    {
+      kr: "ㅚ",
+      rom: "oe"
+    }, {
+      kr: "ㅝ",
+      rom: "wo"
+    },
+    {
+      kr: "ㅞ",
+      rom: "we"
+    }, {
+      kr: "ㅟ",
+      rom: "wi"
+    },
+    {
+      kr: "ㅢ",
+      rom: "ui"
+    }
+  ];
 
-    <table id="hangeulTable"></table>
+  //Permet d'interragir avec le hangeulTable du HTML
+  const table = document.getElementById("hangeulTable");
 
-  </main>
-  <script>
-    const letters = [
-      // Consonnes simples
-      { kr: "ㄱ", rom: "g/k" }, { kr: "ㄴ", rom: "n" },
-      { kr: "ㄷ", rom: "d/t" }, { kr: "ㄹ", rom: "r/l" },
-      { kr: "ㅁ", rom: "m" }, { kr: "ㅂ", rom: "b/p" },
-      { kr: "ㅅ", rom: "s" }, { kr: "ㅇ", rom: "ng/—" },
-      { kr: "ㅈ", rom: "j" }, { kr: "ㅊ", rom: "ch" },
-      { kr: "ㅋ", rom: "k" }, { kr: "ㅌ", rom: "t" },
-      { kr: "ㅍ", rom: "p" }, { kr: "ㅎ", rom: "h" },
+  const columns = 5;
+  let row;
 
-      // Consonnes doubles
-      { kr: "ㄲ", rom: "kk" }, { kr: "ㄸ", rom: "tt" },
-      { kr: "ㅃ", rom: "pp" }, { kr: "ㅆ", rom: "ss" },
-      { kr: "ㅉ", rom: "jj" },
+  letters.forEach((item, index) => {
+    if (index % columns === 0) {
+      row = document.createElement("tr"); // Tr = Table row
+      table.appendChild(row);
+    }
 
-      // Voyelles simples
-      { kr: "ㅏ", rom: "a" }, { kr: "ㅑ", rom: "ya" },
-      { kr: "ㅓ", rom: "eo" }, { kr: "ㅕ", rom: "yeo" },
-      { kr: "ㅗ", rom: "o" }, { kr: "ㅛ", rom: "yo" },
-      { kr: "ㅜ", rom: "u" }, { kr: "ㅠ", rom: "yu" },
-      { kr: "ㅡ", rom: "eu" }, { kr: "ㅣ", rom: "i" },
+    const cell = document.createElement("td"); // Td = Table data
+    cell.textContent = item.kr;
 
-      // Voyelles combinées / diphtongues
-      { kr: "ㅐ", rom: "ae" }, { kr: "ㅒ", rom: "yae" },
-      { kr: "ㅔ", rom: "e" }, { kr: "ㅖ", rom: "ye" },
-      { kr: "ㅘ", rom: "wa" }, { kr: "ㅙ", rom: "wae" },
-      { kr: "ㅚ", rom: "oe" }, { kr: "ㅝ", rom: "wo" },
-      { kr: "ㅞ", rom: "we" }, { kr: "ㅟ", rom: "wi" },
-      { kr: "ㅢ", rom: "ui" }
-    ];
-
-    //Permet d'interragir avec le hangeulTable du HTML
-    const table = document.getElementById("hangeulTable");
-
-    const columns = 5;
-    let row;
-
-    letters.forEach((item, index) => {
-      if (index % columns === 0) {
-        row = document.createElement("tr"); // Tr = Table row
-        table.appendChild(row);
-      }
-
-      const cell = document.createElement("td"); // Td = Table data
-      cell.textContent = item.kr;
-
-      //Permet de changer l'ellement du tableau "cell"
-      // Cette partie permet de switché entre kr et rom
-      cell.addEventListener("click", () => {
-        cell.textContent = (cell.textContent === item.kr) ? item.rom : item.kr;
-      });
-
-      row.appendChild(cell);
+    //Permet de changer l'ellement du tableau "cell"
+    // Cette partie permet de switché entre kr et rom
+    cell.addEventListener("click", () => {
+      cell.textContent = (cell.textContent === item.kr) ? item.rom : item.kr;
     });
-  </script>
 
-  <footer>
-    <h5>CONTACTEZ-NOUS</h5>
+    row.appendChild(cell);
+  });
+</script>
 
-    <div class="logo">
-      <a href="https://facebook.com/seoulcitykorea">
-        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/739/739135.png" width="50" height="50"
-          alt="Facebook">
-      </a>
-
-      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" width="50" height="50"
-          alt="Instagram">
-      </a>
-      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img" src="images/Naver_Icon_1.webp" width="50" height="50" alt="Naver" />
-      </a>
-    </div>
-
-    <h5>Un projet de : Chalendard Rémy</h5>
-  </footer>
-</body>
-
-</html>
+<?php
+include 'includes/footer.php'
+?>

@@ -1,154 +1,108 @@
 <?php
-
+include 'includes/header.php';
+require 'config.php';
 ?>
 
-<!doctype html>
-<html lang="fr">
+<style>
+  .success {
+    outline: 2px solid green;
+  }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Contactez-nous pour toute question ou suggestion sur Séoul : remplissez notre formulaire et nous vous répondrons rapidement pour vous aider à planifier votre visite.">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <title>Travel In Seoul</title>
-</head>
+  .error {
+    outline: 2px solid red;
 
-<body>
-  <header>
-    <h1>TRAVEL IN SEOUL</h1>
-   <nav>
-      <a href="index.php">HOME</a>
-      <a href="news.php">NEWS</a>
-      <a href="restautant.php">FOODS</a>
-      <a href="activites.php">ACTIVITIES</a>
-      <a href="Quartiers.php">DISTRICTS</a>
-      <a href="language.php">HANGEUL</a>
-      <a href="bus.php">LIGNES DE BUS</a>
-      <a href="metro.php">LIGNES DE METRO</a>
-      <a href="contact.php">CONTACT</a>
-    </nav>
-  </header>
+  }
 
-  <style>
-    .success {
-      outline: 2px solid green;
-    }
-
-    .error {
-      outline: 2px solid red;
-
-    }
-
-    .success-checked::before {
-      content: "✓ ";
-      color: green;
-    }
-  </style>
-
-  <main>
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
-        <form id="contactForm">
-          <div class="form">
-            <div>
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="family-name">
-            </div>
-
-            <div>
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required autocomplete="name">
-            </div>
-          </div>
-
-          <div>
-            <label for="mail">Email</label>
-            <input type="email" id="mail" name="mail" placeholder="exemple@mail.com" required autocomplete="email">
-          </div>
-
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Écrivez votre message " rows="10" required></textarea>
-          </div>
+  .success-checked::before {
+    content: "✓ ";
+    color: green;
+  }
+</style>
 
 
-          <button type="submit" class="btn">Envoyer</button>
-        </form>
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+    <form id="contactForm">
+      <div class="form">
+        <div>
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="family-name">
+        </div>
+
+        <div>
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required autocomplete="name">
+        </div>
       </div>
-    </div>
-  </main>
 
-  <script>
-    const form = document.getElementById("contactForm");
+      <div>
+        <label for="mail">Email</label>
+        <input type="email" id="mail" name="mail" placeholder="exemple@mail.com" required autocomplete="email">
+      </div>
 
-    const nom = document.getElementById("nom");
-    const prenom = document.getElementById("prenom");
-    const mail = document.getElementById("mail");
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Écrivez votre message " rows="10" required></textarea>
+      </div>
 
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-    prenom.addEventListener("input", () => {
-      if (prenom.value.length >= 2 && prenom.value.length <= 20) {
-        prenom.classList.add("success");
-        prenom.classList.remove("error");
-      } else {
-        prenom.classList.add("error");
-        prenom.classList.remove("success");
-      }
-    });
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+  </div>
+</div>
 
-    nom.addEventListener("input", () => {
-      if (nom.value.length >= 2 && nom.value.length <= 20) {
-        nom.classList.add("success");
-        nom.classList.remove("error");
-      } else {
-        nom.classList.add("error");
-        nom.classList.remove("success");
-      }
-    });
+<script>
+  const form = document.getElementById("contactForm");
 
-    mail.addEventListener("input", () => {
-      if (emailRegex.test(mail.value)) {
-        mail.classList.add("success");
-        mail.classList.remove("error");
-      } else {
-        mail.classList.add("error");
-        mail.classList.remove("success");
-      }
-    });
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const mail = document.getElementById("mail");
 
-    form.email.addEventListener("input", (e) => {
-      if (emailRegex.test(form.email.value)) {
-        form.email.classList.remove("error");
-        form.email.classList.add("success");
-        console.log("ok");
-      } else {
-        form.email.classList.remove("success");
-        form.email.classList.add("error");
-        console.log("KO");
-      }
-    });
-  </script>
+  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-  <footer>
-    <h5>CONTACTEZ-NOUS</h5>
-    <section id="logo">
-      <a href="https://facebook.com/seoulcitykorea">
-        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/739/739135.png" width="50" height="50"
-          alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" width="50" height="50"
-          alt="Instagram">
-      </a>
-      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img" src="images/Naver_Icon_1.webp" width="50" height="50" alt="Naver" />
-      </a>
-      <h5>Un projet de : Chalendard Rémy</h5>
-    </section>
-  </footer>
-</body>
+  prenom.addEventListener("input", () => {
+    if (prenom.value.length >= 2 && prenom.value.length <= 20) {
+      prenom.classList.add("success");
+      prenom.classList.remove("error");
+    } else {
+      prenom.classList.add("error");
+      prenom.classList.remove("success");
+    }
+  });
 
-</html>
+  nom.addEventListener("input", () => {
+    if (nom.value.length >= 2 && nom.value.length <= 20) {
+      nom.classList.add("success");
+      nom.classList.remove("error");
+    } else {
+      nom.classList.add("error");
+      nom.classList.remove("success");
+    }
+  });
+
+  mail.addEventListener("input", () => {
+    if (emailRegex.test(mail.value)) {
+      mail.classList.add("success");
+      mail.classList.remove("error");
+    } else {
+      mail.classList.add("error");
+      mail.classList.remove("success");
+    }
+  });
+
+  form.email.addEventListener("input", (e) => {
+    if (emailRegex.test(form.email.value)) {
+      form.email.classList.remove("error");
+      form.email.classList.add("success");
+      console.log("ok");
+    } else {
+      form.email.classList.remove("success");
+      form.email.classList.add("error");
+      console.log("KO");
+    }
+  });
+</script>
+
+<?php
+include 'includes/footer.php'
+?>

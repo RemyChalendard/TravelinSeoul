@@ -11,3 +11,6 @@ Performance OK mais améliorable
 Voir pour ajouter une API pour les transports (Bus et metro)
 
 Probleme de cache sur la page Bus, j'ai 97 de performance en navigation privée et 80 en normal, probleme de cache ?
+
+
+Ne pas changer le chemin des images meme si elles sont sur phpmyadmin

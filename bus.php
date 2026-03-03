@@ -1,268 +1,213 @@
-<?php 
-
+<?php
+include 'includes/header.php';
+require 'config.php';
 ?>
 
-
-<!doctype html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Découvrez les lignes de bus de Séoul : itinéraires, arrêts et astuces pour naviguer rapidement et efficacement dans la ville.">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <title>Travel In Seoul</title>
-</head>
-
-<body>
-  <header>
-    <h1>TRAVEL IN SEOUL</h1>
-    <nav>
-      <a href="index.php">HOME</a>
-      <a href="news.php">NEWS</a>
-      <a href="restautant.php">FOODS</a>
-      <a href="activites.php">ACTIVITIES</a>
-      <a href="Quartiers.php">DISTRICTS</a>
-      <a href="language.php">HANGEUL</a>
-      <a href="bus.php">LIGNES DE BUS</a>
-      <a href="metro.php">LIGNES DE METRO</a>
-      <a href="contact.php">CONTACT</a>
-    </nav>
-  </header>
-  <main>
-    <h3>Les differentes lignes de bus de Seoul</h3>
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
-        <img class="art-img" src="images/buses.webp" width="450" alt="Les bus">
-      </div>
-      <div class="text">
-        <h2>Les différentes lignes de bus</h2>
-        <p>
-          À Séoul, le système de transport public comprend des bus, le métro et des taxis. Les bus sont divisés en
-          différentes catégories en fonction de leur destination et de leur fréquence. Voici les principaux types de bus
-          et un aperçu de leurs tarifs.
-        </p>
-      </div>
-    </div>
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
-        <img class="art-img" src="images/bleu.webp" width="450" alt="Bus bleus">
-      </div>
-
-      <div class="text">
-        <h2>Les bus bleus</h2>
-        <p>
-          <strong>Numéros</strong>
-          : Ils relient les quartiers périphériques au centre-ville.
-        </p>
-        <p>
-          <strong>Itinéraires</strong> : Lignes longues et intermédiaires.
-        </p>
-
-        <p>Les <strong>bus bleus</strong> de Séoul sont des lignes de transport interquartiers qui desservent
-          principalement les zones périphériques de la ville. Ces lignes relient des quartiers plus éloignés et des
-          banlieues à des zones centrales et importantes, notamment les grandes stations de métro, les quartiers
-          d'affaires et les zones commerciales. Les bus bleus sont idéaux pour ceux qui doivent parcourir des distances
-          moyennes ou longues, mais ils restent très pratiques pour les déplacements quotidiens, grâce à leur capacité à
-          se connecter à d’autres lignes de bus et aux réseaux de métro.</p>
-
-        <ul>
-          <li><strong>100</strong> : Relie <strong>Songpa</strong> (sud-est) à <strong>Dongdaemun</strong>
-            (centre-ville).</li>
-          <li><strong>102</strong> : Relie <strong>Gongdeok</strong> à <strong>Dongdaemun</strong>.</li>
-          <li><strong>105</strong> : Relie <strong>Ilsan</strong> (nord-ouest de Séoul) à <strong>Jongno</strong>.</li>
-          <li><strong>1002</strong> : Relie <strong>Gwangmyeong</strong> à <strong>Sinchon</strong>.</li>
-          <li><strong>104</strong> : Relie <strong>Mapo</strong> à <strong>Myeongdong</strong>.</li>
-          <li><strong>105-1</strong> : Relie <strong>Suwon</strong> à <strong>Gyeongnidan-gil</strong>.</li>
-          <li><strong>106</strong> : Relie <strong>Sangbong</strong> à <strong>Hyehwa</strong>.</li>
-          <li><strong>107</strong> : Relie <strong>Hangangjin</strong> à <strong>Dongdaemun</strong>.</li>
-        </ul>
-
-      </div>
-    </div>
-
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
-        <img class="art-img" src="images/vert.webp" width="450" alt="Bus verts">
-      </div>
-      <div class="text">
-        <h2>Les bus verts</h2>
-        <p>
-          <strong>Numéros</strong>
-          : Ils relient les stations de métro ou des arrêts de bus aux quartiers plus petits.
-        </p>
-        <p>
-          <strong>Itinéraires</strong>
-          : C'est un réseau de bus local qui fait la navette entre des zones spécifiques.
-        </p>
-        <p>Les bus verts sont destinés à desservir des zones spécifiques et à faciliter les correspondances avec
-          d'autres lignes de bus ou le métro. Ce sont souvent des lignes locales qui relient des quartiers résidentiels
-          ou des zones moins fréquentées avec des lignes de bus plus grandes ou des stations de métro.</p>
-
-        <p>
-        <ul>
-          <li><strong>701</strong> : Relie <strong>Gangdong</strong> à <strong>Jamsil</strong>.</li>
-          <li><strong>702</strong> : Relie <strong>Junggye</strong> à <strong>Wangsimni</strong>.</li>
-          <li><strong>771</strong> : Relie <strong>Yangjae</strong> à <strong>Jamsil</strong>.</li>
-          <li><strong>7025</strong> : Relie <strong>Beomeo</strong> à <strong>Shindang</strong>.</li>
-          <li><strong>7013</strong> : Relie <strong>Seongbuk</strong> à <strong>Jongno</strong>.</li>
-          <li><strong>703</strong> : Relie <strong>Nowon</strong> à <strong>Sinsa</strong>.</li>
-          <li><strong>7734</strong> : Relie <strong>Hongdae</strong> à <strong>Jamsil</strong>.</li>
-          <li><strong>744</strong> : Relie <strong>Ogeum</strong> à <strong>Dongdaemun</strong>.</li>
-        </ul>
-        </p>
-      </div>
-    </div>
-
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
-        <img class="art-img" src="images/jaune.webp" width="450" alt="Bus jaunes">
-      </div>
-      <div class="text">
-        <h2>Les bus jaunes</h2>
-        <p>
-          <strong>Numéros</strong> : Ce sont des bus qui circulent à l’intérieur des quartiers résidentiels ou des zones
-          plus petites.
-        </p>
-        <p>
-          <strong>Itinéraires</strong> : Ils relient principalement des zones à faible densité à des lignes de bus plus
-          grandes et sont principalement utilisés pour des trajets courts à l’intérieur de quartiers résidentiels
-          ou des zones moins desservies. Ils sont parfaits pour relier ces zones aux principales lignes de bus ou
-          stations de métro, offrant ainsi une connexion locale plus pratique.
-        </p>
-        <p>
-        <ul>
-          <li><strong>03</strong> : Relie <strong>Cheongdam</strong> à <strong>Garak Market</strong>.</li>
-          <li><strong>06</strong> : Relie <strong>Yangjae</strong> à <strong>Bangbae</strong>.</li>
-          <li><strong>13</strong> : Relie <strong>Seongbuk</strong> à <strong>Gireum</strong>.</li>
-          <li><strong>15</strong> : Relie <strong>Mapo</strong> à <strong>Shindang</strong>.</li>
-          <li><strong>23</strong> : Relie <strong>Sinchon</strong> à <strong>Gupabal</strong>.</li>
-          <li><strong>25</strong> : Relie <strong>Jamsil</strong> à <strong>Hanti</strong>.</li>
-          <li><strong>32</strong> : Relie <strong>Daechi</strong> à <strong>Gongdeok</strong>.</li>
-          <li><strong>42</strong> : Relie <strong>Gyeongnidan-gil</strong> à <strong>Oksu</strong>.</li>
-        </ul>
-        </p>
-      </div>
-    </div>
-
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
-        <img class="art-img" src="images/rouge.webp" width="450" alt="Bus rouge">
-      </div>
-      <div class="text">
-        <h2>Les bus rouges</h2>
-        <p>
-          <strong>Itinéraires</strong> : Ils relient principalement des zones à faible densité à des lignes de bus plus
-          grandes.Les bus rouges sont des lignes longues qui relient des zones plus éloignées, telles que des villes
-          satellites
-          autour de Séoul, à des quartiers centraux comme <strong>Gangnam</strong>, <strong>Sinchon</strong> ou
-          <strong>Dongdaemun</strong>. Ces lignes sont idéales pour les navetteurs qui doivent parcourir de longues
-          distances depuis la banlieue.
-        </p>
-        <p>
-        <ul>
-          <li><strong>9000</strong> : Relie <strong>Incheon</strong> à <strong>Gangnam</strong>.</li>
-          <li><strong>9001</strong> : Relie <strong>Ilsan</strong> à <strong>Gangnam</strong>.</li>
-          <li><strong>9003</strong> : Relie <strong>Guri</strong> à <strong>Gangnam</strong>.</li>
-          <li><strong>9005</strong> : Relie <strong>Seongnam</strong> à <strong>Gangnam</strong>.</li>
-          <li><strong>9300</strong> : Relie <strong>Goyang</strong> à <strong>Yeouido</strong>.</li>
-          <li><strong>9400</strong> : Relie <strong>Bucheon</strong> à <strong>Sinchon</strong>.</li>
-          <li><strong>9500</strong> : Relie <strong>Hwaseong</strong> à <strong>Gangnam</strong>.</li>
-          <li><strong>9600</strong> : Relie <strong>Seongnam</strong> à <strong>Dongdaemun</strong>.</li>
-        </ul>
-        </p>
-      </div>
-    </div>
-
-    <h2>Tarifs des bus à Séoul (2025)</h2>
-    <p>Les tarifs peuvent légèrement varier en fonction du type de bus et du trajet. Voici les informations de base :
+<h3>Les differentes lignes de bus de Seoul</h3>
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+    <img class="art-img" src="images/buses.webp" width="450" alt="Les bus">
+  </div>
+  <div class="text">
+    <h2>Les différentes lignes de bus</h2>
+    <p>
+      À Séoul, le système de transport public comprend des bus, le métro et des taxis. Les bus sont divisés en
+      différentes catégories en fonction de leur destination et de leur fréquence. Voici les principaux types de bus
+      et un aperçu de leurs tarifs.
     </p>
+  </div>
+</div>
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+    <img class="art-img" src="images/bleu.webp" width="450" alt="Bus bleus">
+  </div>
+
+  <div class="text">
+    <h2>Les bus bleus</h2>
+    <p>
+      <strong>Numéros</strong>
+      : Ils relient les quartiers périphériques au centre-ville.
+    </p>
+    <p>
+      <strong>Itinéraires</strong> : Lignes longues et intermédiaires.
+    </p>
+
+    <p>Les <strong>bus bleus</strong> de Séoul sont des lignes de transport interquartiers qui desservent
+      principalement les zones périphériques de la ville. Ces lignes relient des quartiers plus éloignés et des
+      banlieues à des zones centrales et importantes, notamment les grandes stations de métro, les quartiers
+      d'affaires et les zones commerciales. Les bus bleus sont idéaux pour ceux qui doivent parcourir des distances
+      moyennes ou longues, mais ils restent très pratiques pour les déplacements quotidiens, grâce à leur capacité à
+      se connecter à d’autres lignes de bus et aux réseaux de métro.</p>
+
     <ul>
-      <li>
-        <strong>Tarif de base</strong>
-        :
-        <ul>
-          <li>En
-            <strong>bus bleu</strong> ou
-            <strong>bus vert</strong> : 1 250 KRW (à partir de 2023) pour les trajets de base (jusqu'à 10 km).
-          </li>
-          <li>En
-            <strong>bus rouge</strong> : 2 000 KRW (pour les trajets plus longs).
-          </li>
-          <li>En
-            <strong>bus jaune</strong> : 1 200 KRW (tarif similaire au bus bleu).
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Tarif avec correspondance</strong>
-        :
-        <p>Si vous prenez un bus et ensuite le métro, ou si vous changez de bus (dans un laps de temps de 30 minutes),
-          vous bénéficiez d’une
-          <strong>réduction</strong> pour les correspondances.
-        </p>
-        <p>Vous devez utiliser votre
-          <strong>carte T-money</strong> pour que les correspondances soient automatiquement ajustées.
-        </p>
-      </li>
-      <li>
-        <strong>Réductions</strong>
-        :
-        <ul>
-          <li>Les
-            <strong>enfants</strong> (jusqu'à 6 ans) bénéficient de tarifs réduits ou gratuits dans certains cas.
-          </li>
-          <li>Les
-            <strong>adultes</strong> peuvent également bénéficier de réductions, notamment pour les personnes âgées ou
-            handicapées.
-          </li>
-        </ul>
-      </li>
+      <li><strong>100</strong> : Relie <strong>Songpa</strong> (sud-est) à <strong>Dongdaemun</strong>
+        (centre-ville).</li>
+      <li><strong>102</strong> : Relie <strong>Gongdeok</strong> à <strong>Dongdaemun</strong>.</li>
+      <li><strong>105</strong> : Relie <strong>Ilsan</strong> (nord-ouest de Séoul) à <strong>Jongno</strong>.</li>
+      <li><strong>1002</strong> : Relie <strong>Gwangmyeong</strong> à <strong>Sinchon</strong>.</li>
+      <li><strong>104</strong> : Relie <strong>Mapo</strong> à <strong>Myeongdong</strong>.</li>
+      <li><strong>105-1</strong> : Relie <strong>Suwon</strong> à <strong>Gyeongnidan-gil</strong>.</li>
+      <li><strong>106</strong> : Relie <strong>Sangbong</strong> à <strong>Hyehwa</strong>.</li>
+      <li><strong>107</strong> : Relie <strong>Hangangjin</strong> à <strong>Dongdaemun</strong>.</li>
     </ul>
 
+  </div>
+</div>
 
-    <div class="d-flex fd-row jc-c g-16">
-      <div class="f-1-1-300">
-        <img class="art-img" src="images/tmoney.webp" width="450" alt="Tmoney Card">
-      </div>
-      <div class="text">
-        <h2>Carte de transport (T-money)</h2>
-        <p>La carte
-          <strong>T-money</strong> est le moyen le plus pratique pour utiliser les transports en commun à Séoul (bus,
-          métro et même les taxis). Vous pouvez charger de l’argent dessus et l’utiliser pour payer directement dans le
-          bus ou le métro. Le tarif est déduit automatiquement selon la distance parcourue.
-        </p>
-      </div>
-    </div>
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+    <img class="art-img" src="images/vert.webp" width="450" alt="Bus verts">
+  </div>
+  <div class="text">
+    <h2>Les bus verts</h2>
+    <p>
+      <strong>Numéros</strong>
+      : Ils relient les stations de métro ou des arrêts de bus aux quartiers plus petits.
+    </p>
+    <p>
+      <strong>Itinéraires</strong>
+      : C'est un réseau de bus local qui fait la navette entre des zones spécifiques.
+    </p>
+    <p>Les bus verts sont destinés à desservir des zones spécifiques et à faciliter les correspondances avec
+      d'autres lignes de bus ou le métro. Ce sont souvent des lignes locales qui relient des quartiers résidentiels
+      ou des zones moins fréquentées avec des lignes de bus plus grandes ou des stations de métro.</p>
+
+    <p>
+    <ul>
+      <li><strong>701</strong> : Relie <strong>Gangdong</strong> à <strong>Jamsil</strong>.</li>
+      <li><strong>702</strong> : Relie <strong>Junggye</strong> à <strong>Wangsimni</strong>.</li>
+      <li><strong>771</strong> : Relie <strong>Yangjae</strong> à <strong>Jamsil</strong>.</li>
+      <li><strong>7025</strong> : Relie <strong>Beomeo</strong> à <strong>Shindang</strong>.</li>
+      <li><strong>7013</strong> : Relie <strong>Seongbuk</strong> à <strong>Jongno</strong>.</li>
+      <li><strong>703</strong> : Relie <strong>Nowon</strong> à <strong>Sinsa</strong>.</li>
+      <li><strong>7734</strong> : Relie <strong>Hongdae</strong> à <strong>Jamsil</strong>.</li>
+      <li><strong>744</strong> : Relie <strong>Ogeum</strong> à <strong>Dongdaemun</strong>.</li>
+    </ul>
+    </p>
+  </div>
+</div>
+
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+    <img class="art-img" src="images/jaune.webp" width="450" alt="Bus jaunes">
+  </div>
+  <div class="text">
+    <h2>Les bus jaunes</h2>
+    <p>
+      <strong>Numéros</strong> : Ce sont des bus qui circulent à l’intérieur des quartiers résidentiels ou des zones
+      plus petites.
+    </p>
+    <p>
+      <strong>Itinéraires</strong> : Ils relient principalement des zones à faible densité à des lignes de bus plus
+      grandes et sont principalement utilisés pour des trajets courts à l’intérieur de quartiers résidentiels
+      ou des zones moins desservies. Ils sont parfaits pour relier ces zones aux principales lignes de bus ou
+      stations de métro, offrant ainsi une connexion locale plus pratique.
+    </p>
+    <p>
+    <ul>
+      <li><strong>03</strong> : Relie <strong>Cheongdam</strong> à <strong>Garak Market</strong>.</li>
+      <li><strong>06</strong> : Relie <strong>Yangjae</strong> à <strong>Bangbae</strong>.</li>
+      <li><strong>13</strong> : Relie <strong>Seongbuk</strong> à <strong>Gireum</strong>.</li>
+      <li><strong>15</strong> : Relie <strong>Mapo</strong> à <strong>Shindang</strong>.</li>
+      <li><strong>23</strong> : Relie <strong>Sinchon</strong> à <strong>Gupabal</strong>.</li>
+      <li><strong>25</strong> : Relie <strong>Jamsil</strong> à <strong>Hanti</strong>.</li>
+      <li><strong>32</strong> : Relie <strong>Daechi</strong> à <strong>Gongdeok</strong>.</li>
+      <li><strong>42</strong> : Relie <strong>Gyeongnidan-gil</strong> à <strong>Oksu</strong>.</li>
+    </ul>
+    </p>
+  </div>
+</div>
+
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+    <img class="art-img" src="images/rouge.webp" width="450" alt="Bus rouge">
+  </div>
+  <div class="text">
+    <h2>Les bus rouges</h2>
+    <p>
+      <strong>Itinéraires</strong> : Ils relient principalement des zones à faible densité à des lignes de bus plus
+      grandes.Les bus rouges sont des lignes longues qui relient des zones plus éloignées, telles que des villes
+      satellites
+      autour de Séoul, à des quartiers centraux comme <strong>Gangnam</strong>, <strong>Sinchon</strong> ou
+      <strong>Dongdaemun</strong>. Ces lignes sont idéales pour les navetteurs qui doivent parcourir de longues
+      distances depuis la banlieue.
+    </p>
+    <p>
+    <ul>
+      <li><strong>9000</strong> : Relie <strong>Incheon</strong> à <strong>Gangnam</strong>.</li>
+      <li><strong>9001</strong> : Relie <strong>Ilsan</strong> à <strong>Gangnam</strong>.</li>
+      <li><strong>9003</strong> : Relie <strong>Guri</strong> à <strong>Gangnam</strong>.</li>
+      <li><strong>9005</strong> : Relie <strong>Seongnam</strong> à <strong>Gangnam</strong>.</li>
+      <li><strong>9300</strong> : Relie <strong>Goyang</strong> à <strong>Yeouido</strong>.</li>
+      <li><strong>9400</strong> : Relie <strong>Bucheon</strong> à <strong>Sinchon</strong>.</li>
+      <li><strong>9500</strong> : Relie <strong>Hwaseong</strong> à <strong>Gangnam</strong>.</li>
+      <li><strong>9600</strong> : Relie <strong>Seongnam</strong> à <strong>Dongdaemun</strong>.</li>
+    </ul>
+    </p>
+  </div>
+</div>
+
+<h2>Tarifs des bus à Séoul (2025)</h2>
+<p>Les tarifs peuvent légèrement varier en fonction du type de bus et du trajet. Voici les informations de base :
+</p>
+<ul>
+  <li>
+    <strong>Tarif de base</strong>
+    :
+    <ul>
+      <li>En
+        <strong>bus bleu</strong> ou
+        <strong>bus vert</strong> : 1 250 KRW (à partir de 2023) pour les trajets de base (jusqu'à 10 km).
+      </li>
+      <li>En
+        <strong>bus rouge</strong> : 2 000 KRW (pour les trajets plus longs).
+      </li>
+      <li>En
+        <strong>bus jaune</strong> : 1 200 KRW (tarif similaire au bus bleu).
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Tarif avec correspondance</strong>
+    :
+    <p>Si vous prenez un bus et ensuite le métro, ou si vous changez de bus (dans un laps de temps de 30 minutes),
+      vous bénéficiez d’une
+      <strong>réduction</strong> pour les correspondances.
+    </p>
+    <p>Vous devez utiliser votre
+      <strong>carte T-money</strong> pour que les correspondances soient automatiquement ajustées.
+    </p>
+  </li>
+  <li>
+    <strong>Réductions</strong>
+    :
+    <ul>
+      <li>Les
+        <strong>enfants</strong> (jusqu'à 6 ans) bénéficient de tarifs réduits ou gratuits dans certains cas.
+      </li>
+      <li>Les
+        <strong>adultes</strong> peuvent également bénéficier de réductions, notamment pour les personnes âgées ou
+        handicapées.
+      </li>
+    </ul>
+  </li>
+</ul>
 
 
+<div class="d-flex fd-row jc-c g-16">
+  <div class="f-1-1-300">
+    <img class="art-img" src="images/tmoney.webp" width="450" alt="Tmoney Card">
+  </div>
+  <div class="text">
+    <h2>Carte de transport (T-money)</h2>
+    <p>La carte
+      <strong>T-money</strong> est le moyen le plus pratique pour utiliser les transports en commun à Séoul (bus,
+      métro et même les taxis). Vous pouvez charger de l’argent dessus et l’utiliser pour payer directement dans le
+      bus ou le métro. Le tarif est déduit automatiquement selon la distance parcourue.
+    </p>
+  </div>
+</div>
 
-
-
-
-
-
-  </main>
-  <footer>
-    <h5>CONTACTEZ-NOUS</h5>
-    <section id="logo">
-      <a href="https://facebook.com/seoulcitykorea">
-        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/739/739135.png" width="50" height="50"
-          alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img" src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" width="50" height="50"
-          alt="Instagram">
-      </a>
-      <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img" src="images/Naver_Icon_1.webp" width="50" height="50" alt="Naver" />
-      </a>
-      <h5>Un projet de : Chalendard Rémy</h5>
-    </section>
-  </footer>
-</body>
-
-</html>
+<?php
+include 'includes/footer.php'
+?>
