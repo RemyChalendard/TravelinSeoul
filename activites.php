@@ -116,9 +116,7 @@ require 'config.php';
       })
       .catch(err => console.error("Erreur lors du chargement du JSON :", err));
   </script>
-
-
-
+  
 </body>
 
 </html>
