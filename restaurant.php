@@ -11,6 +11,7 @@ require 'config.php';
 try {
   $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Restaurant' ORDER BY date_creation ASC");
   $requete->execute();
+  // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
   $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 
   if ($evenements) {
