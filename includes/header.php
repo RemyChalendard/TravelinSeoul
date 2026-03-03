@@ -25,7 +25,7 @@
         <div class="nav-links" id="navLinks">
           <a href="index.php">HOME</a>
           <a href="news.php">NEWS</a>
-          <a href="restautant.php">FOODS</a>
+          <a href="restaurant.php">FOODS</a>
           <a href="activites.php">ACTIVITIES</a>
           <a href="Quartiers.php">DISTRICTS</a>
           <a href="language.php">HANGEUL</a>
