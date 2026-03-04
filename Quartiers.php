@@ -3,7 +3,7 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<div>>
+<div>
 <h1> Les différents quartiers de Séoul</h1>
 </div>
 

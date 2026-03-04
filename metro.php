@@ -3,7 +3,7 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h3>Les differentes lignes de métro de Seoul</h3>
+<h1>Les differentes lignes de métro de Seoul</h1>
 
 <?php
 try {

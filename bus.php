@@ -3,7 +3,7 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h3>Les differentes lignes de Bus de Seoul</h3>
+<h1>Les differentes lignes de Bus de Seoul</h1>
 <div class="d-flex fd-row jc-c g-16">
   <div class="f-1-1-300">
     <img class="art-img" src="images/buses.webp" width="450" alt="Les bus">

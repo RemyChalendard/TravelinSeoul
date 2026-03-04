@@ -3,7 +3,7 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h3>La création du Hangeul</h3>
+<h1>La création du Hangeul</h1>
 
 <?php
 try {
