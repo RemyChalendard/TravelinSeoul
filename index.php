@@ -3,7 +3,7 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h1> <strong> Seoul - "La ville de l'âme"</strong></h1>
+<h1> <strong> Seoul - La ville de l'âme</strong></h1>
 
 <?php
 try {
@@ -26,8 +26,16 @@ try {
 
         <div class="text">
           <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
-          <p><?php echo htmlspecialchars($event['contenu'] ?? "Non renseigné"); ?></p>
-          <p><strong>Auteur :</strong> <?php echo htmlspecialchars($event['auteur'] ?? "Non renseigné"); ?></p>
+          <?php
+            $contenu = htmlspecialchars($event['contenu'] ?? "Non renseigné");
+            $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
+            $paragraphes = explode("\n", $contenu);
+            foreach ($paragraphes as $p) {
+                if (trim($p) !== '') {
+                    echo "<p>" . $p . "</p>";
+                }
+            }
+          ?>
         </div>
       </div>
 <?php

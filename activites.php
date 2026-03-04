@@ -19,7 +19,7 @@ require 'config.php';
             $requete = $pdo->prepare("SELECT * FROM evenements ORDER BY date ASC");
             $requete->execute();
             // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
-            $evenements = $requete->fetchAll(PDO::FETCH_ASSOC); 
+            $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 
             if ($evenements) {
               foreach ($evenements as $event) {
@@ -50,6 +50,7 @@ require 'config.php';
 try {
   $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Evenements' ORDER BY date_creation ASC");
   $requete->execute();
+  // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
   $articles = $requete->fetchAll(PDO::FETCH_ASSOC);
 
   if ($articles) {
@@ -67,7 +68,6 @@ try {
         <div class="text">
           <h2><?php echo htmlspecialchars($article['titre'] ?? "Article"); ?></h2>
           <p><strong> </strong> <?php echo (htmlspecialchars($article['contenu'] ?? "Non renseigné")); ?></p>
-          <p><strong>Auteur :</strong> <?php echo htmlspecialchars($article['auteur'] ?? "Non renseigné"); ?></p>
 
         </div>
       </div>

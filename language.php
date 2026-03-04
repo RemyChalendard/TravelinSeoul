@@ -27,7 +27,6 @@ try {
         <div class="text">
           <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
           <p><?php echo htmlspecialchars($event['contenu'] ?? "Non renseigné"); ?></p>
-          <p><strong>Auteur :</strong> <?php echo htmlspecialchars($event['auteur'] ?? "Non renseigné"); ?></p>
         </div>
       </div>
       

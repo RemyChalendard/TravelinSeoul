@@ -26,9 +26,9 @@ Mettre du html dans la boucle pour pouvoir faire des paragrahes
 - Index (terminée)
 - Page News (terminée, rajouter des artciles d'actualités)
 - Language (terminée)
+- Bus (terminée)
 
 Il me reste a faire les pages : 
 
-- Bus
 - Metro
 - Contact

@@ -3,172 +3,46 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h3>Les différentes lignes de métro de Séoul</h3>
-
-<div class="d-flex fd-row jc-c g-16">
-  <div class="f-1-1-300">
-    <img class="art-img" src="images/seoulSubwayMap.webp" width="400" alt="Métro de Séoul">
-  </div>
-  <div class="text">
-    <h2>Le métro de Séoul</h2>
-    <p>
-      Le métro de Séoul est l’un des réseaux de transport urbain les plus vastes et les plus modernes au monde.
-      Véritable colonne vertébrale de la ville, il s’étend bien au-delà des limites de la capitale pour desservir
-      l’ensemble de la région métropolitaine, reliant Séoul aux villes satellites dans un maillage dense et
-      parfaitement organisé. </p>
-
-    <p>
-      Le métro de Séoul ne se limite pas à un simple moyen de transport : il reflète le rythme et l’efficacité de la
-      société coréenne. Rapide, fiable et accessible, il permet de traverser la mégapole en toute simplicité, tout
-      en offrant une expérience fluide et rassurante. C’est un espace de transition où se croisent chaque jour des
-      millions de vies, au cœur d’une ville en perpétuel mouvement.
-    </p>
-  </div>
-</div>
-
-<div class="d-flex fd-row jc-c g-16">
-  <div class="f-1-1-300">
-    <img class="art-img" src="images/metro1.webp" width="400" alt="Ligne 1 métro Séoul">
-  </div>
-  <div class="text">
-    <h2>Ligne 1</h2>
-    <p><strong>Couleur</strong> : Bleu foncé</p>
-    <p><strong>Itinéraire</strong> : Nord – Sud, reliant le centre et la banlieue.</p>
-    <p>
-      La ligne 1 du métro de Séoul est la plus ancienne et l’une des plus emblématiques du réseau. Mise en service
-      en 1974, elle traverse la ville du nord au sud et s’étend bien au-delà du centre historique, reliant Séoul à
-      de nombreuses villes de la banlieue. Plus qu’une simple ligne urbaine, elle fonctionne comme un axe
-      ferroviaire majeur, mêlant métro et trains de banlieue.
-    </p>
-    <ul>
-      <li>Seoul Station</li>
-      <li>Jonggak</li>
-      <li>Dongdaemun</li>
-      <li>Cheongnyangni</li>
-    </ul>
-  </div>
-</div>
-
-<div class="d-flex fd-row jc-c g-16">
-  <div class="f-1-1-300">
-    <img class="art-img" src="images/metro2.webp" width="400" alt="Ligne 2 métro Séoul">
-  </div>
-  <div class="text">
-    <h2>Ligne 2</h2>
-    <p><strong>Couleur</strong> : Vert</p>
-    <p><strong>Itinéraire</strong> : Ligne circulaire autour du centre-ville.</p>
-    <p>
-      La ligne 2 du métro de Séoul est l’une des plus emblématiques et des plus fréquentées du réseau.
-      Reconnaissable à sa couleur verte, elle forme une grande boucle autour du centre-ville, reliant de nombreux
-      quartiers clés et constituant un axe essentiel pour les déplacements quotidiens. Véritable cercle de vie
-      urbaine, elle permet des correspondances avec presque toutes les autres lignes du métro.</p>
-
-    <p> Son parcours traverse des zones parmi les plus dynamiques de la capitale, comme Hongdae, Sinchon, City Hall,
-      Gangnam ou encore Jamsil. La ligne 2 relie ainsi des quartiers étudiants animés, des centres d’affaires
-      ultramodernes et des zones commerçantes majeures. En l’empruntant, on perçoit les multiples visages de Séoul,
-      entre culture, travail, loisirs et divertissement. </p>
-
-    <p> Les stations de la ligne 2 sont modernes et très fonctionnelles, conçues pour absorber un flux constant de
-      passagers. Les quais sont spacieux, bien éclairés et équipés de portes palières. Les rames, fréquentes et
-      rapides, offrent un intérieur lumineux avec des écrans indiquant en temps réel les informations de trajet, ce
-      qui rend les déplacements fluides malgré l’affluence.
-    </p>
-    <ul>
-      <li>Hongik Univ.</li>
-      <li>City Hall</li>
-      <li>Gangnam</li>
-      <li>Jamsil</li>
-    </ul>
-  </div>
-</div>
-
-<div class="d-flex fd-row jc-c g-16">
-  <div class="f-1-1-300">
-    <img class="art-img" src="images/metro3.webp" width="400" alt="Ligne 3 métro Séoul">
-  </div>
-  <div class="text">
-    <h2>Ligne 3</h2>
-    <p><strong>Couleur</strong> : Orange</p>
-    <p><strong>Itinéraire</strong> : Nord-Ouest – Sud-Est.</p>
-    <p>
-      La ligne 3 du métro de Séoul est un axe essentiel qui traverse la ville du nord-ouest au sud-est, reliant des
-      quartiers résidentiels paisibles à des zones administratives et culturelles majeures. Identifiée par sa
-      couleur orange, elle joue un rôle clé dans les déplacements quotidiens, notamment pour les habitants se
-      rendant vers le centre de la capitale. </p>
-
-    <p>Son tracé passe par des lieux emblématiques tels que Gyeongbokgung, Anguk ou encore Apgujeong, offrant un
-      lien
-      direct entre les quartiers historiques et les zones modernes et élégantes du sud de Séoul. En parcourant la
-      ligne 3, on ressent un équilibre entre tradition et modernité : palais royaux, rues bordées de hanoks, mais
-      aussi avenues larges et quartiers contemporains.
-    </p>
-    <ul>
-      <li>Gyeongbokgung</li>
-      <li>Anguk</li>
-      <li>Apgujeong</li>
-      <li>Express Bus Terminal</li>
-    </ul>
-  </div>
-</div>
-
-<div class="d-flex fd-row jc-c g-16">
-  <div class="f-1-1-300">
-    <img class="art-img" src="images/metro4.webp" width="400" alt="Ligne 4 métro Séoul">
-  </div>
-  <div class="text">
-    <h2>Ligne 4</h2>
-    <p><strong>Couleur</strong> : Bleu clair</p>
-    <p><strong>Itinéraire</strong> : Nord-Est – Sud.</p>
-    <p>
-      La ligne 4 du métro de Séoul est un axe majeur qui traverse la ville du nord au sud, reliant des quartiers
-      résidentiels populaires à des zones commerciales et culturelles très fréquentées. Identifiée par sa couleur
-      bleu clair, elle joue un rôle essentiel dans la mobilité quotidienne des habitants, en reliant le nord de la
-      capitale aux secteurs les plus animés du centre et du sud. </p>
-
-    <p> Son tracé passe par des lieux emblématiques tels que Dongdaemun, Myeongdong, Seoul Station ou encore Sadang.
-      En empruntant la ligne 4, on traverse des quartiers commerçants vibrants, des zones touristiques majeures et
-      des secteurs plus calmes, reflétant la diversité sociale et urbaine de Séoul. Elle offre également des
-      correspondances stratégiques avec de nombreuses autres lignes, ce qui en fait un itinéraire très utilisé.</p>
-
-    <p>Les stations de la ligne 4 sont fonctionnelles et adaptées à un fort flux de passagers. Bien éclairées et
-      régulièrement rénovées, elles disposent de quais sécurisés et d’une signalisation claire. Les rames,
-      fréquentes et climatisées, assurent des trajets rapides malgré l’affluence, notamment aux heures de pointe.
-    </p>
-    <ul>
-      <li>Myeongdong</li>
-      <li>Dongdaemun History & Culture Park</li>
-      <li>Seoul Station</li>
-      <li>Sadang</li>
-    </ul>
-  </div>
-</div>
-
-<h2>Tarifs du métro à Séoul</h2>
-<p>
-  Le paiement se fait principalement avec la <strong>carte T-money</strong>.
-  Le tarif dépend de la distance parcourue.
-</p>
-<ul>
-  <li><strong>Tarif de base</strong> : environ 1 250 KRW pour les 10 premiers kilomètres.</li>
-  <li><strong>Supplément</strong> appliqué au-delà selon la distance.</li>
-  <li><strong>Correspondances gratuites</strong> avec les bus dans un délai limité.</li>
-</ul>
-
-<div class="d-flex fd-row jc-c g-16">
-  <div class="f-1-1-300">
-    <img class="art-img" src="images/tmoney.webp" width="400" alt="Carte T-money">
-  </div>
-  <div class="text">
-    <h2>Carte de transport (T-money)</h2>
-    <p>
-      La carte <strong>T-money</strong> permet d’utiliser facilement le métro,
-      les bus et même les taxis. Elle se recharge facilement et offre des réductions
-      lors des correspondances. Elle est disponible à l'achat dans les distributeurs des stations, ou dans les
-      convéniences stores (7Eleven, GS25)
-    </p>
-  </div>
-</div>
+<h1> <strong> Lignes de métro </strong></h1>
 
 <?php
-include 'includes/footer.php'
+try {
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Metro' ORDER BY date_creation ASC");
+  $requete->execute();
+  $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+  if ($evenements) {
+    foreach ($evenements as $event) {
 ?>
+      <div class="d-flex fd-row jc-c g-16">
+        <div class="f-1-1-300">
+          <?php if (!empty($event['image'])): ?>
+            <img class="art-img" src="<?php echo htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['titre'] ?? 'Image'); ?>" width="450">
+          <?php else: ?>
+            <img class="art-img" src="https://via.placeholder.com/450x300?text=No+Image" alt="Pas d'image" width="450">
+          <?php endif; ?>
+        </div>
+
+        <div class="text">
+          <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?>
+          
+          <?php
+          $contenu = htmlspecialchars($event['contenu'] ?? "Non renseigné");
+          $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
+          foreach (explode("\n", $contenu) as $p) {
+            if (trim($p) !== '') echo "<p>" . $p . "</p>";
+          }
+          ?>
+        </div>
+      </div>
+<?php
+    }
+  } else {
+    echo "<p>Aucun quartier à afficher.</p>";
+  }
+} catch (PDOException $e) {
+  echo "Erreur : " . $e->getMessage();
+}
+?>
+
+<?php include 'includes/footer.php'; ?>
