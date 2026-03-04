@@ -35,6 +35,7 @@ try {
           ?>
         </div>
       </div>
+      
 <?php
     }
   } else {
