@@ -48,7 +48,7 @@ require 'config.php';
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Evenements' ORDER BY date_creation ASC");
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Evenements' AND statut = 'publie' ORDER BY date_creation ASC");
   $requete->execute();
   // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
   $articles = $requete->fetchAll(PDO::FETCH_ASSOC);

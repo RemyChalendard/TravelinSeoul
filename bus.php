@@ -3,7 +3,7 @@ include 'includes/header.php';
 require 'config.php';
 ?>
 
-<h3>Les differentes lignes de bus de Seoul</h3>
+<h3>Les differentes lignes de Bus de Seoul</h3>
 <div class="d-flex fd-row jc-c g-16">
   <div class="f-1-1-300">
     <img class="art-img" src="images/buses.webp" width="450" alt="Les bus">
@@ -17,7 +17,7 @@ require 'config.php';
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Bus' ORDER BY date_creation ASC");
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Bus' AND statut = 'publie' ORDER BY date_creation ASC");
   $requete->execute();
   $articles = $requete->fetchAll(PDO::FETCH_ASSOC);
 

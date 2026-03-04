@@ -7,7 +7,7 @@ require 'config.php';
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Restaurant' ORDER BY date_creation ASC");
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'Restaurant' AND statut = 'publie' ORDER BY date_creation ASC");
   $requete->execute();
   $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 
@@ -35,7 +35,7 @@ try {
           ?>
         </div>
       </div>
-      
+
 <?php
     }
   } else {
