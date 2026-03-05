@@ -3,13 +3,12 @@ require_once("../admin/db.php");
 include "../admin/header.php";      
 ?>
 
-
 <?php
-session_start();
 require 'db.php';
 
 if(!isset($_SESSION['admin'])){
     header("Location: login.php");
+    exit;
 }
 ?>
 
@@ -31,9 +30,23 @@ if(!isset($_SESSION['admin'])){
 
 <h3>Ajouter un article</h3>
 
-<form action="add_article.php" method="POST">
+<form action="add_article.php" method="POST" enctype="multipart/form-data">
 
 <input type="text" name="titre" placeholder="Titre" required>
+
+<label>Catégorie</label>
+<select name="categorie" required>
+    <option value="">-- Sélectionner une catégorie --</option>
+    <?php
+    $categories = $pdo->query("SELECT DISTINCT categorie FROM articles ORDER BY categorie");
+    foreach($categories as $cat){
+        echo '<option value="' . htmlspecialchars($cat['categorie']) . '">' . htmlspecialchars($cat['categorie']) . '</option>';
+    }
+    ?>
+</select>
+
+<label>Photo</label>
+<input type="file" name="photo" accept="image/*" required>
 
 <textarea name="contenu" placeholder="Contenu"></textarea>
 
@@ -54,6 +67,8 @@ foreach($articles as $article){
 <div class="article">
 
 <h4><?= htmlspecialchars($article['titre']) ?></h4>
+
+<p><?= htmlspecialchars($article['categorie']) ?></p>
 
 <p><?= substr($article['contenu'],0,150) ?>...</p>
 
