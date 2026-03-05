@@ -32,3 +32,5 @@ Il me reste a faire les pages :
 
 - Metro
 - Contact
+
+Acceder au paneau admin : http://localhost:3000/admin/

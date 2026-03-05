@@ -7,7 +7,7 @@
   <meta name="description"
     content="Découvrez les meilleures activités à Séoul : visites culturelles, balades, marchés, spectacles et expériences uniques pour profiter pleinement de la capitale coréenne.">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
   <title>Travel In Seoul</title>
 </head>
 

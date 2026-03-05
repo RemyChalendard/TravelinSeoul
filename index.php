@@ -1,6 +1,7 @@
 <?php
 include 'includes/header.php';
 require 'config.php';
+require_once 'connexion.php'; 
 ?>
 
 <h1> <strong> Seoul - La ville de l'âme</strong></h1>

@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Travel in Seoul</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/travelInSeoul/styles/styles.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+/* ── NAVBAR (identique au site) ── */
+.navbar {
+  background-color: #080d52;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.nav-brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-brand span {
+  background: #2A6EBB;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 15px;
+}
+.nav-links a:hover { color: #007bff; }
+.nav-back {
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+}
+.nav-back:hover { color: #fff; }
+
+/* ── HEADER (identique au site) ── */
+header {
+  background-color: #2A6EBB;
+  text-align: center;
+  color: white;
+  padding: 30px 20px;
+}
+header h1 {
+  font-size: 36px;
+  padding: 0;
+  color: white;
+}
+header p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  padding: 8px 0 0;
+  text-align: center;
+}
+
+/* ── AUTH ── */
+.auth-wrap {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f7fa;
+  padding: 40px 20px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.auth-card-header {
+  background-color: #080d52;
+  padding: 25px 30px;
+  color: white;
+}
+.auth-card-header h2 {
+  font-size: 22px;
+  text-align: left;
+  background: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+.auth-card-header p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  padding: 5px 0 0;
+  text-align: left;
+}
+.auth-tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+}
+.auth-tab {
+  flex: 1;
+  padding: 14px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: white;
+  color: #666;
+  transition: all 0.2s;
+}
+.auth-tab.active {
+  color: #2A6EBB;
+  border-bottom: 3px solid #2A6EBB;
+  margin-bottom: -2px;
+}
+.auth-body { padding: 28px 30px; }
+
+.auth-error {
+  background: #fff0f0;
+  border: 1px solid #ffcccc;
+  border-left: 3px solid #cc0000;
+  border-radius: 3px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #cc0000;
+  margin-bottom: 16px;
+  display: none;
+}
+.auth-error.show { display: block; }
+.auth-success {
+  background: #f0fff4;
+  border: 1px solid #b3e6c8;
+  border-left: 3px solid #2A6EBB;
+  border-radius: 3px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #1a6e3c;
+  margin-bottom: 16px;
+  display: none;
+}
+.auth-success.show { display: block; }
+
+/* ── FORMS ── */
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  transition: border-color 0.2s;
+  resize: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2A6EBB;
+  box-shadow: 0 0 0 3px rgba(42,110,187,0.1);
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-full { grid-column: 1/-1; }
+.form-hint { font-size: 12px; color: #888; margin-top: 4px; }
+
+/* ── BUTTONS ── */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary {
+  background: #2A6EBB;
+  color: white;
+  width: 100%;
+  justify-content: center;
+  font-size: 15px;
+  padding: 12px;
+}
+.btn-primary:hover { background: #1f5a9e; }
+.btn-blue { background: #2A6EBB; color: white; }
+.btn-blue:hover { background: #1f5a9e; }
+.btn-dark { background: #080d52; color: white; }
+.btn-dark:hover { background: #0d1570; }
+.btn-outline { background: white; color: #333; border: 1px solid #ccc; }
+.btn-outline:hover { background: #f5f7fa; }
+.btn-danger { background: white; color: #cc0000; border: 1px solid #ffaaaa; }
+.btn-danger:hover { background: #fff0f0; }
+.btn-edit { background: white; color: #2A6EBB; border: 1px solid #a0c4e8; }
+.btn-edit:hover { background: #f0f7ff; }
+.btn-sm { padding: 6px 12px; font-size: 13px; }
+
+/* ── LAYOUT ── */
+.admin-layout {
+  display: flex;
+  min-height: calc(100vh - 60px - 69px);
+}
+.sidebar {
+  width: 230px;
+  background: #080d52;
+  color: white;
+  padding: 20px 0;
+  flex-shrink: 0;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-section {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  padding: 16px 20px 6px;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+.sidebar-item:hover { background: rgba(255,255,255,0.07); color: white; }
+.sidebar-item.active { background: rgba(42,110,187,0.3); color: white; border-left-color: #2A6EBB; }
+.sidebar-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0; }
+.sidebar-foot { padding: 16px 20px; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.08); }
+.sidebar-user { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 8px; line-height: 1.5; }
+.sidebar-user strong { color: white; display: block; font-size: 14px; }
+.logout-btn {
+  font-size: 13px;
+  color: #ff8080;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 0;
+  background: none;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  transition: opacity 0.2s;
+}
+.logout-btn:hover { opacity: 0.7; }
+
+/* ── MAIN ── */
+.main-content { flex: 1; padding: 30px; background: #f5f7fa; min-width: 0; }
+.view { display: none; }
+.view.active { display: block; animation: fadeUp 0.2s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.page-header h2 {
+  font-size: 22px;
+  text-align: left;
+  background: none;
+  color: #080d52;
+  padding: 0 0 0 12px;
+  border-left: 4px solid #2A6EBB;
+}
+
+/* ── STATS ── */
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 24px; }
+.stat-card {
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  border-top: 3px solid #2A6EBB;
+  text-align: center;
+}
+.stat-card:nth-child(2) { border-top-color: #080d52; }
+.stat-card:nth-child(3) { border-top-color: #007bff; }
+.stat-card:nth-child(4) { border-top-color: #1a416e; }
+.stat-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.stat-value { font-size: 2rem; font-weight: 700; color: #080d52; }
+
+/* ── TABLE CARD ── */
+.table-card {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.table-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #f9fbff;
+}
+.table-card-title { font-size: 14px; font-weight: 500; color: #080d52; }
+
+/* Override global table styles for admin */
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  text-align: left;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  background: #f9fbff;
+  font-weight: 500;
+  cursor: default;
+  width: auto;
+  height: auto;
+}
+.admin-table td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: default;
+  width: auto;
+  height: auto;
+  transition: background 0.15s;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+}
+.admin-table td:hover { background: inherit; }
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: #f9fbff; }
+.truncate { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── BADGES ── */
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+.badge-publie { background: #e6f4ea; color: #1e7e34; border: 1px solid #b3d9bc; }
+.badge-brouillon { background: #fff8e6; color: #996600; border: 1px solid #f0d080; }
+.badge-archive { background: #f0f0f0; color: #666; border: 1px solid #ddd; }
+
+/* ── SEARCH ── */
+.search-box { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  width: 200px;
+  transition: border-color 0.2s;
+}
+.search-input:focus { border-color: #2A6EBB; }
+
+/* ── FORM PAGE ── */
+.form-card {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  padding: 28px 30px;
+}
+.form-actions { display: flex; gap: 10px; margin-top: 20px; }
+.actions-cell { display: flex; gap: 6px; }
+
+/* ── MODAL / CONFIRM ── */
+.overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000; align-items: center; justify-content: center;
+}
+.overlay.open { display: flex; }
+.confirm-box {
+  background: white; border-radius: 5px; padding: 30px;
+  width: 360px; max-width: 95vw;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center; animation: fadeUp 0.2s ease;
+}
+.confirm-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.confirm-box h3 { font-size: 18px; color: #080d52; padding: 0; margin-bottom: 8px; }
+.confirm-box p { font-size: 14px; color: #666; padding: 0 0 20px; text-align: center; }
+.confirm-actions { display: flex; gap: 10px; justify-content: center; }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed; bottom: 24px; right: 24px;
+  background: #080d52; color: white;
+  padding: 12px 20px; border-radius: 5px;
+  font-size: 14px; z-index: 3000;
+  transform: translateX(120%); transition: transform 0.3s ease;
+  border-left: 4px solid #2A6EBB;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  max-width: 300px;
+}
+.toast.show { transform: translateX(0); }
+.toast.err { border-left-color: #cc0000; }
+
+/* ── LOADING / EMPTY ── */
+.loading { display:flex; align-items:center; justify-content:center; padding:40px; color:#888; font-size:14px; gap:10px; }
+.spinner { width:18px; height:18px; border:2px solid #ddd; border-top-color:#2A6EBB; border-radius:50%; animation:spin 0.7s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.empty { text-align:center; padding:40px; color:#888; font-size:14px; }
+
+/* ── FOOTER ── */
+footer { background-color: #2A6EBB; text-align: center; color: white; padding: 23px; font-size: 14px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 780px) {
+  .admin-layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; flex-direction: row; flex-wrap: wrap; padding: 8px; gap: 4px; }
+  .sidebar-section, .sidebar-divider, .sidebar-foot .sidebar-user { display: none; }
+  .sidebar-item { padding: 8px 12px; border-radius: 4px; border-left: none; font-size: 13px; border-bottom: 2px solid transparent; }
+  .sidebar-item.active { border-left: none; border-bottom-color: #2A6EBB; background: rgba(42,110,187,0.2); }
+  .sidebar-foot { padding: 8px 12px; margin-top: 0; border: none; display: flex; align-items: center; }
+  .main-content { padding: 16px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-full { grid-column: 1; }
+  .page-header { flex-direction: column; align-items: flex-start; }
+  header h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ AUTH ══════════ -->
+<div id="authScreen">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-back">← Retour au site</a>
+      <div class="nav-links">
+        <a href="#" onclick="switchTab('login');return false;">Connexion</a>
+        <a href="#" onclick="switchTab('register');return false;">Inscription</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Administration</h1>
+    <p>Travel in Seoul — Panneau de gestion</p>
+  </header>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h2 id="authCardTitle">Connexion</h2>
+        <p id="authCardSub">Accès réservé aux administrateurs</p>
+      </div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchTab('login')">Connexion</button>
+        <button class="auth-tab" onclick="switchTab('register')">Inscription</button>
+      </div>
+      <div class="auth-body">
+        <div id="authError" class="auth-error"></div>
+        <div id="authSuccess" class="auth-success"></div>
+
+        <!-- LOGIN -->
+        <div id="loginForm">
+          <div class="form-group">
+            <label>Adresse e-mail</label>
+            <input type="email" id="lEmail" placeholder="admin@travelinseoul.fr">
+          </div>
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" id="lPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+          </div>
+          <button class="btn btn-primary" onclick="doLogin()">Se connecter</button>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="registerForm" style="display:none">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nom complet *</label>
+              <input type="text" id="rName" placeholder="Jean Dupont">
+            </div>
+            <div class="form-group">
+              <label>Rôle</label>
+              <select id="rRole">
+                <option value="admin">Administrateur</option>
+                <option value="user">Utilisateur</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Adresse e-mail *</label>
+            <input type="email" id="rEmail" placeholder="admin@travelinseoul.fr">
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Mot de passe *</label>
+              <input type="password" id="rPass" placeholder="Minimum 8 caractères">
+            </div>
+            <div class="form-group">
+              <label>Confirmation *</label>
+              <input type="password" id="rConfirm" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Clé admin <span style="color:#888;font-weight:400">(si rôle administrateur)</span></label>
+            <input type="password" id="rKey" placeholder="Fournie par votre hébergeur">
+            <p class="form-hint">Laissez vide pour un compte utilisateur simple.</p>
+          </div>
+          <button class="btn btn-primary" onclick="doRegister()">Créer le compte</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer><p>© 2025 Travel in Seoul — Administration</p></footer>
+</div>
+
+
+<!-- ══════════ ADMIN PANEL ══════════ -->
+<div id="adminPanel" style="display:none">
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">Travel in Seoul <span>ADMIN</span></a>
+      <div class="nav-links">
+        <a href="/" class="nav-back">← Voir le site</a>
+        <a href="#" onclick="doLogout();return false;" style="color:#ff8080">Déconnexion</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">Général</div>
+      <div class="sidebar-item active" onclick="nav('dashboard',this)">📊 Tableau de bord</div>
+      <hr class="sidebar-divider">
+      <div class="sidebar-section">Contenu</div>
+      <div class="sidebar-item" onclick="nav('articles',this)">📝 Articles</div>
+      <div class="sidebar-item" onclick="nav('newArticle',this)">➕ Nouvel article</div>
+      <div class="sidebar-item" onclick="nav('evenements',this)">📅 Événements</div>
+      <div class="sidebar-item" onclick="nav('newEvent',this)">➕ Nouvel événement</div>
+      <div class="sidebar-foot">
+        <div class="sidebar-user">
+          <strong id="sidebarName">—</strong>
+          <span id="sidebarRole" style="font-size:12px"></span>
+        </div>
+        <button class="logout-btn" onclick="doLogout()">↩ Déconnexion</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+
+      <!-- DASHBOARD -->
+      <div id="view-dashboard" class="view active">
+        <div class="page-header">
+          <h2>Tableau de bord</h2>
+          <span style="font-size:13px;color:#888" id="dashDate"></span>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-label">Articles total</div><div class="stat-value" id="sTotal">—</div></div>
+          <div class="stat-card"><div class="stat-label">Publiés</div><div class="stat-value" id="sPub">—</div></div>
+          <div class="stat-card"><div class="stat-label">Brouillons</div><div class="stat-value" id="sDraft">—</div></div>
+          <div class="stat-card"><div class="stat-label">Événements</div><div class="stat-value" id="sEvents">—</div></div>
+        </div>
+        <div class="table-card">
+          <div class="table-card-head"><span class="table-card-title">Derniers articles</span></div>
+          <div id="dashList"><div class="loading"><div class="spinner"></div>Chargement…</div></div>
+        </div>
+      </div>
+
+      <!-- ARTICLES -->
+      <div id="view-articles" class="view">
+        <div class="page-header">
+          <h2>Gestion des Articles</h2>
+          <div class="search-box">
+            <input class="search-input" id="artSearch" placeholder="Rechercher…" oninput="loadArticles()">
+            <select class="search-input" style="width:150px" id="artFilter" onchange="loadArticles()">
+              <option value="">Tous les statuts</option>
+              <option value="publie">Publiés</option>
+              <option value="brouillon">Brouillons</option>
+              <option value="archive">Archivés</option>
+            </select>
+            <button class="btn btn-dark" onclick="nav('newArticle')">➕ Nouvel article</button>
+          </div>
+        </div>
+        <div class="table-card">
+          <div class="table-card-head"><span class="table-card-title">Table : articles</span></div>
+          <div id="artTableWrap"><div class="loading"><div class="spinner"></div>Chargement…</div></div>
+        </div>
+      </div>
+
+      <!-- NEW / EDIT ARTICLE -->
+      <div id="view-newArticle" class="view">
+        <div class="page-header"><h2 id="artFormTitle">Nouvel Article</h2></div>
+        <div class="form-card">
+          <input type="hidden" id="artId">
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label>Titre *</label>
+              <input type="text" id="artTitre" placeholder="Titre de l'article…">
+            </div>
+            <div class="form-group">
+              <label>Catégorie</label>
+              <input type="text" id="artCategorie" placeholder="Culture, Food, Travel…">
+            </div>
+            <div class="form-group">
+              <label>Statut</label>
+              <select id="artStatut">
+                <option value="brouillon">Brouillon</option>
+                <option value="publie">Publié</option>
+                <option value="archive">Archivé</option>
+              </select>
+            </div>
+            <div class="form-group form-full">
+              <label>Description / Extrait</label>
+              <textarea id="artDescription" rows="3" placeholder="Courte description visible dans les listes…"></textarea>
+            </div>
+            <div class="form-group form-full">
+              <label>Contenu *</label>
+              <textarea id="artContenu" rows="10" placeholder="Contenu complet de l'article…"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Auteur</label>
+              <input type="text" id="artAuteur" placeholder="Nom de l'auteur">
+            </div>
+            <div class="form-group">
+              <label>Image (URL)</label>
+              <input type="text" id="artImage" placeholder="https://…">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-blue" onclick="saveArticle()">💾 Enregistrer</button>
+            <button class="btn btn-outline" onclick="nav('articles')">Annuler</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉVÉNEMENTS -->
+      <div id="view-evenements" class="view">
+        <div class="page-header">
+          <h2>Gestion des Événements</h2>
+          <div class="search-box">
+            <input class="search-input" id="evSearch" placeholder="Rechercher…" oninput="loadEvenements()">
+            <button class="btn btn-dark" onclick="nav('newEvent')">➕ Nouvel événement</button>
+          </div>
+        </div>
+        <div class="table-card">
+          <div class="table-card-head"><span class="table-card-title">Table : evenements</span></div>
+          <div id="evTableWrap"><div class="loading"><div class="spinner"></div>Chargement…</div></div>
+        </div>
+      </div>
+
+      <!-- NEW / EDIT EVENT -->
+      <div id="view-newEvent" class="view">
+        <div class="page-header"><h2 id="evFormTitle">Nouvel Événement</h2></div>
+        <div class="form-card">
+          <input type="hidden" id="evId">
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label>Titre *</label>
+              <input type="text" id="evTitre" placeholder="Nom de l'événement…">
+            </div>
+            <div class="form-group">
+              <label>Lieu</label>
+              <input type="text" id="evLieu" placeholder="Hongdae, Gangnam…">
+            </div>
+            <div class="form-group">
+              <label>Type</label>
+              <input type="text" id="evType" placeholder="Festival, Exposition…">
+            </div>
+            <div class="form-group">
+              <label>Date *</label>
+              <input type="date" id="evDate">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-blue" onclick="saveEvenement()">💾 Enregistrer</button>
+            <button class="btn btn-outline" onclick="nav('evenements')">Annuler</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer><p>© 2025 Travel in Seoul — Panneau d'administration</p></footer>
+</div>
+
+<!-- CONFIRM DELETE -->
+<div class="overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-icon">⚠️</div>
+    <h3>Confirmer la suppression</h3>
+    <p id="confirmText">Cette action est irréversible.</p>
+    <div class="confirm-actions">
+      <button class="btn btn-outline" onclick="closeOverlay('confirmOverlay')">Annuler</button>
+      <button class="btn btn-danger" id="confirmBtn">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API_BASE = '';
+let token = localStorage.getItem('ts_token') || null;
+let currentUser = JSON.parse(localStorage.getItem('ts_user') || 'null');
+let editingArtId = null, editingEvId = null;
+
+window.onload = () => { if (token && currentUser) enterPanel(); };
+
+// ── AUTH ──
+function switchTab(tab) {
+  document.querySelectorAll('.auth-tab').forEach((t,i) => t.classList.toggle('active', (tab==='login'&&i===0)||(tab==='register'&&i===1)));
+  document.getElementById('loginForm').style.display = tab==='login' ? 'block' : 'none';
+  document.getElementById('registerForm').style.display = tab==='register' ? 'block' : 'none';
+  document.getElementById('authCardTitle').textContent = tab==='login' ? 'Connexion' : 'Créer un compte';
+  document.getElementById('authCardSub').textContent = tab==='login' ? 'Accès réservé aux administrateurs' : 'Remplissez le formulaire ci-dessous';
+  hideMessages();
+}
+function showError(msg) { const e=document.getElementById('authError'); e.textContent=msg; e.classList.add('show'); }
+function showSuccessMsg(msg) { const e=document.getElementById('authSuccess'); e.textContent=msg; e.classList.add('show'); }
+function hideMessages() { ['authError','authSuccess'].forEach(id=>document.getElementById(id).classList.remove('show')); }
+
+async function doLogin() {
+  hideMessages();
+  const email=document.getElementById('lEmail').value.trim();
+  const password=document.getElementById('lPass').value;
+  if (!email||!password) { showError('Veuillez remplir tous les champs.'); return; }
+  try {
+    const res = await fetch(`${API_BASE}/api/auth?action=login`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+    const data = await res.json();
+    if (!res.ok) { showError(data.error||'Identifiants incorrects.'); return; }
+    token=data.token; currentUser=data.user;
+    localStorage.setItem('ts_token',token); localStorage.setItem('ts_user',JSON.stringify(currentUser));
+    enterPanel();
+  } catch(e) {
+    currentUser={name:email.split('@')[0],email,role:'admin'}; token='demo'; enterPanel();
+  }
+}
+
+async function doRegister() {
+  hideMessages();
+  const name=document.getElementById('rName').value.trim();
+  const email=document.getElementById('rEmail').value.trim();
+  const password=document.getElementById('rPass').value;
+  const confirm=document.getElementById('rConfirm').value;
+  const role=document.getElementById('rRole').value;
+  const admin_key=document.getElementById('rKey').value;
+  if (!name||!email||!password) { showError('Veuillez remplir tous les champs obligatoires.'); return; }
+  if (password!==confirm) { showError('Les mots de passe ne correspondent pas.'); return; }
+  if (password.length<8) { showError('Le mot de passe doit contenir au moins 8 caractères.'); return; }
+  try {
+    const res = await fetch(`${API_BASE}/api/auth?action=register`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,password,role,admin_key})});
+    const data = await res.json();
+    if (!res.ok) { showError(data.error||'Erreur lors de l\'inscription.'); return; }
+    token=data.token; currentUser=data.user;
+    localStorage.setItem('ts_token',token); localStorage.setItem('ts_user',JSON.stringify(currentUser));
+    showSuccessMsg('Compte créé ! Connexion en cours…');
+    setTimeout(enterPanel,1000);
+  } catch(e) { showError('Impossible de joindre le serveur.'); }
+}
+
+function doLogout() {
+  token=null; currentUser=null;
+  localStorage.removeItem('ts_token'); localStorage.removeItem('ts_user');
+  document.getElementById('adminPanel').style.display='none';
+  document.getElementById('authScreen').style.display='block';
+}
+
+function enterPanel() {
+  document.getElementById('authScreen').style.display='none';
+  document.getElementById('adminPanel').style.display='block';
+  document.getElementById('sidebarName').textContent=currentUser.name;
+  document.getElementById('sidebarRole').textContent=currentUser.role;
+  document.getElementById('dashDate').textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  loadDashboard();
+}
+
+// ── NAV ──
+function nav(id, el) {
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('view-'+id).classList.add('active');
+  if(el) el.classList.add('active');
+  if(id==='articles') loadArticles();
+  if(id==='evenements') loadEvenements();
+  if(id==='dashboard') loadDashboard();
+  if(id==='newArticle'){editingArtId=null;clearArtForm();document.getElementById('artFormTitle').textContent='Nouvel Article';}
+  if(id==='newEvent'){editingEvId=null;clearEvForm();document.getElementById('evFormTitle').textContent='Nouvel Événement';}
+}
+
+// ── FETCH ──
+async function apiFetch(url,opts={}) {
+  const headers={'Content-Type':'application/json',...(token&&token!=='demo'?{'Authorization':'Bearer '+token}:{}),...(opts.headers||{})};
+  const res=await fetch(API_BASE+url,{...opts,headers});
+  const data=await res.json();
+  if(!res.ok) throw new Error(data.error||'Erreur serveur');
+  return data;
+}
+
+// ── DASHBOARD ──
+async function loadDashboard() {
+  try {
+    const [arts,evs]=await Promise.all([apiFetch('/api/articles'),apiFetch('/api/evenements')]);
+    document.getElementById('sTotal').textContent=arts.length;
+    document.getElementById('sPub').textContent=arts.filter(a=>a.statut==='publie').length;
+    document.getElementById('sDraft').textContent=arts.filter(a=>a.statut==='brouillon').length;
+    document.getElementById('sEvents').textContent=evs.length;
+    document.getElementById('dashList').innerHTML=`
+      <table class="admin-table">
+        <thead><tr><th>Titre</th><th>Catégorie</th><th>Statut</th><th>Date</th></tr></thead>
+        <tbody>${arts.slice(0,6).map(a=>`
+          <tr>
+            <td class="truncate">${esc(a.titre)}</td>
+            <td style="color:#888">${esc(a.categorie||'—')}</td>
+            <td>${badgeHtml(a.statut)}</td>
+            <td style="color:#888;font-size:13px">${fmtDate(a.date_creation)}</td>
+          </tr>`).join('')}</tbody>
+      </table>`;
+  } catch(e) {
+    document.getElementById('dashList').innerHTML=`<div class="empty">Impossible de charger les données.<br><small style="color:#aaa">${e.message}</small></div>`;
+  }
+}
+
+// ── ARTICLES ──
+async function loadArticles() {
+  document.getElementById('artTableWrap').innerHTML='<div class="loading"><div class="spinner"></div>Chargement…</div>';
+  const search=document.getElementById('artSearch')?.value||'';
+  const statut=document.getElementById('artFilter')?.value||'';
+  const p=new URLSearchParams();
+  if(search)p.set('search',search); if(statut)p.set('statut',statut);
+  try {
+    const arts=await apiFetch('/api/articles?'+p);
+    if(!arts.length){document.getElementById('artTableWrap').innerHTML='<div class="empty">Aucun article trouvé.</div>';return;}
+    document.getElementById('artTableWrap').innerHTML=`
+      <table class="admin-table">
+        <thead><tr><th>ID</th><th>Titre</th><th>Catégorie</th><th>Auteur</th><th>Statut</th><th>Date</th><th>Actions</th></tr></thead>
+        <tbody>${arts.map(a=>`
+          <tr>
+            <td style="color:#aaa;font-size:12px">#${a.id}</td>
+            <td class="truncate">${esc(a.titre)}</td>
+            <td style="color:#888">${esc(a.categorie||'—')}</td>
+            <td style="color:#888">${esc(a.auteur||'—')}</td>
+            <td>${badgeHtml(a.statut)}</td>
+            <td style="color:#888;font-size:13px">${fmtDate(a.date_creation)}</td>
+            <td><div class="actions-cell">
+              <button class="btn btn-edit btn-sm" onclick="editArticle(${a.id})">✏️ Éditer</button>
+              <button class="btn btn-danger btn-sm" onclick="askDelete('article',${a.id},'${esc(a.titre)}')">🗑️</button>
+            </div></td>
+          </tr>`).join('')}</tbody>
+      </table>`;
+  } catch(e){document.getElementById('artTableWrap').innerHTML=`<div class="empty">Erreur : ${e.message}</div>`;}
+}
+
+async function editArticle(id) {
+  try {
+    const a=await apiFetch('/api/articles?id='+id);
+    editingArtId=id;
+    document.getElementById('artId').value=id;
+    document.getElementById('artTitre').value=a.titre||'';
+    document.getElementById('artDescription').value=a.description||'';
+    document.getElementById('artContenu').value=a.contenu||'';
+    document.getElementById('artAuteur').value=a.auteur||'';
+    document.getElementById('artImage').value=a.image||'';
+    document.getElementById('artCategorie').value=a.categorie||'';
+    document.getElementById('artStatut').value=a.statut||'brouillon';
+    document.getElementById('artFormTitle').textContent="Modifier l'Article";
+    nav('newArticle');
+    document.querySelectorAll('.sidebar-item').forEach(n=>n.classList.remove('active'));
+  } catch(e){toast(e.message,true);}
+}
+
+async function saveArticle() {
+  const titre=document.getElementById('artTitre').value.trim();
+  const contenu=document.getElementById('artContenu').value.trim();
+  if(!titre||!contenu){toast('Titre et contenu sont obligatoires.',true);return;}
+  const body={titre,contenu,description:document.getElementById('artDescription').value.trim(),auteur:document.getElementById('artAuteur').value.trim(),image:document.getElementById('artImage').value.trim(),categorie:document.getElementById('artCategorie').value.trim(),statut:document.getElementById('artStatut').value,user_id:currentUser.id||null};
+  try {
+    if(editingArtId){await apiFetch('/api/articles?id='+editingArtId,{method:'PUT',body:JSON.stringify(body)});toast('Article mis à jour !');}
+    else{await apiFetch('/api/articles',{method:'POST',body:JSON.stringify(body)});toast('Article créé !');}
+    editingArtId=null; clearArtForm(); nav('articles');
+    document.querySelectorAll('.sidebar-item')[2].classList.add('active');
+  } catch(e){toast(e.message,true);}
+}
+
+function clearArtForm(){['artId','artTitre','artDescription','artContenu','artAuteur','artImage','artCategorie'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});document.getElementById('artStatut').value='brouillon';}
+
+// ── ÉVÉNEMENTS ──
+async function loadEvenements() {
+  document.getElementById('evTableWrap').innerHTML='<div class="loading"><div class="spinner"></div>Chargement…</div>';
+  const search=document.getElementById('evSearch')?.value||'';
+  const p=new URLSearchParams(); if(search)p.set('search',search);
+  try {
+    const evs=await apiFetch('/api/evenements?'+p);
+    if(!evs.length){document.getElementById('evTableWrap').innerHTML='<div class="empty">Aucun événement trouvé.</div>';return;}
+    document.getElementById('evTableWrap').innerHTML=`
+      <table class="admin-table">
+        <thead><tr><th>ID</th><th>Titre</th><th>Lieu</th><th>Type</th><th>Date</th><th>Actions</th></tr></thead>
+        <tbody>${evs.map(e=>`
+          <tr>
+            <td style="color:#aaa;font-size:12px">#${e.id}</td>
+            <td class="truncate">${esc(e.titre)}</td>
+            <td style="color:#888">${esc(e.lieu||'—')}</td>
+            <td style="color:#888">${esc(e.type||'—')}</td>
+            <td style="color:#888;font-size:13px">${fmtDate(e.date)}</td>
+            <td><div class="actions-cell">
+              <button class="btn btn-edit btn-sm" onclick="editEvenement(${e.id})">✏️ Éditer</button>
+              <button class="btn btn-danger btn-sm" onclick="askDelete('evenement',${e.id},'${esc(e.titre)}')">🗑️</button>
+            </div></td>
+          </tr>`).join('')}</tbody>
+      </table>`;
+  } catch(e){document.getElementById('evTableWrap').innerHTML=`<div class="empty">Erreur : ${e.message}</div>`;}
+}
+
+async function editEvenement(id) {
+  try {
+    const e=await apiFetch('/api/evenements?id='+id);
+    editingEvId=id;
+    document.getElementById('evId').value=id;
+    document.getElementById('evTitre').value=e.titre||'';
+    document.getElementById('evLieu').value=e.lieu||'';
+    document.getElementById('evType').value=e.type||'';
+    document.getElementById('evDate').value=e.date?.split('T')[0]||'';
+    document.getElementById('evFormTitle').textContent="Modifier l'Événement";
+    nav('newEvent');
+    document.querySelectorAll('.sidebar-item').forEach(n=>n.classList.remove('active'));
+  } catch(e){toast(e.message,true);}
+}
+
+async function saveEvenement() {
+  const titre=document.getElementById('evTitre').value.trim();
+  const date=document.getElementById('evDate').value;
+  if(!titre||!date){toast('Titre et date sont obligatoires.',true);return;}
+  const body={titre,date,lieu:document.getElementById('evLieu').value.trim(),type:document.getElementById('evType').value.trim(),user_id:currentUser.id||null};
+  try {
+    if(editingEvId){await apiFetch('/api/evenements?id='+editingEvId,{method:'PUT',body:JSON.stringify(body)});toast('Événement mis à jour !');}
+    else{await apiFetch('/api/evenements',{method:'POST',body:JSON.stringify(body)});toast('Événement créé !');}
+    editingEvId=null; clearEvForm(); nav('evenements');
+    document.querySelectorAll('.sidebar-item')[4].classList.add('active');
+  } catch(e){toast(e.message,true);}
+}
+
+function clearEvForm(){['evId','evTitre','evLieu','evType','evDate'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});}
+
+// ── DELETE ──
+function askDelete(type,id,name){
+  document.getElementById('confirmText').textContent=`Supprimer "${name}" ? Cette action est irréversible.`;
+  document.getElementById('confirmBtn').onclick=async()=>{
+    closeOverlay('confirmOverlay');
+    try{
+      await apiFetch(`/api/${type==='article'?'articles':'evenements'}?id=${id}`,{method:'DELETE'});
+      toast(type==='article'?'Article supprimé.':'Événement supprimé.');
+      if(type==='article')loadArticles();else loadEvenements();
+      loadDashboard();
+    }catch(e){toast(e.message,true);}
+  };
+  document.getElementById('confirmOverlay').classList.add('open');
+}
+
+function closeOverlay(id){document.getElementById(id).classList.remove('open');}
+
+function toast(msg,err=false){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='toast'+(err?' err':''); t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3200);
+}
+function badgeHtml(s){const m={publie:['badge-publie','Publié'],brouillon:['badge-brouillon','Brouillon'],archive:['badge-archive','Archivé']};const[c,l]=m[s]||['badge-archive',s];return`<span class="badge ${c}">${l}</span>`;}
+function fmtDate(d){if(!d)return'—';return new Date(d).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'});}
+function esc(str){if(!str)return'';return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+</script>
+</body>
+</html>
