@@ -27,10 +27,11 @@ Mettre du html dans la boucle pour pouvoir faire des paragrahes
 - Page News (terminée, rajouter des artciles d'actualités)
 - Language (terminée)
 - Bus (terminée)
+- Metro (terminée)
 
 Il me reste a faire les pages : 
 
-- Metro
+
 - Contact
 
-Acceder au paneau admin : http://localhost:3000/admin/
+Acceder au paneau admin : monsite.com/admin/login.php
