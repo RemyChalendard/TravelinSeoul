@@ -7,14 +7,14 @@ if ($env === false) {
     die("Erreur : impossible de lire le fichier .env");
 }
 
-$host = $env['DB_HOST'];
+$host = $env['DB_HOST'];   
 $dbname = $env['DB_NAME'];
-$user = $env['DB_USER'];
+$user = $env['DB_USER'];      
 $password = $env['DB_PASSWORD'];
 
 try {
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8",
+        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
         $user,
         $password,
         [
@@ -26,3 +26,4 @@ try {
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
 }
+?>

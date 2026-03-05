@@ -1,24 +1,12 @@
 <?php
-require_once("../admin/db.php");  
-include "../admin/header.php";      
-?>
-
-
-<?php
 session_start();
-require 'db.php';
+require_once __DIR__ . "/db.php";
 
 if(!isset($_SESSION['admin'])){
     header("Location: login.php");
+    exit;
 }
 
-$titre = $_POST['titre'];
-$contenu = $_POST['contenu'];
-
-$sql = $pdo->prepare("INSERT INTO articles (titre, contenu) VALUES (?,?)");
-$sql->execute([$titre,$contenu]);
-
 header("Location: dashboard.php");
+exit;
 ?>
-
-<?php include "footer.php"; ?>

@@ -18,6 +18,12 @@ if(!isset($_SESSION['admin'])){
 <meta charset="UTF-8">
 <title>Dashboard Admin</title>
 <link rel="stylesheet" href="/travelInSeoul/styles/admin.css">
+<style>
+textarea[name="contenu"] {
+    height: 300px;
+    resize: vertical;
+}
+</style>
 </head>
 
 <body>
@@ -48,6 +54,13 @@ if(!isset($_SESSION['admin'])){
 <label>Photo</label>
 <input type="file" name="photo" accept="image/*" required>
 
+<label>État de l'article</label>
+<select name="etat" required>
+    <option value="brouillon">Brouillon</option>
+    <option value="publiée">Publiée</option>
+    <option value="archivée">Archivée</option>
+</select>
+
 <textarea name="contenu" placeholder="Contenu"></textarea>
 
 <button type="submit">Publier</button>
@@ -68,9 +81,11 @@ foreach($articles as $article){
 
 <h4><?= htmlspecialchars($article['titre']) ?></h4>
 
-<p><?= htmlspecialchars($article['categorie']) ?></p>
+<p><?= htmlspecialchars($article['categorie'] ?? 'Non défini') ?></p>
 
-<p><?= substr($article['contenu'],0,150) ?>...</p>
+<p><strong>État :</strong> <?= htmlspecialchars($article['etat'] ?? 'brouillon') ?></p>
+
+<p><?= substr($article['contenu'] ?? '', 0, 150) ?>...</p>
 
 <a href="delete_article.php?id=<?= $article['id'] ?>">Supprimer</a>
 
