@@ -15,9 +15,7 @@
 
 <body>
   <header>
-
     <img src="images/logoseoul.png" alt="Logo Seoul" width="200" height="200">
-
     <h1>TRAVEL IN SEOUL</h1>
     <nav class="navbar">
       <div class="nav-container">
@@ -41,8 +39,8 @@
       </div>
     </nav>
   </header>
-  <main>
 
+  <main>
     <script>
       const burgerMenu = document.getElementById('burgerMenu');
       const navLinks = document.getElementById('navLinks');

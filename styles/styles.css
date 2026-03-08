@@ -116,23 +116,31 @@ iframe {
 }
 
 /*Header*/
+
 header {
   background-color: #2A6EBB;
   text-align: center;
   color: white;
 }
 
-/*Header logo*/
-header::before {
-  content: "";
-  display: block;
-  width: 200px;
-  height: 200px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0 auto 10px;
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
+.header-content img {
+  width: 120px;
+  height: 120px;
+}
+
+.header-content h1 {
+  margin: 0;
+}
+
+
 
 footer {
   padding:23px;
