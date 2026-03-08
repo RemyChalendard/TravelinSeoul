@@ -6,7 +6,7 @@
 
 /* Styles de la navbar */
 .navbar {
-  background-color: #080d52; 
+  background-color: #080d52;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -31,13 +31,13 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #fff; 
+  color: #fff;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #007bff; 
+  color: #007bff;
 }
 
 .burger-menu {
@@ -53,7 +53,7 @@
 .burger-menu span {
   width: 25px;
   height: 3px;
-  background-color: #fff; 
+  background-color: #fff;
   transition: all 0.3s ease;
   border-radius: 2px;
 }
@@ -71,7 +71,7 @@
     width: 100%;
     flex-direction: column;
     gap: 0;
-    background-color: #080d52; 
+    background-color: #080d52;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     max-height: 0;
     overflow: hidden;
@@ -111,7 +111,7 @@
 
 /* Iframe */
 iframe {
-  display:block;
+  display: block;
   border: none;
 }
 
@@ -121,6 +121,8 @@ header {
   background-color: #2A6EBB;
   text-align: center;
   color: white;
+  padding-top: 30px;
+
 }
 
 .header-content {
@@ -129,6 +131,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .header-content img {
@@ -136,14 +139,12 @@ header {
   height: 120px;
 }
 
-.header-content h1 {
-  margin: 0;
-}
+
 
 
 
 footer {
-  padding:23px;
+  padding: 23px;
 }
 
 .map-container {
@@ -203,8 +204,8 @@ h4 {
 }
 
 h5 {
-    font-size: 18px;
-    padding:8px;
+  font-size: 18px;
+  padding: 8px;
 }
 
 p {
@@ -216,7 +217,7 @@ p {
 }
 
 li {
-margin-bottom: 18px;
+  margin-bottom: 18px;
 }
 
 .mw1200 {
@@ -312,7 +313,8 @@ footer {
 #evenements h4 {
   font-size: 20px;
   font-weight: bold;
-  color:white;}
+  color: white;
+}
 
 #evenements {
   display: flex;
@@ -327,7 +329,7 @@ footer {
   margin-bottom: 20px;
 }
 
-#evenements p  {
+#evenements p {
   text-align: center;
 }
 
@@ -361,12 +363,12 @@ td:hover {
 /* Boutton */
 
 #monBouton {
-color:white;
-background: #2A6EBB;
-font-size: 21px;
-border-radius: 3px;
-cursor: pointer;
-padding:6px;
+  color: white;
+  background: #2A6EBB;
+  font-size: 21px;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 6px;
 
 }
 
@@ -392,7 +394,17 @@ padding:6px;
     height: auto;
     margin: 0 auto;
     display: block;
+    padding-top: 60px;
+    margin-bottom: -15px;
   }
+
+  .f-1-1-300 {
+    flex: 1 1 100px;
+    margin-left: 15px;
+    margin-bottom: 32px;
+  }
+
+
 
   /* Flexbox */
   .d-flex {
@@ -494,5 +506,5 @@ padding:6px;
 
 .art-img {
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
