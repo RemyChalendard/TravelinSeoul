@@ -6,6 +6,7 @@ if(isset($_SESSION['admin'])){
     header("Location: dashboard.php");
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,6 @@ if(isset($_SESSION['admin'])){
 <div class="login-container">
 <h2>Connexion Administrateur</h2>
 <form action="login_traitement.php" method="POST">
-    <!-- <form action="hash.php" method="POST"> -->
 
     <label>Identifiant</label>
     <input type="text" name="username" required>
