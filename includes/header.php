@@ -8,20 +8,25 @@
     content="Découvrez les meilleures activités à Séoul : visites culturelles, balades, marchés, spectacles et expériences uniques pour profiter pleinement de la capitale coréenne.">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
+
+
   <title>Travel In Seoul</title>
 </head>
 
 <body>
   <header>
+
+    <img src="images/logoseoul.png" alt="Logo Seoul" width="200" height="200">
+
     <h1>TRAVEL IN SEOUL</h1>
-     <nav class="navbar">
+    <nav class="navbar">
       <div class="nav-container">
         <button class="burger-menu" id="burgerMenu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        
+
         <div class="nav-links" id="navLinks">
           <a href="index.php">HOME</a>
           <a href="news.php">NEWS</a>
@@ -38,19 +43,19 @@
   </header>
   <main>
 
-  <script>
-    const burgerMenu = document.getElementById('burgerMenu');
-    const navLinks = document.getElementById('navLinks');
+    <script>
+      const burgerMenu = document.getElementById('burgerMenu');
+      const navLinks = document.getElementById('navLinks');
 
-    burgerMenu.addEventListener('click', () => {
-      burgerMenu.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerMenu.classList.remove('active');
-        navLinks.classList.remove('active');
+      burgerMenu.addEventListener('click', () => {
+        burgerMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
       });
-    });
-  </script>
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          burgerMenu.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    </script>

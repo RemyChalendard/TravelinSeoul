@@ -52,7 +52,7 @@ textarea[name="contenu"] {
 </select>
 
 <label>Photo</label>
-<input type="file" name="photo" accept="image/*" required>
+<input type="file" name="images" accept="images/*" required>
 
 <label>État de l'article</label>
 <select name="etat" required>
@@ -81,9 +81,39 @@ foreach($articles as $article){
 
 <h4><?= htmlspecialchars($article['titre']) ?></h4>
 
-<p><?= htmlspecialchars($article['categorie'] ?? 'Non défini') ?></p>
+<p><strong>Catégorie :</strong>
+<form action="update_categorie.php" method="POST" style="display:inline;">
+    <select name="categorie" onchange="this.form.submit()">
+        <?php
+        $categories = $pdo->query("SELECT DISTINCT categorie FROM articles ORDER BY categorie");
+        foreach($categories as $cat){
+            $selected = ($article['categorie'] === $cat['categorie']) ? 'selected' : '';
+            echo '<option value="' . htmlspecialchars($cat['categorie']) . '" ' . $selected . '>' . htmlspecialchars($cat['categorie']) . '</option>';
+        }
+        ?>
+    </select>
+    <input type="hidden" name="id" value="<?= $article['id'] ?>">
+</form>
+</p>
 
-<p><strong>État :</strong> <?= htmlspecialchars($article['etat'] ?? 'brouillon') ?></p>
+<p><strong>État :</strong>
+<form action="update_etat.php" method="POST" style="display:inline;">
+    <select name="etat" onchange="this.form.submit()">
+        <option value="brouillon" <?= ($article['etat'] === 'brouillon') ? 'selected' : '' ?>>Brouillon</option>
+        <option value="publiée" <?= ($article['etat'] === 'publiée') ? 'selected' : '' ?>>Publiée</option>
+        <option value="archivée" <?= ($article['etat'] === 'archivée') ? 'selected' : '' ?>>Archivée</option>
+    </select>
+    <input type="hidden" name="id" value="<?= $article['id'] ?>">
+</form>
+</p>
+
+<p><strong>Photo :</strong>
+<form action="update_photo.php" method="POST" enctype="multipart/form-data" style="display:inline;">
+    <input type="file" name="photo" accept="image/*" required>
+    <input type="hidden" name="id" value="<?= $article['id'] ?>">
+    <button type="submit">Mettre à jour</button>
+</form>
+</p>
 
 <p><?= substr($article['contenu'] ?? '', 0, 150) ?>...</p>
 
