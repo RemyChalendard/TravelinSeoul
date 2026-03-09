@@ -1,7 +1,8 @@
 <?php
 include 'includes/header.php';
 require 'config.php';
-require_once 'connexion.php'; 
+
+$pdo = Database::getInstance()->getPDO();
 ?>
 
 <h1>Les differentes lignes de Bus de Seoul</h1>

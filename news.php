@@ -1,15 +1,17 @@
 <?php
 include 'includes/header.php';
 require 'config.php';
+$pdo = Database::getInstance()->getPDO();
+
 ?>
 
 <h1><strong>Actualitées</strong></h1>
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'News' ORDER BY id DESC");
-  $requete->execute();
-  $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
+  $stmt = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'News' ORDER BY id DESC");
+  $stmt->execute();
+  $evenements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   if ($evenements) {
     foreach ($evenements as $event) {

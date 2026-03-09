@@ -1,16 +1,17 @@
 <?php
 include 'includes/header.php';
 require 'config.php';
-require_once 'connexion.php'; 
+$pdo = Database::getInstance()->getPDO();
+
 ?>
 
 <h1>Les differentes lignes de métro de Seoul</h1>
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Metro' AND statut = 'publie' ORDER BY date_creation ASC");
-  $requete->execute();
-  $articles = $requete->fetchAll(PDO::FETCH_ASSOC);
+  $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Metro' AND statut = 'publie' ORDER BY date_creation ASC");
+  $stmt->execute();
+  $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   if ($articles) {
     foreach ($articles as $article) {

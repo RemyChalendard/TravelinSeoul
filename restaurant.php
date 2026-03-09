@@ -1,16 +1,17 @@
 <?php
 include 'includes/header.php';
 require 'config.php';
-require_once 'connexion.php'; 
+$pdo = Database::getInstance()->getPDO();
+
 ?>
 
 <h1><strong>La restauration</strong></h1>
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'Restaurant' AND statut = 'publie' ORDER BY date_creation ASC");
-  $requete->execute();
-  $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
+  $stmt = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'Restaurant' AND statut = 'publie' ORDER BY date_creation ASC");
+  $stmt->execute();
+  $evenements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   if ($evenements) {
     foreach ($evenements as $event) {

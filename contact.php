@@ -1,7 +1,6 @@
 <?php
 include 'includes/header.php';
 require 'config.php';
-require_once 'connexion.php'; 
 ?>
 
 <style>

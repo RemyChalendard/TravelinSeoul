@@ -1,7 +1,8 @@
 <?php
 include 'includes/header.php';
 require 'config.php';
-require_once 'connexion.php'; 
+
+$pdo = Database::getInstance()->getPDO();
 ?>
 
 <h1> <strong> Seoul - La ville de l'âme</strong></h1>
@@ -51,5 +52,5 @@ try {
 ?>
 
 <?php
-include 'includes/footer.php'
+include 'includes/footer.php';
 ?>
