@@ -109,9 +109,10 @@
           navLinks.classList.remove('active');
         });
       });
-      
+
 
       // Seoul Widget - Heure et Météo
+      // Recupere l'heure de Séoul et la météo actuelle via une API
       function updateTime() {
         const seoulTime = new Date().toLocaleString('fr-FR', {
           timeZone: 'Asia/Seoul',
@@ -122,6 +123,8 @@
         document.getElementById('time').textContent = '🕐 Séoul: ' + seoulTime;
       }
 
+      // Requete API pour la météo de Séoul
+      // Recupere les données à l'exterieur du code puis une fois récuperer le reste du code continue
       async function getWeather() {
         try {
           const response = await fetch(
