@@ -132,7 +132,7 @@
           );
           const data = await response.json();
           const temp = data.current.temperature_2m;
-          document.getElementById('weather').textContent = `Météo: ${temp}°C`;
+          document.getElementById('weather').textContent = `Météo: ${temp}°C`; // Affiche la météo avec la température
         } catch (error) {
           console.error('Erreur météo:', error);
         }
