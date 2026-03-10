@@ -1,10 +1,6 @@
 <?php
 require_once("../admin/db.php");  
-include "../admin/header.php";      
-?>
-
-<?php
-require 'db.php';
+session_start();
 
 if(!isset($_SESSION['admin'])){
     header("Location: login.php");
@@ -18,7 +14,12 @@ if(!isset($_SESSION['admin'])){
 <meta charset="UTF-8">
 <title>Dashboard Admin</title>
 <link rel="stylesheet" href="/travelInSeoul/styles/admin.css">
-
+<style>
+textarea[name="contenu"] {
+    height: 300px;
+    resize: vertical;
+}
+</style>
 </head>
 
 <body>
@@ -47,7 +48,7 @@ if(!isset($_SESSION['admin'])){
 </select>
 
 <label>Photo</label>
-<input type="file" name="images" accept="images/*" required>
+<input type="file" name="images" accept="image/*" required>
 
 <label>État de l'article</label>
 <select name="etat" required>
@@ -55,6 +56,8 @@ if(!isset($_SESSION['admin'])){
     <option value="publiée">Publiée</option>
     <option value="archivée">Archivée</option>
 </select>
+
+<textarea name="contenu" placeholder="Contenu"></textarea>
 
 <button type="submit">Publier</button>
 
@@ -104,15 +107,18 @@ foreach($articles as $article){
 <form action="update_photo.php" method="POST" enctype="multipart/form-data" style="display:inline;">
     <input type="file" name="photo" accept="image/*" required>
     <input type="hidden" name="id" value="<?= $article['id'] ?>">
+    <button type="submit">Mettre à jour</button>
 </form>
 </p>
 
-<p><strong>État :</strong></p>
-<form action="update_etat.php" method="POST" style="margin-bottom: 15px;">
+<p><strong>Contenu :</strong></p>
+<form action="update_contenu.php" method="POST" style="margin-bottom: 15px;">
+    <textarea name="contenu" style="width:100%; height:150px;"><?= htmlspecialchars($article['contenu']) ?></textarea>
     <input type="hidden" name="id" value="<?= $article['id'] ?>">
+    <button type="submit">Mettre à jour le contenu</button>
 </form>
 
-<p><?= substr($article['etat'] ?? '', 0, 150) ?>...</p>
+<p><?= substr($article['contenu'] ?? '', 0, 150) ?>...</p>
 
 <a href="delete_article.php?id=<?= $article['id'] ?>">Supprimer</a>
 
@@ -124,5 +130,3 @@ foreach($articles as $article){
 
 </body>
 </html>
-
-<?php include "footer.php"; ?>
