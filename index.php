@@ -1,4 +1,5 @@
 <?php
+// var_dump($_ENV);
 include 'includes/header.php';
 require 'config.php';
 

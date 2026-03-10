@@ -1,16 +1,14 @@
 <?php
-$envPath = "/var/www/html/travelInSeoul/.env";
 
-$env = parse_ini_file($envPath);
 
-if ($env === false) {
+if (!isset($_ENV)) {
     die("Erreur : impossible de lire le fichier .env");
 }
 
-$host = $env['DB_HOST'];   
-$dbname = $env['DB_NAME'];
-$user = $env['DB_USER'];      
-$password = $env['DB_PASSWORD'];
+$host =$_ENV;   
+$dbname = $_ENV['DB_NAME'];
+$user = $_ENV['DB_USER'];      
+$password = $_ENV['DB_PASSWORD'];
 
 try {
     $pdo = new PDO(
