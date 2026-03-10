@@ -11,7 +11,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <?php
 try {
-  $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Quartiers' AND statut = 'publie' ORDER BY date_creation ASC");
+  $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Quartiers' AND etat = 'publiée' ORDER BY date_creation ASC");
   $stmt->execute();
  // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
   $evenements = $stmt->fetchAll(PDO::FETCH_ASSOC);

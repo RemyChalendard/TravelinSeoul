@@ -9,7 +9,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <?php
 try {
-  $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Metro' AND statut = 'publie' ORDER BY date_creation ASC");
+  $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Metro' AND etat = 'publiée' ORDER BY date_creation ASC");
   $stmt->execute();
   $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

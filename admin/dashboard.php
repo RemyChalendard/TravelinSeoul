@@ -18,12 +18,7 @@ if(!isset($_SESSION['admin'])){
 <meta charset="UTF-8">
 <title>Dashboard Admin</title>
 <link rel="stylesheet" href="/travelInSeoul/styles/admin.css">
-<style>
-textarea[name="contenu"] {
-    height: 300px;
-    resize: vertical;
-}
-</style>
+
 </head>
 
 <body>
@@ -60,8 +55,6 @@ textarea[name="contenu"] {
     <option value="publiée">Publiée</option>
     <option value="archivée">Archivée</option>
 </select>
-
-<textarea name="contenu" placeholder="Contenu"></textarea>
 
 <button type="submit">Publier</button>
 
@@ -111,11 +104,15 @@ foreach($articles as $article){
 <form action="update_photo.php" method="POST" enctype="multipart/form-data" style="display:inline;">
     <input type="file" name="photo" accept="image/*" required>
     <input type="hidden" name="id" value="<?= $article['id'] ?>">
-    <button type="submit">Mettre à jour</button>
 </form>
 </p>
 
-<p><?= substr($article['contenu'] ?? '', 0, 150) ?>...</p>
+<p><strong>État :</strong></p>
+<form action="update_etat.php" method="POST" style="margin-bottom: 15px;">
+    <input type="hidden" name="id" value="<?= $article['id'] ?>">
+</form>
+
+<p><?= substr($article['etat'] ?? '', 0, 150) ?>...</p>
 
 <a href="delete_article.php?id=<?= $article['id'] ?>">Supprimer</a>
 

@@ -9,7 +9,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Accueil' AND statut = 'publie' ORDER BY date_creation ASC");
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Accueil' AND etat = 'publiée' ORDER BY date_creation ASC");
   $requete->execute();
   // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
   $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);

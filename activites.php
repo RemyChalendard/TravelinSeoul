@@ -46,7 +46,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <?php
 try {
-  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Evenements' AND statut = 'publie' ORDER BY date_creation ASC");
+  $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Evenements' AND etat = 'publiée' ORDER BY date_creation ASC");
   $requete->execute();
   $articles = $requete->fetchAll(PDO::FETCH_ASSOC);
 
