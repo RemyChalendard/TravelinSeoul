@@ -4,6 +4,49 @@
   box-sizing: border-box;
 }
 
+/* Seoul Widget */
+#seoul-info {
+  background: linear-gradient(135deg, #2A6EBB 0%, #1a416e 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+#seoul-info #time {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#seoul-info #weather {
+  font-size: 16px;
+  opacity: 0.95;
+}
+
+/* Responsive Mobile */
+@media (max-width: 780px) {
+  #seoul-info {
+    padding: 12px 15px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  #seoul-info #time {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  #seoul-info #weather {
+    font-size: 14px;
+  }
+}
+
 /* Styles de la navbar */
 .navbar {
   background-color: #080d52;
