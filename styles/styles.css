@@ -30,7 +30,7 @@
   opacity: 0.95;
 }
 
-/* Responsive Mobile */
+/* Responsive Mobile Widget */
 @media (max-width: 780px) {
   #seoul-info {
     padding: 12px 15px;

@@ -60,7 +60,7 @@
 
 <body>
   <header>
-    <img src="images/logoseoul.png" alt="Logo Seoul" width="200" height="200">
+    <img src="images/logoseoul.png" alt="Logo Seoul" width="" height="">
     <h1>TRAVEL IN SEOUL</h1>
 
     <!-- Widget Séoul -->
@@ -120,7 +120,7 @@
           minute: '2-digit',
           second: '2-digit'
         });
-        document.getElementById('time').textContent = '🕐 Séoul: ' + seoulTime;
+        document.getElementById('time').textContent = 'Séoul: ' + seoulTime;
       }
 
       // Requete API pour la météo de Séoul
@@ -132,7 +132,7 @@
           );
           const data = await response.json();
           const temp = data.current.temperature_2m;
-          document.getElementById('weather').textContent = `🌡️ Météo: ${temp}°C`;
+          document.getElementById('weather').textContent = `Météo: ${temp}°C`;
         } catch (error) {
           console.error('Erreur météo:', error);
         }
