@@ -20,13 +20,13 @@ $categorie_filter = $_GET['categorie'] ?? '';
     <link rel="stylesheet" href="/travelInSeoul/styles/admin.css">
     <link rel="stylesheet" href="/travelInSeoul/styles/dashboard.css">
     <style>
-      
+
     </style>
 </head>
 
 <body>
 
-    <!-- SIDEBAR -->
+    <!-- Barre Latérale -->
     <aside class="sidebar">
         <h2>Dashboard</h2>
 
@@ -47,11 +47,11 @@ $categorie_filter = $_GET['categorie'] ?? '';
             }
             ?>
 
-            <li style="margin-top: 20px;"><a href="?section=contact" class="<?= $section === 'contact' ? 'active' : '' ?>">💬 Messages de contact</a></li>
+            <li style="margin-top: 20px;"><a href="?section=contact" class="<?= $section === 'contact' ? 'active' : '' ?>">Messages de contact</a></li>
         </ul>
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- Barre du haut de page -->
     <main class="main-content">
 
         <div class="container">
@@ -63,6 +63,7 @@ $categorie_filter = $_GET['categorie'] ?? '';
 
             <div class="dashboard-wrapper">
 
+                <!-- Contenu Principal -->
                 <div class="left-column">
                     <div class="form-add">
                         <h3>Ajouter un article</h3>
@@ -87,7 +88,7 @@ $categorie_filter = $_GET['categorie'] ?? '';
                             <label>Photo</label>
                             <input type="file" name="images" accept="image/*" required>
 
-                            <label>État de l'article</label>
+                         
                             <select name="etat" required>
                                 <option value="brouillon">Brouillon</option>
                                 <option value="publiée">Publiée</option>
