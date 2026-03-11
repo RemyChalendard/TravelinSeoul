@@ -1,6 +1,7 @@
 <?php
+require_once("admin/db.php");
 include 'includes/header.php';
-require 'config.php';
+require 'config.php';  
 ?>
 
 <style>
@@ -10,19 +11,72 @@ require 'config.php';
 
   .error {
     outline: 2px solid red;
-
   }
 
   .success-checked::before {
     content: "✓ ";
     color: green;
   }
+
+  .message-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+  }
+
+  .message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+  }
 </style>
 
+<?php
+// Traiter le formulaire
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $nom = $_POST['nom'] ?? '';
+    $prenom = $_POST['prenom'] ?? '';
+    $mail = $_POST['mail'] ?? '';
+    $message = $_POST['message'] ?? '';
+    
+    // Validation basique
+    if(!empty($nom) && !empty($prenom) && !empty($mail) && !empty($message)){
+        try {
+            $stmt = $pdo->prepare("INSERT INTO contact_messages (nom, prenom, email, message) VALUES (:nom, :prenom, :email, :message)");
+            $stmt->execute([
+                ':nom' => $nom,
+                ':prenom' => $prenom,
+                ':email' => $mail,
+                ':message' => $message
+            ]);
+            
+            $success_message = "✓ Votre message a été envoyé avec succès !";
+        } catch (PDOException $e) {
+            $error_message = "Erreur lors de l'envoi du message. Veuillez réessayer.";
+        }
+    } else {
+        $error_message = "Veuillez remplir tous les champs.";
+    }
+}
+?>
+
+<?php if(isset($success_message)): ?>
+    <div class="message-success"><?= $success_message ?></div>
+<?php endif; ?>
+
+<?php if(isset($error_message)): ?>
+    <div class="message-error"><?= $error_message ?></div>
+<?php endif; ?>
 
 <div class="d-flex fd-row jc-c g-16">
   <div class="f-1-1-300">
-    <form id="contactForm">
+    <form id="contactForm" method="POST" action="">
       <div class="form">
         <div>
           <label for="nom">Nom</label>
@@ -45,7 +99,6 @@ require 'config.php';
         <textarea id="message" name="message" placeholder="Écrivez votre message " rows="10" required></textarea>
       </div>
 
-
       <button type="submit" class="btn">Envoyer</button>
     </form>
   </div>
@@ -57,6 +110,7 @@ require 'config.php';
   const nom = document.getElementById("nom");
   const prenom = document.getElementById("prenom");
   const mail = document.getElementById("mail");
+  const message = document.getElementById("message");
 
   const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
@@ -90,19 +144,13 @@ require 'config.php';
     }
   });
 
-  form.email.addEventListener("input", (e) => {
-    if (emailRegex.test(form.email.value)) {
-      form.email.classList.remove("error");
-      form.email.classList.add("success");
-      console.log("ok");
-    } else {
-      form.email.classList.remove("success");
-      form.email.classList.add("error");
-      console.log("KO");
-    }
+  // Réinitialiser le formulaire après succès
+  form.addEventListener("submit", function(e) {
+    // Le formulaire sera soumis normalement
+    // PHP traitera l'insertion en base
   });
 </script>
 
 <?php
-include 'includes/footer.php'
+include 'includes/footer.php';
 ?>

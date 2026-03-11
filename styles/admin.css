@@ -1,3 +1,7 @@
+/* ============================================
+   ADMIN DASHBOARD - STYLES
+   ============================================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -27,16 +31,11 @@ body {
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 1.3em;
-  color: white;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
   margin: 0;
 }
 
@@ -49,18 +48,17 @@ body {
   transition: 0.3s;
 }
 
-.sidebar a:hover {
-  background: rgba(255, 255, 255, 0.1);
+.sidebar a:hover,
+.sidebar a.active {
+  background: rgba(255, 255, 255, 0.2);
   border-left-color: white;
 }
 
 .sidebar a.active {
-  background: rgba(255, 255, 255, 0.2);
-  border-left-color: white;
   font-weight: bold;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== MAIN LAYOUT ===== */
 .main-content {
   margin-left: 250px;
   padding: 20px;
@@ -88,7 +86,6 @@ body {
   margin: 0;
   color: #2A6EBB;
   font-size: 2em;
-  text-align: left;
 }
 
 .logout {
@@ -102,7 +99,7 @@ body {
   color: darkred;
 }
 
-/* ===== LAYOUT DEUX COLONNES ===== */
+/* ===== DASHBOARD LAYOUT ===== */
 .dashboard-wrapper {
   display: flex;
   gap: 20px;
@@ -117,7 +114,7 @@ body {
   flex: 1;
 }
 
-/* ===== FORMULAIRE BLEU ===== */
+/* ===== FORM STYLES ===== */
 .form-add {
   background: #2A6EBB;
   color: white;
@@ -129,9 +126,9 @@ body {
 .form-add h3 {
   color: white;
   margin: 0 0 20px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 15px;
   font-size: 1.2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .form-add label {
@@ -148,20 +145,11 @@ body {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: none;
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
-  background: white;
-  color: #333;
   font-size: 14px;
-}
-
-.form-add input[type="text"]:focus,
-.form-add select:focus,
-.form-add textarea:focus {
-  outline: none;
-  border-color: white;
+  box-sizing: border-box;
 }
 
 .form-add textarea {
@@ -174,11 +162,11 @@ body {
   color: #2A6EBB;
   border: none;
   padding: 12px;
-  cursor: pointer;
   width: 100%;
   font-size: 16px;
   border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -193,13 +181,19 @@ body {
   margin: 0;
 }
 
-/* ===== TITRES ===== */
+/* ===== TYPOGRAPHY ===== */
 h3 {
   color: #2A6EBB;
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 1.5em;
   text-align: left;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 30px 0;
 }
 
 /* ===== ARTICLES ===== */
@@ -216,14 +210,13 @@ h3 {
   color: #2A6EBB;
   margin: 0 0 15px 0;
   font-size: 1.3em;
-  text-align: left;
 }
 
 .article p {
   margin: 10px 0;
   color: #555;
-  text-align: left;
   font-size: 16px;
+  text-align: left;
 }
 
 .article form {
@@ -287,7 +280,6 @@ h3 {
   color: #2A6EBB;
   margin: 0 0 10px 0;
   font-size: 1.2em;
-  text-align: left;
 }
 
 .message p {
@@ -310,10 +302,10 @@ h3 {
   font-size: 0.9em;
   color: #999;
   margin-top: 10px;
-  border-top: 1px solid #eee;
   padding-top: 10px;
 }
 
+/* ===== BUTTONS ===== */
 .delete-btn {
   background: #e74c3c;
   color: white;
@@ -329,11 +321,20 @@ h3 {
   background: #c0392b;
 }
 
-/* ===== HR ===== */
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 30px 0;
+.btn-repondre {
+  background: #27ae60;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn-repondre:hover {
+  background: #229954;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -346,7 +347,6 @@ hr {
     width: 100%;
     height: auto;
     position: relative;
-    box-shadow: none;
     border-bottom: 2px solid #1a4d87;
     padding: 15px;
   }
@@ -386,19 +386,13 @@ hr {
     gap: 15px;
   }
 
-  .left-column {
-    width: 100%;
-  }
-
+  .left-column,
   .right-column {
     width: 100%;
   }
 
+  .article,
   .form-add {
-    padding: 15px;
-  }
-
-  .article {
     padding: 15px;
   }
 
