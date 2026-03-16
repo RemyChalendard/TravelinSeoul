@@ -55,6 +55,7 @@ try {
 ?>
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
+          
           <?php if (!empty($article['image'])): ?>
             <img class="art-img" src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['titre'] ?? 'Article'); ?>" width="450">
           <?php else: ?>

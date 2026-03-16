@@ -23,7 +23,7 @@ try {
             <?php
             $image_src = strpos($event['image'], 'images/') === 0 ? $event['image'] : 'images/' . $event['image'];
             ?>
-            <img src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
+            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
           <?php endif; ?>
 
         </div>

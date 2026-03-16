@@ -20,6 +20,7 @@ try {
 ?>
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
+          
           <?php if (!empty($event['image'])): ?>
             <img class="art-img" src="<?php echo htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['titre'] ?? 'Image'); ?>" width="450">
           <?php else: ?>
