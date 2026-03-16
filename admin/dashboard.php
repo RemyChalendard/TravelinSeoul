@@ -86,9 +86,9 @@ $categorie_filter = $_GET['categorie'] ?? '';
                             </select>
 
                             <label>Photo</label>
-                            <input type="file" name="images" accept="image/*" required>
+                            <input type="file" name="images" required>
 
-                         
+
                             <select name="etat" required>
                                 <option value="brouillon">Brouillon</option>
                                 <option value="publiée">Publiée</option>
@@ -168,7 +168,7 @@ $categorie_filter = $_GET['categorie'] ?? '';
 
                                 <p><?= substr($article['contenu'] ?? '', 0, 150) ?>...</p>
 
-                                <a href="delete_article.php?id=<?= $article['id'] ?>">Supprimer</a>
+                                <a href="delete_article.php?id=<?= $article['id'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">Supprimer</a>
 
                             </div>
 

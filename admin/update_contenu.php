@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     
     if(!empty($id) && !empty($contenu)){
         try {
-            $stmt = $pdo->prepare("UPDATE article SET content = :contenu WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE articles SET contenu = :contenu WHERE id = :id");
             $stmt->execute([
                 ':contenu' => $contenu,
                 ':id' => $id
