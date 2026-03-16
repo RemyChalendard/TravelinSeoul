@@ -13,8 +13,7 @@ if(isset($_SESSION['admin'])){
 <head>
 <meta charset="UTF-8">
 <title>Connexion Admin</title>
-<link rel="stylesheet" href="/travelInSeoul/styles/admin.css">
-</head>
+<link rel="stylesheet" href="../styles/login.css"></head>
 <body>
 
 <div class="login-container">

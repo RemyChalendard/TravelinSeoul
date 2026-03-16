@@ -12,17 +12,21 @@
 //     die("Erreur de connexion : " . $e->getMessage());
 // }
 
+if(isset($_SESSION['admin'])){
+    header("Location: index.php");
+    exit;
+}
 
 class Database {
     private static ?Database $instance = null;
     private PDO $pdo;
     
     // Constructeur privé (empêche new Database())
-    private function __construct() {
-        $host = "mysql-server";       
-        $user = "root";            
-        $password = "root";            
-        $database = "travelinseoul"; 
+private function __construct() {
+    $host = $_ENV['DB_HOST'];
+    $user = $_ENV['DB_USER'];
+    $password = $_ENV['DB_PASS'];  
+    $database = $_ENV['DB_DATABASE'];
 
         try {
             $this->pdo = new PDO(
