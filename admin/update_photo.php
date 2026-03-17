@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['images'])){
     }
     
     if(move_uploaded_file($photo['tmp_name'], $filepath)){
-        $stmt = $pdo->prepare("UPDATE article SET image = :images WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE articles SET image = :images WHERE id = :id");
         $stmt->execute([
             ':images' => $filename,
             ':id' => $id

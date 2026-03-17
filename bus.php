@@ -29,10 +29,11 @@ try {
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
           
-          <?php if (!empty($article['image'])): ?>
-            <img class="art-img" src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['titre'] ?? 'Article'); ?>" width="450">
-          <?php else: ?>
-            <img class="art-img" src="https://via.placeholder.com/450x300?text=No+Image" alt="Pas d'image" width="450">
+           <?php if (!empty($article['image'])): ?>
+            <?php
+            $image_src = strpos($article['image'], 'images/') === 0 ? $article['image'] : 'images/' . $article['image'];
+            ?>
+            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
           <?php endif; ?>
         </div>
 
