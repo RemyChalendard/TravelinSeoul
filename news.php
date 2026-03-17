@@ -25,7 +25,6 @@ try {
             ?>
             <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
           <?php endif; ?>
-
         </div>
 
         <div class="text">

@@ -14,20 +14,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contenu = $_POST['contenu'] ?? '';
     $image = '';
 
-    // DEBUG
-    echo "Fichier reçu: " . (isset($_FILES['images']) ? "OUI" : "NON") . "<br>";
-    
-    // Uploader image
+    // Uploader l'image sur la base de données
     if (isset($_FILES['images']) && $_FILES['images']['name']) {
         $dossier = dirname(__DIR__) . '/images/';
         echo "Dossier: " . $dossier . "<br>";
         echo "Existe: " . (is_dir($dossier) ? "OUI" : "NON") . "<br>";
-        
+
         if (!is_dir($dossier)) mkdir($dossier, 0755, true);
-        
+
         $image = basename($_FILES['images']['name']);
         echo "Image: " . $image . "<br>";
-        
+
         if (move_uploaded_file($_FILES['images']['tmp_name'], $dossier . $image)) {
             echo "✅ Image uploadée !<br>";
         } else {
@@ -36,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     echo "Image variable: " . ($image ? $image : "VIDE") . "<br>";
-    
-    // Insérer en BDD
+
+    // Insérer dans la base de données
     if (!empty($titre) && !empty($categorie)) {
         try {
             $stmt = $pdo->prepare("INSERT INTO articles (titre, categorie, etat, contenu, image) VALUES (:titre, :categorie, :etat, :contenu, :image)");
@@ -54,8 +51,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
-// Pas de redirect pour voir les messages
-// header("Location: dashboard.php");
-// exit;
 ?>
+
+<?php if ($success): ?>
+    <p style="color: green; font-weight: bold; font-size: 18px;">
+        ✅ Article ajouté avec succès ! Redirection dans 5 secondes...
+    </p>
+    <script>
+        setTimeout(function() {
+            window.location.href = 'dashboard.php';
+        }, 5000);
+    </script>
+<?php endif; ?>

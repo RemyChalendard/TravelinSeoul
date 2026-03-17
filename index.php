@@ -20,29 +20,30 @@ try {
 ?>
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
-          
+
           <?php if (!empty($event['image'])): ?>
-            <img class="art-img" src="<?php echo htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['titre'] ?? 'Image'); ?>" width="450">
-          <?php else: ?>
-            <img class="art-img" src="https://via.placeholder.com/450x300?text=No+Image" alt="Pas d'image" width="450">
+            <?php
+            $image_src = strpos($event['image'], 'images/') === 0 ? $event['image'] : 'images/' . $event['image'];
+            ?>
+            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
           <?php endif; ?>
         </div>
 
-        <div class="text">
-          <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
-          <?php
+          <div class="text">
+            <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
+            <?php
             $contenu = htmlspecialchars($event['contenu'] ?? "Non renseigné");
             $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
             $paragraphes = explode("\n", $contenu);
             foreach ($paragraphes as $p) {
-                if (trim($p) !== '') {
-                    echo "<p>" . $p . "</p>";
-                }
+              if (trim($p) !== '') {
+                echo "<p>" . $p . "</p>";
+              }
             }
-          ?>
+            ?>
+          </div>
         </div>
-      </div>
-<?php
+  <?php
 
     }
   } else {
@@ -51,8 +52,8 @@ try {
 } catch (PDOException $e) {
   echo "Erreur : " . $e->getMessage();
 }
-?>
+  ?>
 
-<?php
-include 'includes/footer.php';
-?>
+  <?php
+  include 'includes/footer.php';
+  ?>
