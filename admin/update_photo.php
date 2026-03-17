@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['images'])){
     $filename = basename($photo['name']);
     $filepath = $upload_dir . $filename;
     
-    $allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    $allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/avif'];
     if(!in_array($photo['type'], $allowed)){
         header("Location: dashboard.php");
         exit;

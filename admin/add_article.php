@@ -7,6 +7,8 @@ if (!isset($_SESSION['admin'])) {
     exit;
 }
 
+$success = false;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titre = $_POST['titre'] ?? '';
     $categorie = $_POST['categorie'] ?? '';
@@ -14,27 +16,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contenu = $_POST['contenu'] ?? '';
     $image = '';
 
-    // Uploader l'image sur la base de données
+    // Uploader image
     if (isset($_FILES['images']) && $_FILES['images']['name']) {
         $dossier = dirname(__DIR__) . '/images/';
-        echo "Dossier: " . $dossier . "<br>";
-        echo "Existe: " . (is_dir($dossier) ? "OUI" : "NON") . "<br>";
-
+        
         if (!is_dir($dossier)) mkdir($dossier, 0755, true);
-
+        
         $image = basename($_FILES['images']['name']);
-        echo "Image: " . $image . "<br>";
-
-        if (move_uploaded_file($_FILES['images']['tmp_name'], $dossier . $image)) {
-            echo "✅ Image uploadée !<br>";
-        } else {
-            echo "❌ Erreur upload<br>";
-        }
+        move_uploaded_file($_FILES['images']['tmp_name'], $dossier . $image);
     }
-
-    echo "Image variable: " . ($image ? $image : "VIDE") . "<br>";
-
-    // Insérer dans la base de données
+    
+    // Insérer en BDD
     if (!empty($titre) && !empty($categorie)) {
         try {
             $stmt = $pdo->prepare("INSERT INTO articles (titre, categorie, etat, contenu, image) VALUES (:titre, :categorie, :etat, :contenu, :image)");
@@ -45,21 +37,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':contenu' => $contenu,
                 ':image' => $image
             ]);
-            echo "✅ Article créé en BDD avec image: " . $image . "<br>";
+            $success = true;
         } catch (PDOException $e) {
-            echo "❌ Erreur BDD: " . $e->getMessage() . "<br>";
+            echo "❌ Erreur : " . $e->getMessage();
         }
     }
 }
-?>
 
-<?php if ($success): ?>
-    <p style="color: green; font-weight: bold; font-size: 18px;">
-        ✅ Article ajouté avec succès ! Redirection dans 5 secondes...
-    </p>
-    <script>
+if ($success) {
+    echo "✅ Article créé avec succès ! Redirection dans 5 secondes...";
+    echo "<script>
         setTimeout(function() {
             window.location.href = 'dashboard.php';
         }, 5000);
-    </script>
-<?php endif; ?>
+    </script>";
+    exit;
+}
+?>
