@@ -19,11 +19,8 @@ try {
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
 
-          <?php if (!empty($event['image'])): ?>
-            <?php
-            $image_src = strpos($event['image'], 'images/') === 0 ? $event['image'] : 'images/' . $event['image'];
-            ?>
-            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
+         <?php if (!empty($event['image'])): ?>
+            <img class="art-img" src="<?php echo htmlspecialchars(image_url($event['image'])); ?>" alt="" width="450">
           <?php endif; ?>
         </div>
 

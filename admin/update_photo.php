@@ -7,9 +7,9 @@ if(!isset($_SESSION['admin'])){
     exit;
 }
 
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['images'])){
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photo'])){
     $id = $_POST['id'] ?? '';
-    $photo = $_FILES['images'];
+    $photo = $_FILES['photo'];
     
     $upload_dir = "../images/";
     if(!is_dir($upload_dir)) mkdir($upload_dir, 0755, true);
@@ -24,9 +24,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['images'])){
     }
     
     if(move_uploaded_file($photo['tmp_name'], $filepath)){
-        $stmt = $pdo->prepare("UPDATE articles SET image = :images WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE articles SET image = :image WHERE id = :id");
         $stmt->execute([
-            ':images' => $filename,
+            ':image' => 'images/' . $filename,
             ':id' => $id
         ]);
         header("Location: dashboard.php");

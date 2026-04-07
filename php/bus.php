@@ -8,7 +8,7 @@ $pdo = Database::getInstance()->getPDO();
 <h1>Les differentes lignes de Bus de Seoul</h1>
 <div class="d-flex fd-row jc-c g-16">
   <div class="f-1-1-300">
-    <img class="art-img" src="images/buses.webp" width="450" alt="Les bus">
+    <img class="art-img" src="../images/buses.webp" width="450" alt="Les bus">
   </div>
   <div class="text">
     <p>Seoul dispose d'un vaste réseau de bus qui couvre toute la ville et ses environs. Les bus sont un moyen de transport populaire pour les résidents et les visiteurs, offrant une alternative pratique au métro. Il existe plusieurs types de bus à Seoul, chacun avec ses propres caractéristiques et itinéraires.</p>
@@ -29,11 +29,8 @@ try {
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
           
-           <?php if (!empty($article['image'])): ?>
-            <?php
-            $image_src = strpos($article['image'], 'images/') === 0 ? $article['image'] : 'images/' . $article['image'];
-            ?>
-            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
+          <?php if (!empty($article['image'])): ?>
+            <img class="art-img" src="<?php echo htmlspecialchars(image_url($article['image'])); ?>" alt="" width="450">
           <?php endif; ?>
         </div>
 

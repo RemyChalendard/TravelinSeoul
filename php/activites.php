@@ -55,15 +55,12 @@ try {
 ?>
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
-          
+
           <?php if (!empty($article['image'])): ?>
-            <?php
-            $image_src = strpos($article['image'], 'images/') === 0 ? $article['image'] : 'images/' . $article['image'];
-            ?>
-            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
+            <img class="art-img" src="<?php echo htmlspecialchars(image_url($article['image'])); ?>" alt="" width="450">
           <?php endif; ?>
+
         </div>
-      
 
         <div class="text">
           <h2><?php echo htmlspecialchars($article['titre'] ?? "Article"); ?></h2>

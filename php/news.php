@@ -2,7 +2,6 @@
 include '../includes/header.php';
 require '../config.php';
 $pdo = Database::getInstance()->getPDO();
-
 ?>
 
 <h1><strong>Actualitées</strong></h1>
@@ -20,11 +19,9 @@ try {
         <div class="f-1-1-300">
 
           <?php if (!empty($event['image'])): ?>
-            <?php
-            $image_src = strpos($event['image'], '../images/') === 0 ? $event['image'] : 'images/' . $event['image'];
-            ?>
-            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
+            <img class="art-img" src="<?php echo htmlspecialchars(image_url($event['image'])); ?>" alt="" width="450">
           <?php endif; ?>
+
         </div>
 
         <div class="text">
