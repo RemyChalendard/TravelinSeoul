@@ -36,6 +36,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photo'])){
     exit;
 }
 
+
 header("Location: dashboard.php");
 exit;
 ?>
