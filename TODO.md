@@ -1,5 +1,4 @@
-## Corriger les chemin d'images pour que cela prennent en compte les images deja stocké + les nouvelles sur la BDD
-sur les pages : 
+## Etat d'avancement des pages
 
 - Home (Fonctionne)
 - News (Fonctionne)
