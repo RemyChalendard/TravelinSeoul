@@ -1,7 +1,7 @@
 <?php
-require_once("admin/db.php");
-include 'includes/header.php';
-require 'config.php';  
+require_once("../admin/db.php");
+include '../includes/header.php';
+require '../config.php';  
 ?>
 
 <style>
@@ -152,5 +152,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 </script>
 
 <?php
-include 'includes/footer.php';
+include '../includes/footer.php';
 ?>

@@ -1,15 +1,15 @@
 <?php
-include 'includes/header.php';
-require 'config.php';
+include '../includes/header.php';
+require '../config.php';
 $pdo = Database::getInstance()->getPDO();
 
 ?>
 
-<h1><strong>La restauration</strong></h1>
+<h1><strong>Actualitées</strong></h1>
 
 <?php
 try {
-  $stmt = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'Restaurant' AND etat = 'publiée' ORDER BY date_creation ASC");
+  $stmt = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'News' AND etat = 'publiée' ORDER BY id DESC");
   $stmt->execute();
   $evenements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -21,7 +21,7 @@ try {
 
           <?php if (!empty($event['image'])): ?>
             <?php
-            $image_src = strpos($event['image'], 'images/') === 0 ? $event['image'] : 'images/' . $event['image'];
+            $image_src = strpos($event['image'], '../images/') === 0 ? $event['image'] : 'images/' . $event['image'];
             ?>
             <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
           <?php endif; ?>
@@ -29,17 +29,18 @@ try {
 
         <div class="text">
           <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
-
           <?php
           $contenu = htmlspecialchars($event['contenu'] ?? "Non renseigné");
           $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
-          foreach (explode("\n", $contenu) as $p) {
-            if (trim($p) !== '') echo "<p>" . $p . "</p>";
+          $paragraphes = explode("\n", $contenu);
+          foreach ($paragraphes as $p) {
+            if (trim($p) !== '') {
+              echo "<p>" . $p . "</p>";
+            }
           }
           ?>
         </div>
       </div>
-
 <?php
     }
   } else {
@@ -50,4 +51,6 @@ try {
 }
 ?>
 
-<?php include 'includes/footer.php'; ?>
+<?php
+include '../includes/footer.php';
+?>

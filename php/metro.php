@@ -1,6 +1,6 @@
 <?php
-include 'includes/header.php';
-require 'config.php';
+include '../includes/header.php';
+require '../config.php';
 $pdo = Database::getInstance()->getPDO();
 
 ?>
@@ -56,4 +56,4 @@ try {
 }
 ?>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
