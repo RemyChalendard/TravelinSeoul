@@ -1,21 +1,15 @@
 <?php
-if (isset($_SESSION['admin'])) {
-    header("Location: index.php");
-    exit;
-}
-
 class Database
 {
     private static ?Database $instance = null;
     private PDO $pdo;
 
-    // Constructeur privé (empêche new Database())
     private function __construct()
     {
-        $host = $_ENV['DB_HOST'];
-        $user = $_ENV['DB_USER'];
-        $password = $_ENV['DB_PASS'];
-        $database = $_ENV['DB_DATABASE'];
+        $host = 'mysql-chalendard-remy13.alwaysdata.net'; 
+        $user = 'chalendard-remy13';                       
+        $password = 'aitanaMars13!';                   
+        $database = 'chalendard-remy13_travelinseoul';    
 
         try {
             $this->pdo = new PDO(
@@ -29,7 +23,6 @@ class Database
         }
     }
 
-    // Méthode statique pour obtenir l'instance unique
     public static function getInstance(): Database
     {
         if (self::$instance === null) {
@@ -38,23 +31,22 @@ class Database
         return self::$instance;
     }
 
-    // Retourner l'objet PDO
     public function getPDO(): PDO
     {
         return $this->pdo;
     }
 
-    // Empêcher le clonage
     private function __clone() {}
 
-    // Empêcher la désérialisation
     public function __wakeup()
     {
         throw new Exception("Cannot unserialize a singleton");
     }
 }
 
+define('BASE_URL', $_ENV['BASE_URL'] ?? '/travelInSeoul');
+
 function image_url($path)
 {
-    return '/travelInSeoul/' . ltrim($path, '/');
+    return BASE_URL . '/' . ltrim($path, '/');
 }

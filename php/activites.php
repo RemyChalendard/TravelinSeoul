@@ -9,6 +9,7 @@ $pdo = Database::getInstance()->getPDO();
   <h1 id="titre-evenements">Les évenements à venir:</h1>
 </div>
 
+
 <div class="tableau" id="evenements">
   <div id="activites-container">
     <div class="d-flex fd-row jc-c g-16">

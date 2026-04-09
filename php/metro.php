@@ -6,6 +6,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <h1>Les differentes lignes de métro de Seoul</h1>
 
+
 <?php
 try {
   $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Metro' AND etat = 'publiée' ORDER BY date_creation ASC");

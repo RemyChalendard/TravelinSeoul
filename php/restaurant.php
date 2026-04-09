@@ -7,6 +7,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <h1><strong>La restauration</strong></h1>
 
+
 <?php
 try {
   $stmt = $pdo->prepare("SELECT * FROM articles WHERE categorie = 'Restaurant' AND etat = 'publiée' ORDER BY date_creation ASC");

@@ -12,6 +12,7 @@ try {
   $stmt->execute();
   $evenements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+  
   if ($evenements) {
     foreach ($evenements as $event) {
 ?>

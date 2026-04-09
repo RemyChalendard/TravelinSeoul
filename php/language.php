@@ -8,6 +8,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <h1>La création du Hangeul</h1>
 
+
 <?php
 try {
   $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Hangeul' AND etat = 'publiée' ORDER BY date_creation ASC");

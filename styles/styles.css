@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 /* Seoul Widget */
 #seoul-info {
   background: linear-gradient(135deg, #2A6EBB 0%, #1a416e 100%);
@@ -208,7 +209,13 @@ footer {
 /*Main*/
 body {
   font-family: "Roboto", sans-serif;
-  background-color: white;
+  background-color:white;
+ background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
 }
 
 h1 {

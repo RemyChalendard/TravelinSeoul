@@ -11,6 +11,7 @@
 
   <title>Travel In Seoul</title>
 
+  
   <style>
     /* Seoul Widget */
     #seoul-info {
