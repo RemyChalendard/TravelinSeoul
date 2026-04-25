@@ -1,5 +1,4 @@
-
-  </main>
+</main>
   <footer>
     <h5>CONTACTEZ-NOUS</h5>
     
