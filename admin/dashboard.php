@@ -17,8 +17,8 @@ $categorie_filter = $_GET['categorie'] ?? '';
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Admin</title>
-    <link rel="stylesheet" href="/travelInSeoul/styles/admin.css">
-    <link rel="stylesheet" href="/travelInSeoul/styles/dashboard.css">
+ <link rel="stylesheet" href="../styles/admin.css">
+<link rel="stylesheet" href="../styles/dashboard.css">>
     <style>
 
     </style>

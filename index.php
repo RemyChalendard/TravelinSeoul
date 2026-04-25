@@ -23,27 +23,26 @@ try {
 
           <?php if (!empty($event['image'])): ?>
             <?php
-            $image_src = strpos($event['image'], 'images/') === 0 ? $event['image'] : 'images/' . $event['image'];
-            ?>
+            $image_src = '/' . ltrim($image_src, '/');            ?>
             <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
           <?php endif; ?>
         </div>
 
-          <div class="text">
-            <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
-            <?php
-            $contenu = htmlspecialchars($event['contenu'] ?? "Non renseigné");
-            $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
-            $paragraphes = explode("\n", $contenu);
-            foreach ($paragraphes as $p) {
-              if (trim($p) !== '') {
-                echo "<p>" . $p . "</p>";
-              }
+        <div class="text">
+          <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
+          <?php
+          $contenu = htmlspecialchars($event['contenu'] ?? "Non renseigné");
+          $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
+          $paragraphes = explode("\n", $contenu);
+          foreach ($paragraphes as $p) {
+            if (trim($p) !== '') {
+              echo "<p>" . $p . "</p>";
             }
-            ?>
-          </div>
+          }
+          ?>
         </div>
-  <?php
+      </div>
+<?php
 
     }
   } else {
@@ -52,8 +51,8 @@ try {
 } catch (PDOException $e) {
   echo "Erreur : " . $e->getMessage();
 }
-  ?>
+?>
 
-  <?php
-  include 'includes/footer.php';
-  ?>
+<?php
+include 'includes/footer.php';
+?>

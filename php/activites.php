@@ -44,6 +44,7 @@ $pdo = Database::getInstance()->getPDO();
 
 <h1>Les Activités</h1>
 
+
 <?php
 try {
   $requete = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Evenements' AND etat = 'publiée' ORDER BY date_creation DESC");
@@ -57,7 +58,7 @@ try {
         <div class="f-1-1-300">
 
           <?php if (!empty($article['image'])): ?>
-            <img class="art-img" src="<?php echo htmlspecialchars(image_url($article['image'])); ?>" alt="" width="450">
+            <img class="art-img" src="/<?php echo htmlspecialchars($article['image']); ?>" alt="" width="450">
           <?php endif; ?>
 
         </div>

@@ -7,7 +7,7 @@
   <meta name="description"
     content="Découvrez les meilleures activités à Séoul : visites culturelles, balades, marchés, spectacles et expériences uniques pour profiter pleinement de la capitale coréenne.">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/travelinseoul/styles/styles.css">
+  <link rel="stylesheet" href="/styles/styles.css">
 
   <title>Travel In Seoul</title>
 
@@ -60,7 +60,7 @@
 
 <body>
   <header>
-    <img src="/travelinseoul/images/logoseoul.png" alt="Logo Seoul" width="" height="">
+    <img src="/images/logoseoul.png" alt="Logo Seoul" width="" height="">
     <h1>TRAVEL IN SEOUL</h1>
 
     <!-- Widget Séoul -->
@@ -78,15 +78,15 @@
         </button>
 
         <div class="nav-links" id="navLinks">
-          <a href="/travelinseoul/index.php">HOME</a>
-          <a href="/travelinseoul/php/news.php">NEWS</a>
-          <a href="/travelinseoul/php/restaurant.php">FOODS</a>
-          <a href="/travelinseoul/php/activites.php">ACTIVITIES</a>
-          <a href="/travelinseoul/php/Quartiers.php">DISTRICTS</a>
-          <a href="/travelinseoul/php/language.php">HANGEUL</a>
-          <a href="/travelinseoul/php/bus.php">LIGNES DE BUS</a>
-          <a href="/travelinseoul/php/metro.php">LIGNES DE METRO</a>
-          <a href="/travelinseoul/php/contact.php">CONTACT</a>
+          <a href="/index.php">HOME</a>
+          <a href="/php/news.php">NEWS</a>
+          <a href="/php/restaurant.php">FOODS</a>
+          <a href="/php/activites.php">ACTIVITIES</a>
+          <a href="/php/Quartiers.php">DISTRICTS</a>
+          <a href="/php/language.php">HANGEUL</a>
+          <a href="/php/bus.php">LIGNES DE BUS</a>
+          <a href="/php/metro.php">LIGNES DE METRO</a>
+          <a href="/php/contact.php">CONTACT</a>
         </div>
       </div>
     </nav>

@@ -1,4 +1,17 @@
 <?php
+// Chargement du .env
+$envFile = __DIR__ . '/.env';
+if (file_exists($envFile)) {
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos($line, '#') === 0) continue;
+        if (strpos($line, '=') !== false) {
+            [$key, $value] = explode('=', $line, 2);
+            $value = trim($value, '"\'');
+            $_ENV[trim($key)] = $value;
+        }
+    }
+}
 
 if (!isset($_ENV['DB_HOST'])) {
     die("Erreur : impossible de lire les variables d'environnement");

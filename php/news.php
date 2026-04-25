@@ -19,7 +19,7 @@ try {
         <div class="f-1-1-300">
 
           <?php if (!empty($event['image'])): ?>
-            <img class="art-img" src="<?php echo htmlspecialchars(image_url($event['image'])); ?>" alt="" width="450">
+            <img class="art-img" src="/<?php echo htmlspecialchars($event['image']); ?>" alt="" width="450">
           <?php endif; ?>
 
         </div>

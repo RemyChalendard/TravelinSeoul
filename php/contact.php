@@ -1,7 +1,8 @@
 <?php
-require_once("../admin/db.php");
 include '../includes/header.php';
-require '../config.php';  
+require '../config.php';
+
+$pdo = Database::getInstance()->getPDO();
 ?>
 
 <style>
@@ -10,7 +11,7 @@ require '../config.php';
   }
 
   .error {
-    outline: 2px solid red;
+    outline: 2px solid red; 
   }
 
   .success-checked::before {

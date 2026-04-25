@@ -13,7 +13,7 @@
           alt="Instagram">
       </a>
       <a href="https://www.instagram.com/seoulcity?igsh=MXBmaXN4eGx5eiQ3aQ==">
-        <img class="art-img" src="/travelinseoul/images/Naver_Icon_1.webp" width="50" height="50" alt="Naver" />
+        <img class="art-img" src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" width="50" height="50" alt="WhatsApp" />
       </a>
       <h5>Un projet de :Chalendard Rémy</h5>
     </section>

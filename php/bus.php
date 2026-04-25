@@ -28,28 +28,29 @@ try {
 ?>
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
-          
+
           <?php if (!empty($article['image'])): ?>
-            <img class="art-img" src="<?php echo htmlspecialchars(image_url($article['image'])); ?>" alt="" width="450">
+            <img class="art-img" src="/<?php echo htmlspecialchars($article['image']); ?>" alt="" width="450">
           <?php endif; ?>
         </div>
 
         <div class="text">
           <h2><?php echo htmlspecialchars($article['titre'] ?? "Article"); ?></h2>
           <?php
-            $description = htmlspecialchars($article['description'] ?? "Non renseigné");
-            $description = str_replace(["\r\n", "\r"], "\n", $description);
-            foreach (explode("\n", $description) as $p) {
-              if (trim($p) !== '') echo "<p>" . $p . "</p>";
-            }
+          $description = htmlspecialchars($article['description'] ?? "Non renseigné");
+          $description = str_replace(["\r\n", "\r"], "\n", $description);
+          foreach (explode("\n", $description) as $p) {
+            if (trim($p) !== '') echo "<p>" . $p . "</p>";
+          }
           ?>
           <?php
-            $contenu = htmlspecialchars($article['contenu'] ?? "Non renseigné");
-            $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
-            foreach (explode("\n", $contenu) as $p) {
-              if (trim($p) !== '') echo "<p>" . $p . "</p>";
-            }
+          $contenu = htmlspecialchars($article['contenu'] ?? "Non renseigné");
+          $contenu = str_replace(["\r\n", "\r"], "\n", $contenu);
+          foreach (explode("\n", $contenu) as $p) {
+            if (trim($p) !== '') echo "<p>" . $p . "</p>";
+          }
           ?>
+
         </div>
       </div>
 

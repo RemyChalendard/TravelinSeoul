@@ -12,29 +12,29 @@ $pdo = Database::getInstance()->getPDO();
 try {
   $stmt = $pdo->prepare("SELECT * FROM articles WHERE CATEGORIE = 'Hangeul' AND etat = 'publiée' ORDER BY date_creation ASC");
   $stmt->execute();
- // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
+  // Mode de récuperation des données sous forme de tableau associatif ou les clé sont les noms des colonnes
   $evenements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   if ($evenements) {
     foreach ($evenements as $event) {
-      ?>
+?>
       <div class="d-flex fd-row jc-c g-16">
         <div class="f-1-1-300">
 
-            <?php if (!empty($event['image'])): ?>
-            <img class="art-img" src="<?php echo htmlspecialchars(image_url($event['image'])); ?>" alt="" width="450">
+          <?php if (!empty($event['image'])): ?>
+            <img class="art-img" src="/<?php echo htmlspecialchars($event['image']); ?>" alt="" width="450">
           <?php endif; ?>
         </div>
-        
+
         <div class="text">
           <h2><?php echo htmlspecialchars($event['titre'] ?? "Article"); ?></h2>
           <p><?php echo htmlspecialchars($event['contenu'] ?? "Non renseigné"); ?></p>
         </div>
       </div>
-      
-        
-      <?php
-   
+
+
+<?php
+
     }
   } else {
     echo "<p>Aucun quartier à afficher.</p>";
