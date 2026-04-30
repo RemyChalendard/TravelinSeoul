@@ -23,8 +23,12 @@ try {
 
           <?php if (!empty($event['image'])): ?>
             <?php
-            $image_src = '/' . ltrim($image_src, '/');            ?>
-            <img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450">
+            $image_src = '/' . ltrim($event['image'], '/'); 
+            ?>
+
+
+<img class="art-img" src="<?php echo htmlspecialchars($image_src); ?>" alt="" width="450" height="277">
+
           <?php endif; ?>
         </div>
 

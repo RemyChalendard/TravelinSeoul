@@ -187,10 +187,6 @@ header {
   height: 120px;
 }
 
-
-
-
-
 footer {
   padding: 23px;
 }
@@ -211,7 +207,7 @@ footer {
 
 /*Main*/
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: system-ui, sans-serif;
   background-color: white;
   background-size: cover;
   background-position: center;

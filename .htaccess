@@ -5,7 +5,18 @@
     # Exclure les fichiers statiques
     RewriteRule \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf)$ - [L]
 
+    # Exclure robots.txt
+    RewriteRule ^robots\.txt$ - [L]
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png  "access plus 1 year"
+    ExpiresByType text/css   "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
 </IfModule>

@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Découvrez les meilleures activités à Séoul : visites culturelles, balades, marchés, spectacles et expériences uniques pour profiter pleinement de la capitale coréenne.">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/styles.css">
 
+<link rel="stylesheet" href="/styles/styles.css" media="print" onload="this.media='all'">
   <title>Travel In Seoul</title>
 
   <style>
@@ -70,8 +69,8 @@
     </div>
 
     <nav class="navbar">
-      <div class="nav-container">
-        <button class="burger-menu" id="burgerMenu">
+    <div class="nav-container">
+    <button class="burger-menu" id="burgerMenu" aria-label="Menu">          
           <span></span>
           <span></span>
           <span></span>
